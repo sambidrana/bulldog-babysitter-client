@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "../styles/Calendar.css";
+import "../../styles/Calendar.css"
 import { compareAsc, format, add } from "date-fns";
 import { INTERVAL, STORE_CLOSING_TIME, STORE_OPENING_TIME } from "@/constants/config";
 
@@ -30,7 +30,7 @@ const CalendarApp = () => {
   const times = getTimes();
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className="h-screen w-screen mt-44 flex flex-col justify-center items-center">
       {date.justDate ? (
         <div className="flex gap-3">
           {times?.map((time, i) => (
