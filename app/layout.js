@@ -1,6 +1,6 @@
 import Navbar from "@/app/(components)/Navbar";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
-
 
 export const metadata = {
   title: "BBS - client",
@@ -9,11 +9,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body >
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className="">
+          <Navbar />
+          <div className="flex justify-center items-center p-10">
+            {children}
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

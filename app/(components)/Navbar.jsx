@@ -1,9 +1,16 @@
+"use client";
+import { SignIn, SignInButton, SignOutButton, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
+  const { user, isLoaded } = useUser();
+  // console.log(user)
   return (
-    <nav style={{ position: "relative", zIndex: 1000 }} className=" bg-white flex justify-between w-screen h-20 p-6" >
+    <nav
+      // style={{ position: "relative", zIndex: 1000 }}
+      className=" bg-white flex justify-between w-screen  p-6"
+    >
       <div className="ml-8">
         <Link className="navLink" href="/">
           Home
@@ -42,12 +49,13 @@ const Navbar = () => {
         >
           About Us
         </Link>
-        <Link
-          className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2"
-          href="/signin"
-        >
-          Login
-        </Link>
+        {isLoaded && user ? (
+          <div className="flex items-center justify-center">
+            <UserButton showName="true"  afterSignOutUrl="/"  />
+          </div>
+        ) : (
+          <SignInButton className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2"  />
+        )}
       </div>
     </nav>
   );

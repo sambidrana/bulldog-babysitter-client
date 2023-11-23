@@ -4,7 +4,7 @@ import React from "react";
 const BookNow = () => {
   return (
     <>
-      <div className="  w-full h-[80vh] flex items-center justify-around bg-[#A9C274] bg-opacity-50  ">
+      <div className="  w-full flex items-center justify-around bg-[#A9C274] bg-opacity-50 pt-16 pb-16 shadow-inner  ">
         {/* for calendar image */}
         <div className="">
           <Image src="/booknow/calendar.png" width={500} height={500} alt="Calendar Image" />
@@ -12,10 +12,10 @@ const BookNow = () => {
 
         {/* for book now button */}
         <div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center flex-shrink">
             <Image src={"/booknow/frenchie1.png"} width={250} height={250} alt="Frenchie1" />
           </div>
-          <div className="bg-white px-24 py-14 rounded-3xl">
+          <div className="bg-white px-24 py-14 rounded-3xl flex flex-col justify-center items-center shadow-xl">
             <p className="text-2xl">Every Bulldog Deservs a</p>
             <p className="text-2xl">Special Day!</p>
             <p className="text-xl">Secure Yours with a Click</p>
