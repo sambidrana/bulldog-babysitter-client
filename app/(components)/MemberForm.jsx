@@ -1,8 +1,12 @@
 "use client"
+import { useUser } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState } from "react";
 
 export const MemberForm = () => {
+  const { user, isLoaded } = useUser();
+  console.log(useUser())
+
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
