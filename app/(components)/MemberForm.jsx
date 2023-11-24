@@ -1,11 +1,13 @@
-"use client"
+"use client";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
 import React, { useState } from "react";
 
+
+
 export const MemberForm = () => {
   const { user, isLoaded } = useUser();
-  console.log(useUser())
+  console.log(useUser());
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -92,7 +94,10 @@ export const MemberForm = () => {
           className="border border-gray-400 p-2 px-6 rounded-lg"
         />
         <div>
-          <button type="submit" className="p-2 px-4 rounded-lg mt-6 text-gray-100 bg-blue-400 ">
+          <button
+            type="submit"
+            className="p-2 px-4 rounded-lg mt-6 text-gray-100 bg-blue-400 "
+          >
             Add Member
           </button>
         </div>
