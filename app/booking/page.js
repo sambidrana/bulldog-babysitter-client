@@ -5,9 +5,7 @@ import CalendarApp from '../(components)/CalendarApp'
 
 const BookingPage = () => {
     const {userId} = auth()
-    // if (userId) {
-    //     redirect('/sign-in')
-    // }
+   
   return (
     <div>
         <CalendarApp />
