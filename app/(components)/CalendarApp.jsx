@@ -11,7 +11,7 @@ const CalendarApp = () => {
     dateTime: null,
   });
 
-  // console.log(date.dateTime)
+  console.log(date.dateTime)
   const getTimes = () => {
     if (!date.justDate) return;
 
@@ -30,7 +30,7 @@ const CalendarApp = () => {
   const times = getTimes();
 
   return (
-    <div className="h-screen w-screen mt-44 flex flex-col justify-center items-center">
+    <div className=" w-screen mt-44 ml-20 flex flex-col justify-center items-start">
       {date.justDate ? (
         <div className="flex gap-3">
           {times?.map((time, i) => (

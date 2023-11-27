@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2"
-          href="/faq"
+          href="/faqs"
         >
           FAQ's
         </Link>

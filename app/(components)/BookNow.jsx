@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const BookNow = () => {
@@ -20,9 +21,9 @@ const BookNow = () => {
             <p className="text-2xl">Special Day!</p>
             <p className="text-xl">Secure Yours with a Click</p>
             <div className="flex items-center justify-center mt-10">
-              <button className="bg-[#8FAEFD] text-white font-bold py-2 px-8 rounded-lg hover:bg-[#6d95fa]">
+              <Link href={"/booking"} className="bg-[#8FAEFD] text-white font-bold py-2 px-8 rounded-lg hover:bg-[#6d95fa]">
                 Book Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>
