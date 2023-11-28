@@ -5,12 +5,7 @@ import React from "react";
 const BookNow = () => {
   return (
     <>
-      <div className="  w-full flex items-center justify-around bg-[#A9C274] bg-opacity-50 pt-16 pb-16 shadow-inner  ">
-        {/* for calendar image */}
-        <div className="">
-          <Image src="/booknow/calendar.png" width={500} height={500} alt="Calendar Image" />
-        </div>
-
+      <div className="w-screen flex items-center justify-around bg-gradient-to-r from-[#A9C274] to-lime-100 pt-16 pb-16 shadow-inner">
         {/* for book now button */}
         <div>
           <div className="flex items-center justify-center flex-shrink">

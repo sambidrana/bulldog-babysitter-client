@@ -3,11 +3,11 @@ import FAQs from "../(components)/FAQs";
 
 const FAQsPage = () => {
   return (
-    <div className="bg-gray-100 w-screen h-[80vh] mt-10">
+    <div className="bg-gray-100 w-screen mt-24 p-16">
 
       <div className="pt-20 pl-10 pr-10">
         <h1 className="text-4xl font-semibold text-gray-700 mb-10">More Information</h1>
-        <p className="ml-5">
+        <p className="ml-5 text-gray-600">
           We are a home based pet sitter for French Bulldogs. We are Fully
           insured and police Checked. Additional information can be added or it
           can be just about FAQ........ Additional information can be added or

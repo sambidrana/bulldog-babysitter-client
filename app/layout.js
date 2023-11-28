@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className="">
           <Navbar />
-          <div className="">
+          <div className="w-screen">
             {children}
           </div>
         </body>
