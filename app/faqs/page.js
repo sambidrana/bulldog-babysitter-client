@@ -3,7 +3,7 @@ import FAQs from "../(components)/FAQs";
 
 const FAQsPage = () => {
   return (
-    <div className="bg-gray-100 w-screen mt-24 p-16">
+    <div className="bg-gray-100 mt-24 p-16">
 
       <div className="pt-20 pl-10 pr-10">
         <h1 className="text-4xl font-semibold text-gray-700 mb-10">More Information</h1>
