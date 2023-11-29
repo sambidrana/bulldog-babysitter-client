@@ -7,7 +7,7 @@ import Testimonials from "./(components)/Testimonials";
 const page = () => {
   return (
     <>
-      <div>
+      <div className="max-w-screen-2xl mx-auto">
         <BookNow />
         <AboutUs />
         <Gallery />

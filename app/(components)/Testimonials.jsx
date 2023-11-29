@@ -1,8 +1,11 @@
 import React from 'react'
+import TestimonalLayout from './TestimonalLayout'
 
 const Testimonials = () => {
   return (
-    <div>Testimonials</div>
+    <div className=''>
+        <TestimonalLayout />
+    </div>
   )
 }
 
