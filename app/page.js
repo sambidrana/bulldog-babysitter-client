@@ -3,6 +3,7 @@ import AboutUs from "./(components)/AboutUs";
 import BookNow from "./(components)/BookNow";
 import Gallery from "./(components)/Gallery";
 import Testimonials from "./(components)/Testimonials";
+import ContactUs from "./ContactUs";
 
 const page = () => {
   return (
@@ -12,6 +13,7 @@ const page = () => {
         <AboutUs />
         <Gallery />
         <Testimonials />
+        <ContactUs />
       </div>
     </>
   );
