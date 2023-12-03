@@ -1,9 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import "../../styles/Calendar.css"
+import "../../styles/Calendar.css";
 import { compareAsc, format, add } from "date-fns";
-import { INTERVAL, STORE_CLOSING_TIME, STORE_OPENING_TIME } from "@/constants/config";
+import {
+  INTERVAL,
+  STORE_CLOSING_TIME,
+  STORE_OPENING_TIME,
+} from "@/constants/config";
 
 const CalendarApp = () => {
   const [date, setDate] = useState({
@@ -11,7 +15,10 @@ const CalendarApp = () => {
     dateTime: null,
   });
 
-  console.log(date.dateTime)
+  console.log(date.justDate);
+  console.log(date.dateTime);
+  // console.log(Calendar.propTypes.activeStartDate);
+
   const getTimes = () => {
     if (!date.justDate) return;
 
@@ -19,7 +26,7 @@ const CalendarApp = () => {
 
     const beginning = add(justDate, { hours: STORE_OPENING_TIME }); //assuming daycare opens at 9
     const end = add(justDate, { hours: STORE_CLOSING_TIME }); // and closes at 5
-    const interval = INTERVAL; 
+    const interval = INTERVAL;
 
     const times = [];
     for (let i = beginning; i <= end; i = add(i, { minutes: interval })) {
@@ -30,8 +37,8 @@ const CalendarApp = () => {
   const times = getTimes();
 
   return (
-    <div className="w-screen mt-44 ml-20 flex flex-col justify-center items-start">
-      {date.justDate ? (
+    <div className="w-screen mt-44     ml-20 flex flex-col justify-center items-start">
+      {/* {date.justDate ? (
         <div className="flex gap-3">
           {times?.map((time, i) => (
             <div key={`time-${i}`} className="rounded-sm bg-gray-100 p-2">
@@ -44,16 +51,16 @@ const CalendarApp = () => {
             </div>
           ))}
         </div>
-      ) : (
-        <Calendar
-          minDate={new Date()}
-          className="REACT-CALENDAR p-2 m-4"
-          view="month"
-          onClickDay={(date) =>
-            setDate((prev) => ({ ...prev, justDate: date }))
-          }
-        />
-      )}
+      ) : ( */}
+      <Calendar
+        minDate={new Date()}
+        className="REACT-CALENDAR p-2 m-4"
+        view="month"
+        onClickDay={(date) => {
+          setDate((prev) => ({ ...prev, justDate: date }));
+        }}
+      />
+      {/* )} */}
     </div>
   );
 };

@@ -6,7 +6,13 @@ import FeaturedGallery from "./FeaturedGallery";
 const Gallery = () => {
   return (
     <>
-      <div className="pt-24 pb-24 bg-gradient-to-r from-lime-100 to-[#A9C274]">
+      <h2
+        id="gallery"
+        className="text-4xl text-center p-2 mb-4 mt-24 tracking-wider text-[#e8dbbb] shadow-inner"
+      >
+        Gallery
+      </h2>
+      <div className="pt-24 pb-28 bg-gradient-to-r from-lime-100 to-[#A9C274]">
         <div className="flex items-center justify-center gap-10 ">
           <FeaturedGallery image={"/gallery/gal1.png"} name={"gal1"} />
           <FeaturedGallery image={"/gallery/gal2.png"} name={"gal2"} />

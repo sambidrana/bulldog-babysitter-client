@@ -1,6 +1,7 @@
 import React from "react";
 import AboutUs from "./(components)/AboutUs";
 import BookNow from "./(components)/BookNow";
+import Footer from "./(components)/Footer";
 import Gallery from "./(components)/Gallery";
 import Testimonials from "./(components)/Testimonials";
 import ContactUs from "./ContactUs";
@@ -14,6 +15,7 @@ const page = () => {
         <Gallery />
         <Testimonials />
         <ContactUs />
+        <Footer />
       </div>
     </>
   );

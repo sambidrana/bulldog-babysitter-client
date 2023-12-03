@@ -1,7 +1,7 @@
 "use client";
 import { useUser } from "@clerk/nextjs";
 import axios from "axios";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
@@ -31,7 +31,7 @@ const steps = [
 
 export const BoardingForm = ({ userId }) => {
   const { user, isLoaded } = useUser();
-  const router = useRouter()
+  const router = useRouter();
 
   //step 1: Owners Info
   const [firstName, setFirstName] = useState("");
@@ -43,7 +43,7 @@ export const BoardingForm = ({ userId }) => {
   const [petType, setPetType] = useState("");
   const [petAge, setPetAge] = useState("");
   const [chipNumber, setChipNumber] = useState("");
-  const [vaccine, setVaccine] = useState("");
+  const [vaccines, setVaccines] = useState("");
   const [petNotes, setPetNotes] = useState("");
   // Step manager
   const [prevStep, setPrevStep] = useState(0);
@@ -61,10 +61,11 @@ export const BoardingForm = ({ userId }) => {
       petType,
       petAge,
       chipNumber,
-      vaccine,
+      vaccines,
       petNotes,
       userId,
     };
+    console.log("Boarding Data:", boardingData);
 
     try {
       const response = await axios.post(
@@ -290,8 +291,8 @@ export const BoardingForm = ({ userId }) => {
                 </label>
                 <input
                   type="text"
-                  value={vaccine}
-                  onChange={(e) => setVaccine(e.target.value)}
+                  value={vaccines}
+                  onChange={(e) => setVaccines(e.target.value)}
                   placeholder="Rabies, Distemper"
                   name="vaccines"
                   required
