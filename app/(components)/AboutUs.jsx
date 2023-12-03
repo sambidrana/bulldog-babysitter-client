@@ -2,8 +2,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="p-24 pl-32 pr-32 mt-10 mb-10">
-      <p className="text-gray-600 text-2xl font-light">
+    <div className="flex items-center justify-center  pl-32 pr-32 mt-32  mb-32 ">
+      <p className="text-gray-600 text-2xl p-4 font-light ">
         Welcome to The Bulldog Babysitter, the ultimate haven for your beloved
         bulldogs! Founded in [Year], we have dedicated ourselves to providing
         specialized care exclusively for bulldogs. We understand the unique

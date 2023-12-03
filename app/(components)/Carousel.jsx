@@ -37,12 +37,12 @@ function Carousel({
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              class="w-6 h-6"
+              className="w-6 h-6"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </button>
@@ -68,6 +68,7 @@ function Carousel({
           <div className="flex items-center justify-center gap-2 ">
             {slides.map((_, i) => (
               <div
+              key={i}
                 className={`first-letter:transition-all w-3 h-3 bg-gray-200 rounded-full ${
                   curr === i ? "p-2" : "bg=opacity-50"
                 }`}

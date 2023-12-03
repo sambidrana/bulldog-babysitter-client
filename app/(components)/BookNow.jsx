@@ -5,7 +5,7 @@ import React from "react";
 const BookNow = () => {
   return (
     <>
-      <div className="flex items-center justify-around bg-gradient-to-r from-[#A9C274] to-lime-100 pt-16 pb-16 shadow-inner">
+      <div className="flex items-center justify-around bg-gradient-to-r from-[#A9C274] to-lime-100 shadow-inner pt-28 pb-28">
         {/* for book now button */}
         <div>
           <div className="flex items-center justify-center flex-shrink">
@@ -23,7 +23,7 @@ const BookNow = () => {
             <div className="flex items-center justify-center mt-10">
               <Link
                 href={"/booking"}
-                className="bg-[#8FAEFD] text-white font-bold py-2 px-8 rounded-lg hover:bg-[#6d95fa] hover:shadow-md "
+                className="bg-[#c8b6ff] text-white font-bold py-2 px-8 rounded-lg hover:bg-[#a78df6] hover:shadow-md "
               >
                 Book Now
               </Link>

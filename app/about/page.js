@@ -12,6 +12,7 @@ const page = () => {
             src={"/aboutus/bulldogFamily1 1.png"}
             width={1000}
             height={1000}
+            alt="bulldogFamily"
           />
 
         </div>
