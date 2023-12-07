@@ -137,7 +137,7 @@ export const BoardingForm = ({ userId }) => {
 
   return (
     <>
-      <section className="flex flex-col justify-between p-24">
+      <section className="flex flex-col justify-between p-24 mt-12 ">
         <nav aria-label="Progress">
           <ol
             role="list"
@@ -175,149 +175,203 @@ export const BoardingForm = ({ userId }) => {
           </ol>
         </nav>
 
-        <form className="mt-12 py-12" onSubmit={handleBoardingSubmit}>
+        <form
+          className="mt-10 mr-28 ml-32 pb-10 shadow-2xl rounded-xl flex justify-center m-auto bg-white"
+          onSubmit={handleBoardingSubmit}
+        >
           {currentStep === 0 && (
-            <div className="flex items-center justify-center p-24">
-              <label htmlFor="firstName" className="p-4 m-4">
-                First Name
-              </label>
-              <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder="John "
-                name="firstName"
-                required
-                className="border border-gray-400 p-2 px-6 rounded-lg"
-              />
-              <label htmlFor="lastName" className="p-4 m-4">
-                Last Name
-              </label>
-              <input
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                placeholder="Doe"
-                name="lastName"
-                required
-                className="border border-gray-400 p-2 px-6 rounded-lg"
-              />
-              <label htmlFor="phone" className="p-4 m-4">
-                Phone
-              </label>
-              <input
-                type="text"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="+61 666 666 654"
-                name="phone"
-                required
-                className="border border-gray-400 p-2 px-6 rounded-lg"
-              />
-              <label htmlFor="email" className="p-4 m-4">
-                Email
-              </label>
-              <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="+JohnDoe@gmail.com"
-                name="email"
-                required
-                className="border border-gray-400 p-2 px-6 rounded-lg"
-              />
+            <div className="w-full">
+              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
+                <h2>Owner's Information</h2>
+              </div>
+              <div className="mt-10 flex flex-col items-center justify-evenly">
+                <div className="p-4">
+                  <label
+                    htmlFor="firstName"
+                    className="p-4 mr-10 text-gray-600 text-lg"
+                  >
+                    First Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="John "
+                    name="firstName"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12 "
+                  />
+                </div>
+                <div className="p-4">
+                  <label
+                    htmlFor="lastName"
+                    className="p-4 mr-10 text-gray-600 text-lg"
+                  >
+                    Last Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Doe"
+                    name="lastName"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="p-4">
+                  <label
+                    htmlFor="phone"
+                    className="p-4 mr-20 text-gray-600 text-lg"
+                  >
+                    Phone <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+61 666 666 654"
+                    name="phone"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="p-4">
+                  <label
+                    htmlFor="email"
+                    className="p-4 mr-20 text-gray-600 text-lg"
+                  >
+                    Email <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="+JohnDoe@gmail.com"
+                    name="email"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+              </div>
             </div>
           )}
 
           {currentStep === 1 && (
-            <div className="flex items-center justify-center p-24">
-              <h2>Step 2</h2>
-              <div>
-                <label htmlFor="petName" className="p-4 m-4">
-                  Pet name
-                </label>
-                <input
-                  type="text"
-                  value={petName}
-                  onChange={(e) => setPetName(e.target.value)}
-                  placeholder="Drako"
-                  name="petName"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
-                <label htmlFor="petType" className="p-4 m-4">
-                  Pet Type
-                </label>
-                <input
-                  type="text"
-                  value={petType}
-                  onChange={(e) => setPetType(e.target.value)}
-                  placeholder="Frenchie"
-                  name="petType"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
+            <div className="w-full">
+              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
+                <h2>About Your Pet</h2>
               </div>
-              <div>
-                <label htmlFor="petAge" className="p-4 m-4">
-                  Pet Age
-                </label>
-                <input
-                  type="text"
-                  value={petAge}
-                  onChange={(e) => setPetAge(e.target.value)}
-                  placeholder="3"
-                  name="petAge"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
-
-                <label htmlFor="chipNumber" className="p-4 m-4">
-                  Chip Number
-                </label>
-                <input
-                  type="text"
-                  value={chipNumber}
-                  onChange={(e) => setChipNumber(e.target.value)}
-                  placeholder="123456789"
-                  name="chipNumber"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
+              <div className="mt-10 flex flex-col items-center justify-evenly">
+                <div className="flex items-center p-4">
+                  <label
+                    htmlFor="petName"
+                    className="p-4 mr-28 text-gray-600 text-lg"
+                  >
+                    Pet Name <span className="text-red-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value={petName}
+                    onChange={(e) => setPetName(e.target.value)}
+                    placeholder="Drako"
+                    name="petName"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="flex items-center p-4">
+                  <label
+                    htmlFor="petType"
+                    className="p-4 mr-32 text-gray-600 text-lg"
+                  >
+                    Pet Type
+                  </label>
+                  <input
+                    type="text"
+                    value={petType}
+                    onChange={(e) => setPetType(e.target.value)}
+                    placeholder="Frenchie"
+                    name="petType"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="flex items-center p-4">
+                  <label
+                    htmlFor="petAge"
+                    className="p-4 mr-32 text-gray-600 text-lg"
+                  >
+                    Pet Age
+                  </label>
+                  <input
+                    type="text"
+                    value={petAge}
+                    onChange={(e) => setPetAge(e.target.value)}
+                    placeholder="3"
+                    name="petAge"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="flex items-center  p-4">
+                  <label
+                    htmlFor="chipNumber"
+                    className="p-4 mr-24 text-gray-600 text-lg"
+                  >
+                    Chip Number
+                  </label>
+                  <input
+                    type="text"
+                    value={chipNumber}
+                    onChange={(e) => setChipNumber(e.target.value)}
+                    placeholder="123456789"
+                    name="chipNumber"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="flex items-center  p-4">
+                  <label
+                    htmlFor="vaccines"
+                    className="p-4 mr-28 text-gray-600 text-lg"
+                  >
+                    Vaccines
+                  </label>
+                  <input
+                    type="text"
+                    value={vaccines}
+                    onChange={(e) => setVaccines(e.target.value)}
+                    placeholder="Rabies, Distemper"
+                    name="vaccines"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                </div>
+                <div className="flex items-center  p-4">
+                  <label
+                    htmlFor="petNotes"
+                    className="p-4 mr-24 text-gray-600 text-lg"
+                  >
+                    Pet Notes
+                  </label>
+                  <textarea
+                    value={petNotes}
+                    onChange={(e) => setPetNotes(e.target.value)}
+                    placeholder="Any additional notes about your pet..."
+                    name="petNotes"
+                    required
+                    className="border-b-2 border-gray-200 p-2 px-12"
+                  />
+                  <input type={"hidden"} name="userId" value={userId} />
+                </div>
+                <button
+                  type="submit"
+                  className=" p-2 px-4 rounded-lg mt-16 text-white bg-[#A9C274] mb-10 hover:bg-[#89a44f]"
+                >
+                  Add Member
+                </button>
               </div>
-              <div>
-                <label htmlFor="vaccines" className="p-4 m-4">
-                  Vaccines
-                </label>
-                <input
-                  type="text"
-                  value={vaccines}
-                  onChange={(e) => setVaccines(e.target.value)}
-                  placeholder="Rabies, Distemper"
-                  name="vaccines"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
-
-                <label htmlFor="petNotes" className="p-4 m-4">
-                  Pet Notes
-                </label>
-                <textarea
-                  value={petNotes}
-                  onChange={(e) => setPetNotes(e.target.value)}
-                  placeholder="Any additional notes about your pet..."
-                  name="petNotes"
-                  required
-                  className="border border-gray-400 p-2 px-6 rounded-lg"
-                />
-                <input type={"hidden"} name="userId" value={userId} />
-              </div>
-              <button
-                type="submit"
-                className="p-2 px-4 rounded-lg mt-6 text-gray-100 bg-blue-400 mb-10 "
-              >
-                Add Member
-              </button>
             </div>
           )}
         </form>
