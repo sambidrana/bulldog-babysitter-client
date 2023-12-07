@@ -22,7 +22,7 @@ export default function MUICalendar({ userId }) {
     const formattedEndDate = dayjs(endDate).format("DD/MM/YYYY");
     const formattedStartTime = dayjs(startTime).format("HH:mm");
     const formattedEndTime = dayjs(endTime).format("HH:mm");
-    
+
     const userBookingInfo = {
       startDate: formattedStartDate,
       endDate: formattedEndDate,
@@ -57,6 +57,8 @@ export default function MUICalendar({ userId }) {
                 setStartDate(newValue);
               }}
               minDate={dayjs(new Date())}
+              format="DD/MM/YYYY"
+
             />
             <p className="p-2 text-2xl">-</p>
             <DatePicker
@@ -66,6 +68,7 @@ export default function MUICalendar({ userId }) {
                 setEndDate(newValue);
               }}
               minDate={dayjs(new Date())}
+              format="DD/MM/YYYY"
             />
           </div>
           <div className="flex items-center p-2">
