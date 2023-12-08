@@ -48,6 +48,8 @@ export const BoardingForm = ({ userId }) => {
   // Step manager
   const [prevStep, setPrevStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
+  const [navigationFailed, setNavigationFailed] = useState(false);
+
   // console.log(currentStep);
 
   const handleBoardingSubmit = async function (e) {
@@ -78,8 +80,15 @@ export const BoardingForm = ({ userId }) => {
           return prev + 1;
         });
         setTimeout(() => {
-          router.push("/booking");
-        }, 5000);
+          router
+            .push("/booking")
+            .then(() => {
+              return;
+            })
+            .catch((err) => {
+              setNavigationFailed(true);
+            });
+        }, 2000);
       } else {
         console.log("Data sent but something failed", response);
       }
@@ -176,7 +185,9 @@ export const BoardingForm = ({ userId }) => {
         </nav>
 
         <form
-          className="mt-10 mr-28 ml-32 pb-10 shadow-2xl rounded-xl flex justify-center m-auto bg-white"
+          className={`mt-10 mr-28 ml-32 pb-10 shadow-2xl rounded-xl flex justify-center m-auto bg-white ${
+            currentStep === 2 ? "hidden" : ""
+          }`}
           onSubmit={handleBoardingSubmit}
         >
           {currentStep === 0 && (
@@ -377,12 +388,18 @@ export const BoardingForm = ({ userId }) => {
         </form>
 
         {currentStep === 2 && (
-          <div>
-            <h2>
-              Complete, you can start booking now. Your data has been saved You
-              will be redirected to booking page in 5 sec or you could click the
-              link in the nav bar
-            </h2>
+          <div className="flex flex-col items-center justify-center m-auto mt-14">
+            <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
+              <h2>Reginstration Complete</h2>
+            </div>
+            <div className="bg-white shadow-lg w-full flex flex-col items-center justify-center p-8 pb-16 text-lg text-gray-500">
+              <p>Your registration has been completed.</p>
+              <p>
+                {navigationFailed
+                  ? "Oops! Something went wrong during redirection. Please click on the 'Bookings' tab to start booking."
+                  : "Redirecting to bookings page..."}
+              </p>
+            </div>
           </div>
         )}
 
