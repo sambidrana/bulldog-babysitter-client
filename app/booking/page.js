@@ -8,7 +8,7 @@ const BookingPage = () => {
 
   return (
     <>
-        {/* <CalendarApp /> */}
+      {/* <CalendarApp /> */}
         <MUICalendar userId={userId} />
     </>
   );
