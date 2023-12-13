@@ -4,7 +4,7 @@ import React from "react";
 const ContactUs = () => {
   return (
     <>
-      <div className=" pt-32 pb-36 pl-8 pr-8 mb-1 shadow-inner bg-gradient-to-b from-white via-lime-100 to-[#a9c274] flex justify-evenly text-center">
+      <div id="contact" className=" pt-32 pb-36 pl-8 pr-8 mb-1 shadow-inner bg-gradient-to-b from-white via-lime-100 to-[#a9c274] flex justify-evenly text-center">
         <div>
           <Image src={"/contactus/contact1.png"} width={500} height={500} alt="Contact1" />
         </div>

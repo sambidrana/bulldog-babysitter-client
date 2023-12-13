@@ -25,7 +25,7 @@ const Testimonials = () => {
   
   return (
     <div className="mt-36 mb-36 pl-4 pr-4">
-      <h2 id="testimonials" className="text-4xl text-center p-2 mb-4 tracking-wider text-[#e8dbbb] shadow shadow-zinc-300">Testimonials</h2>
+      <h2 id="testimonials" className="text-4xl text-center p-2 mb-10 mr-7 ml-7 tracking-wider text-[#e8dbbb] shadow shadow-zinc-300">Testimonials</h2>
       <Carousel autoSlide={false} autoSlideInterval={2000}>
         {testimonialObj.map((testimonial, index) => (
           <div key={index} className="text-center w-screen p-8 flex flex-col items-center justify-center shadow-lg">

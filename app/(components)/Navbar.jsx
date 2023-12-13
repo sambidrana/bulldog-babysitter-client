@@ -42,7 +42,8 @@ const Navbar = () => {
   return (
     <nav
       // style={{ position: "relative", zIndex: 1000 }}
-      className={`fixed top-0 bg-white w-screen flex justify-between p-6 z-50 ${
+      className={` bg-white w-screen flex justify-between p-6 z-50 ${
+        // fixed top-0
         navShadow ? "shadow-md" : ""
       }`}
     >
@@ -78,6 +79,14 @@ const Navbar = () => {
             >
               Testimonial
             </ScrollLink>
+            <ScrollLink
+              className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+              to="contact"
+              smooth={true}
+              duration={1000}
+            >
+               Contact
+            </ScrollLink>
           </>
         ) : (
           <>
@@ -92,6 +101,12 @@ const Navbar = () => {
               href="/#testimonials"
             >
               Testimonial
+            </Link>
+            <Link
+              className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+              href="/#contact"
+            >
+              Contact
             </Link>
           </>
         )}

@@ -8,7 +8,7 @@ const Gallery = () => {
     <>
       <h2
         id="gallery"
-        className="text-4xl text-center p-2 mb-4 mt-24 tracking-wider text-[#e8dbbb] shadow-inner"
+        className="text-4xl text-center p-2 mb-4 mr-10 ml-10 tracking-wider text-[#e8dbbb] shadow shadow-zinc-300"
       >
         Gallery
       </h2>
