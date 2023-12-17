@@ -11,13 +11,14 @@ const Featured = () => {
           <p>The bulldog babysitter</p>
         </div>
         {/* Video */}
-        <div className="bg-white p-2">
+        <div className="">
           <iframe
-            width="1400"
-            height="889"
-            src="https://www.youtube.com/embed/XBukX8BRvpc"
-            title="IMG 7259"
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/XBukX8BRvpc?si=UqW4RUvO436OQM9K&amp;5&amp;controls=0&amp;start=5&amp;loop=1&amp;autoplay=1&amp;mute=1&amp;playlist=XBukX8BRvpc"
+            title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
           ></iframe>
         </div>
         {/* Footer for video */}
@@ -36,3 +37,12 @@ const Featured = () => {
 };
 
 export default Featured;
+/*
+<iframe
+            width="100%"
+            height="889"
+            src="https://www.youtube.com/embed/XBukX8BRvpc"
+            title="IMG 7259"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          ></iframe>
+*/
