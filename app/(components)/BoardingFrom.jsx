@@ -47,7 +47,7 @@ export const BoardingForm = ({ userId }) => {
   const [petNotes, setPetNotes] = useState("");
   // Step manager
   const [prevStep, setPrevStep] = useState(0);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
   const [navigationFailed, setNavigationFailed] = useState(false);
 
   // console.log(currentStep);
@@ -142,6 +142,17 @@ export const BoardingForm = ({ userId }) => {
         return prev;
       }
     });
+  };
+
+  const handleAttachFileInputChange = (e) => {
+    e.preventDefault();
+    const files = [...e.target.files];
+    const data = new FormData();
+    // console.log(e, files)
+    for (const file of files) {
+      data.append("file", file);
+    }
+    console.log(data)
   };
 
   return (
@@ -273,7 +284,19 @@ export const BoardingForm = ({ userId }) => {
               <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
                 <h2>About Your Pet</h2>
               </div>
+
               <div className="mt-10 flex flex-col items-center justify-evenly">
+                <div className="flex items-center ">
+                  <label className="cursor-pointer bg-gray-100 border border-gray-200 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
+                    <span className="">Add a photo</span>
+                    <input
+                      onChange={handleAttachFileInputChange}
+                      type="file"
+                      className="hidden"
+                    />
+                  </label>
+                </div>
+
                 <div className="flex items-center p-4">
                   <label
                     htmlFor="petName"

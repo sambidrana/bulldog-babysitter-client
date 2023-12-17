@@ -12,12 +12,12 @@ const page = () => {
     <>
       <div className="max-w-screen-2xl mx-auto">
         <Featured />
-        {/* <BookNow />
+        <BookNow />
         <AboutUs />
         <Gallery />
         <Testimonials />
         <ContactUs />
-        <Footer /> */}
+        <Footer />
       </div>
     </>
   );
