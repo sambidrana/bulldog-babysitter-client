@@ -6,18 +6,20 @@ import Featured from "./(components)/Featured";
 import Footer from "./(components)/Footer";
 import Gallery from "./(components)/Gallery";
 import Testimonials from "./(components)/Testimonials";
+import UploadTest from "./(components)/UploadTest";
 
 const page = () => {
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="">
         <Featured />
-        <BookNow />
+        {/* <UploadTest /> */}
+        {/* <BookNow />
         <AboutUs />
         <Gallery />
         <Testimonials />
         <ContactUs />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );
