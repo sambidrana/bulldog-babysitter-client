@@ -1,10 +1,18 @@
+"use client";
 import React from "react";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
     <>
-      <div className="bg-[#a9c274] flex justify-between items-center p-8">
+      <div
+        className={`flex justify-between items-center p-8 ${
+          pathname === "/" ? "bg-white" : "bg-[#a9c274]"
+        } `}
+      >
         <div className="ml-4">
           <h4>The Bulldog Babysitter</h4>
         </div>

@@ -39,6 +39,9 @@ export const BoardingForm = ({ userId }) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   //step 2: Pets Info
+  const [petImage, setPetImage] = useState(null);
+  const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
+
   const [petName, setPetName] = useState("");
   const [petType, setPetType] = useState("");
   const [petAge, setPetAge] = useState("");
@@ -47,13 +50,36 @@ export const BoardingForm = ({ userId }) => {
   const [petNotes, setPetNotes] = useState("");
   // Step manager
   const [prevStep, setPrevStep] = useState(0);
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(0);
   const [navigationFailed, setNavigationFailed] = useState(false);
 
   // console.log(currentStep);
 
   const handleBoardingSubmit = async function (e) {
     e.preventDefault();
+
+    //Uploading the petImage
+    if (petImage) {
+      const formData = new FormData();
+      formData.append("file", petImage);
+      try {
+        const response = await axios.post(
+          "http://localhost:3000/api/upload",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        return; // Stop the function if image upload fails
+      }
+    }
+
+    //Rest of the form data
     const boardingData = {
       firstName,
       lastName,
@@ -80,15 +106,12 @@ export const BoardingForm = ({ userId }) => {
           return prev + 1;
         });
         setTimeout(() => {
-          router
-            .push("/booking")
-            .then(() => {
-              return;
-            })
-            .catch((err) => {
-              setNavigationFailed(true);
-            });
-        }, 2000);
+          try {
+            router.push("/booking");
+          } catch (err) {
+            setNavigationFailed(true);
+          }
+        }, 4000);
       } else {
         console.log("Data sent but something failed", response);
       }
@@ -144,15 +167,16 @@ export const BoardingForm = ({ userId }) => {
     });
   };
 
-  const handleAttachFileInputChange = (e) => {
-    e.preventDefault();
-    const files = [...e.target.files];
-    const data = new FormData();
-    // console.log(e, files)
-    for (const file of files) {
-      data.append("file", file);
+  const handleImageUpload = async (e) => {
+    if (e.target.files?.[0]) {
+      setPetImage(e.target.files[0]);
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        setImagePreviewUrl(fileReader.result);
+      };
+      fileReader.readAsDataURL(e.target.files[0]);
     }
-    console.log(data)
+    console.log(petImage);
   };
 
   return (
@@ -286,13 +310,24 @@ export const BoardingForm = ({ userId }) => {
               </div>
 
               <div className="mt-10 flex flex-col items-center justify-evenly">
-                <div className="flex items-center ">
-                  <label className="cursor-pointer bg-gray-100 border border-gray-200 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
-                    <span className="">Add a photo</span>
+                <div className="flex items-center">
+                  <label className="cursor-pointer mt-10 mb-16">
+                    {imagePreviewUrl ? (
+                      <img
+                        src={imagePreviewUrl}
+                        alt="Preview"
+                        className="max-w-xs max-h-60"
+                      />
+                    ) : (
+                      <span className=" bg-gray-100 border border-gray-200 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
+                        Add a photo
+                      </span>
+                    )}
                     <input
-                      onChange={handleAttachFileInputChange}
+                      onChange={handleImageUpload}
                       type="file"
                       className="hidden"
+                      required
                     />
                   </label>
                 </div>
