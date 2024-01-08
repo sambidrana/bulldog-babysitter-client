@@ -4,6 +4,41 @@ import React from "react";
 const ContactUs = () => {
   return (
     <>
+      <div className="grid grid-cols-1 gap-8 p-2 bg-[#a9c274] md:grid-cols-2">
+        <div>
+          <Image src={"/contactus/contact3.png"} width={500} height={500} />
+        </div>
+        <div>
+          <div className="bg-white shadow p-2">
+            <div className="bg-[#e5e096] text-white">
+              <div className="flex justify-around text-xl p-4">
+                <p className=" font-semibold tracking-widest">Address:</p>
+                <p className=" tracking-wide">
+                  Narre Warren North,
+                  <br />
+                  VIC Australia - 3806
+                </p>
+              </div>
+              <div className="flex justify-around text-xl p-4">
+                <p className="font-semibold tracking-widest">Phone:</p>
+                <p className="tracking-wide">+61 406 262 848</p>
+              </div>
+              <div className="flex justify-around text-xl p-4">
+                <p className="font-semibold tracking-widest">Email:</p>
+                <p className="tracking-wide text-sm"> thebulldogbabysitter@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default ContactUs;
+
+/*
+ <>
       <div id="contact" className=" pt-32 pb-36 pl-8 pr-8 mb-1 shadow-inner bg-gradient-to-b from-white via-lime-100 to-[#a9c274] flex justify-evenly text-center">
         <div>
           <Image src={"/contactus/contact1.png"} width={500} height={500} alt="Contact1" />
@@ -48,7 +83,5 @@ const ContactUs = () => {
         </div>
       </div>
     </>
-  );
-};
 
-export default ContactUs;
+*/
