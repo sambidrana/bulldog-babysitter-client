@@ -1,31 +1,60 @@
 import Image from "next/image";
 import React from "react";
+import Footer from "./Footer";
 
 const ContactUs = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-8 p-2 bg-[#a9c274] md:grid-cols-2">
-        <div>
-          <Image src={"/contactus/contact3.png"} width={500} height={500} />
+      <div className="grid grid-cols-1 gap-2 p-2 bg-[#a9c274] md:grid-cols-2">
+        <div className="grid grid-cols-2 items-start gap-2 mx-auto md:flex md:w-auto p-10">
+          <h3 className="text-2xl font-serif text-white tracking-wide text-left underline underline-offset-4 mt-4 mb-2 md:hidden">
+            Contact Us
+          </h3>
+          <Image
+            src={"/contactus/contact3.png"}
+            width={500}
+            height={500}
+            className="border-2 shadow-2xl bg-[#e9c46a] p-10"
+          />
         </div>
         <div>
-          <div className="bg-white shadow p-2">
-            <div className="bg-[#e5e096] text-white">
-              <div className="flex justify-around text-xl p-4">
-                <p className=" font-semibold tracking-widest">Address:</p>
-                <p className=" tracking-wide">
-                  Narre Warren North,
-                  <br />
-                  VIC Australia - 3806
+          {/* Woringn  Here */}
+          <div className="bg-[#f3eeee] text-white shadow pt-8 pb-10 pr-2 pl-2 mr-10 ml-10 rounded-md relative md:mt-20">
+            <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-5 md:left-5  "></div>
+            <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-5 md:right-5 "></div>
+            <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 right-2 md:bottom-2 md:right-5 "></div>
+            <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 left-2 md:bottom-2 md:left-5 "></div>
+            <h3 className="hidden md:block text-3xl font-serif text-[#a9c274] pb-10 text-center tracking-widest drop-shadow-lg  ">
+              Contact Us
+            </h3>
+            <div className="bg-[#264653] rounded-lg text-white p-4">
+              <div className="flex justify-around text-sm p-4 md:text-xl">
+                <p className="flex-1 font-semibold tracking-widest">Address:</p>
+                <p className="flex-1 tracking-wide hover:underline">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Narre+Warren+North,+VIC+Australia+-+3806"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Narre Warren North,
+                    <br />
+                    VIC Australia - 3806
+                  </a>
                 </p>
               </div>
-              <div className="flex justify-around text-xl p-4">
-                <p className="font-semibold tracking-widest">Phone:</p>
-                <p className="tracking-wide">+61 406 262 848</p>
+              <div className="flex justify-around text-sm p-4 md:text-xl">
+                <p className="flex-1 font-semibold tracking-widest">Phone:</p>
+                <p className="flex-1 tracking-wide hover:underline">
+                  <a href="tel:+61406262848">+61 406 262 848</a>
+                </p>
               </div>
-              <div className="flex justify-around text-xl p-4">
-                <p className="font-semibold tracking-widest">Email:</p>
-                <p className="tracking-wide text-sm"> thebulldogbabysitter@gmail.com</p>
+              <div className="flex justify-around text-sm p-4 md:text-xl">
+                <p className="flex-1 font-semibold tracking-widest">Email:</p>
+                <p className="flex-1 tracking-wide hover:underline ">
+                  <a href="mailto:thebulldogbabysitter@gmail.com">
+                    thebulldogbabysitter@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
           </div>
