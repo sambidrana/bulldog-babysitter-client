@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import React from "react";
 import CalendarApp from "../(components)/CalendarApp";
+import Footer from "../(components)/Footer";
 import MUICalendar from "../(components)/MUICalendar";
 
 const BookingPage = () => {
@@ -9,7 +10,10 @@ const BookingPage = () => {
   return (
     <>
       {/* <CalendarApp /> */}
+      <div className="mt-6">
         <MUICalendar userId={userId} />
+        <Footer />
+      </div>
     </>
   );
 };

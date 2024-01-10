@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Footer from "../(components)/Footer";
 import TestimonialCard from "../(components)/TestimonialCard";
 
 const testimonialObj = [
@@ -43,34 +44,37 @@ const testimonialObj = [
 
 const TestimonialsPage = () => {
   return (
-    <div>
+    <>
       <div>
-        <div className="grid grid-cols-1 gap-2 p-12 md:grid-cols-2 md:p-24 mt-10 bg-[#A9C274]  ">
-          <div className="grid items-center justify-center w-1/2  md:w-auto">
-            <Image
-              src="/testimonial/testHeader.png"
-              height={250}
-              width={350}
-              className="rounded-lg p-1 bg-white"
-            />
+        <div>
+          <div className="grid grid-cols-1 gap-2 p-12 md:grid-cols-2 md:p-24 mt-10 bg-[#A9C274]  ">
+            <div className="grid items-center justify-center w-1/2  md:w-auto">
+              <Image
+                src="/testimonial/testHeader.png"
+                height={250}
+                width={350}
+                className="rounded-lg p-1 bg-white"
+              />
+            </div>
+            <div className="flex flex-col justify-center font-serif">
+              <h2 className="text-2xl p-2 md:text-4xl text-white tracking-widest">
+                Testimonials
+              </h2>
+              <p className="text-base md:text-lg tracking-wide p-2 text-white">
+                Discover why bulldog owners everywhere trust us for caring,
+                reliable, and bulldog-savvy babysitting services.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col justify-center font-serif">
-            <h2 className="text-2xl p-2 md:text-4xl text-white tracking-widest">
-              Testimonials
-            </h2>
-            <p className="text-base md:text-lg tracking-wide p-2 text-white">
-              Discover why bulldog owners everywhere trust us for caring,
-              reliable, and bulldog-savvy babysitting services.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center p-10 ">
+            {testimonialObj.map((testimonial, index) => (
+              <TestimonialCard key={index} {...testimonial} />
+            ))}
           </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center p-10 ">
-          {testimonialObj.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
-          ))}
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

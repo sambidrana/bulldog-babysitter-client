@@ -5,13 +5,14 @@ import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <>
       <div
-        className={`flex justify-between items-center p-8 ${
-          pathname === "/" ? "bg-white" : "bg-[#a9c274]"
+        className={`flex justify-between items-center p-8 bg-white ${
+          pathname === "/" ? "" : "border-t-2"
         } `}
+
+        // pathname === "/" ||  pathname === "/faqs" ||  pathname === "/contact" ||  pathname === "/testimonials" ||  pathname === "/booking"   ? "bg-white" : "bg-[#a9c274]"
       >
         <div className="ml-4">
           <h4>The Bulldog Babysitter</h4>

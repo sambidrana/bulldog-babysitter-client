@@ -19,7 +19,7 @@ const FAQs = () => {
       {faqObj.map((obj, index) => (
         <div className="border-dotted border-b-2 border-sky-300">
           <div className="flex items-center p-2 justify-between text-blue-500">
-            <h3 className="font-semibold text-lg tracking-wide">
+            <h3 className="font-semibold md:text-lg text-base tracking-wide">
               {obj.heading}
             </h3>
 
@@ -48,9 +48,9 @@ const FAQs = () => {
 
           <div className={visibleSections[index] ? "block p-2" : "hidden"}>
             {obj.questions.map((question, index) => (
-              <div className="p-2  tracking-wide" key={index}>
+              <div className="p-2 tracking-wide" key={index}>
                 <h4 className="text-blue-500 mb-2">{question}</h4>
-                <p className="text-gray-600">{obj.answers[index]}</p>
+                <p className="text-gray-600 p-1">{obj.answers[index]}</p>
               </div>
             ))}
           </div>

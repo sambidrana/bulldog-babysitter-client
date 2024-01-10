@@ -16,7 +16,6 @@ const Navbar = () => {
   const [navShadow, setNavShadow] = useState(false);
   const pathName = usePathname();
   const [toggleMenu, setToggleMenu] = useState(true);
-  const openMenu = "top-[9%]";
 
   const handleScroll = () => {
     const offSet = window.scrollY;
@@ -44,24 +43,25 @@ const Navbar = () => {
   function onToggleMenu() {
     setToggleMenu((prev) => !prev);
   }
+  
   return (
     <>
-      <nav className="flex justify-between items-center w-[92%] mx-auto md:pt-4">
+      <nav className="flex justify-between items-center w-[92%] mx-auto pt-4">
         <div>
           <Link className="navLink" href="/">
             Home
           </Link>
         </div>
         <div
-          className={`md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
-            toggleMenu ? "top-[-100%]" : "top-[9%]"
+          className={`md:static absolute bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
+            toggleMenu ? "top-[-100%]" : "top-[6%]"
           }`}
         >
           <ul className="flex md:flex-row flex-col md:items-center gap-12 md:gap-[4vw]">
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/booking"
+                href="/booking" onClick={onToggleMenu}
               >
                 Booking
               </Link>
@@ -69,7 +69,7 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/gallery"
+                href="/gallery"  onClick={onToggleMenu}
               >
                 Gallery
               </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/testimonials"
+                href="/testimonials"  onClick={onToggleMenu}
               >
                 Testimonial
               </Link>
@@ -85,7 +85,7 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/contact"
+                href="/contact"  onClick={onToggleMenu}
               >
                 Contact
               </Link>
@@ -93,25 +93,29 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/faqs"
+                href="/faqs"  onClick={onToggleMenu}
               >
                 FAQ's
               </Link>
             </li>
             <li>
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/about"
+                className="flex transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
+                href="/about"  onClick={onToggleMenu}
               >
                 About Us
               </Link>
             </li>
           </ul>
         </div>
-        <div>
-          <button className="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87acec]">
-            Sign IN
-          </button>
+        <div className="flex gap-10">
+          {isLoaded && user ? (
+            <div className="flex items-center justify-center">
+              <UserButton showName="true" afterSignOutUrl="/" />
+            </div>
+          ) : (
+            <SignInButton className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2" />
+          )}
           <button className="md:hidden" onClick={onToggleMenu}>
             {toggleMenu ? (
               <svg

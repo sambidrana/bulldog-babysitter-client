@@ -99,9 +99,9 @@ export default function MUICalendar({ userId }) {
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200  min-h-screen pt-48">
-          <div className="  grid sm:grid-cols-1 md:grid-cols-2 gap-2  p-2 ml-4 mr-4">
-            <div className="pb-20 pt-12 p-2 ml-28 flex  flex-col items-center justify-center w-[400px] bg-white/95 shadow-2xl rounded-lg ">
+        <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 min-h-screen pt-32 pb-24 ">
+          <div className="  grid grid-cols-1 md:grid-cols-2 items-center p-2 ml-4 mr-4">
+            <div className="pb-20 pt-12 p-2 md:ml-28 flex flex-col items-center justify-center md:max-w-[400px] bg-white shadow-2xl rounded-lg ">
               <div className="flex items-center pt-4 pl-1 pr-1 ">
                 <DatePicker
                   label="Start Date"
@@ -156,12 +156,12 @@ export default function MUICalendar({ userId }) {
                 </button>
               </div>
             </div>
-            <div className="p-2 pt-10">
-              <h3 className="text-white text-3xl mb-10 mt-4 font-serif font-bold tracking-wide">
+            <div className="px-2 pt-10 mt-4 ">
+              <h3 className="text-white text-2xl md:text-3xl mb-4 font-serif font-bold tracking-wide">
                 Your Bulldog's Babysitter,
                 <br /> Your Time Choices
               </h3>
-              <p className="pr-4 font-serif text-gray-700 ">
+              <p className="font-serif text-gray-700 md:text-lg">
                 With 'Your Bulldog's Babysitter, Your Time Choices,' you're in
                 control of crafting the perfect playdate for your furry friend.
                 Whether it's an energetic morning romp or a cozy afternoon
