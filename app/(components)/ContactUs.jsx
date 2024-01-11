@@ -2,6 +2,7 @@
 import axios from "axios";
 import Image from "next/image";
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -23,7 +24,7 @@ const ContactUs = () => {
         enquiryData
       );
       if (response.status === 200 && response.data) {
-        console.log("Data sent: ", response);
+        notifySuccess();
         setName("");
         setEmail("");
         setContact("");
@@ -31,8 +32,31 @@ const ContactUs = () => {
       }
     } catch (err) {
       console.log("Could not send data to server");
+      notifyError()
     }
   };
+  const notifySuccess = () =>
+  toast.success("Your enquiry has been sent. We will get back to you as soon as possible", {
+    duration: 7000,
+    position: "top-right",
+    style: {
+      border: "1px solid #20b319",
+      padding: "26px",
+      marginTop: "40px",
+      color: "#713200",
+    },
+  });
+  const notifyError = () =>
+    toast.error("There was some error connection with the server. Please try again in a few minutes or contact us from the deteils next to you", {
+      duration: 6000,
+      position: "top-right",
+      style: {
+        border: "1px solid red",
+        padding: "26px",
+        marginTop: "40px",
+        color: "#713200",
+      },
+    });
   return (
     <>
       <div className="grid grid-cols-1 gap-2 p-2 pb-16 bg-[#a9c274] md:grid-cols-2 md:pt-10">
@@ -175,6 +199,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <Toaster />
     </>
   );
 };

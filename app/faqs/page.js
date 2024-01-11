@@ -5,7 +5,7 @@ import Footer from "../(components)/Footer";
 const FAQsPage = () => {
   return (
     <>
-      <div className="bg-gray-100 mt-6 p-8 pt-24 md:pl-24 md:pr-24 ">
+      <div className="bg-gray-100 mt-6 p-8 pt-24 pb-24 md:pl-24 md:pr-24 ">
         <div className="mx-auto">
           <h1 className=" text-xl md:text-3xl font-semibold text-gray-700 mb-4">
             More Information

@@ -10,6 +10,12 @@ import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
+const disabledDates = [
+  dayjs("2024-01-14"), // Example date: January 1st, 2024
+  dayjs("2024-02-25"), // Example date: December 25th, 2024
+  // Add more dates as needed
+];
+
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
@@ -96,6 +102,12 @@ export default function MUICalendar({ userId }) {
       },
     });
 
+  // Function to check if a date should be disabled
+  const checkIfDateDisabled = (date) => {
+    return disabledDates.some(
+      (disabledDate) => date.isSame(disabledDate, "day") // Checks if the date matches any disabled date
+    );
+  };
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -111,6 +123,7 @@ export default function MUICalendar({ userId }) {
                   }}
                   minDate={dayjs(new Date())}
                   format="DD/MM/YYYY"
+                  shouldDisableDate={checkIfDateDisabled} // Use the function here
                 />
                 <p className="p-2 text-2xl">-</p>
                 <DatePicker

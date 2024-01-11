@@ -1,5 +1,6 @@
 "use client";
 import {
+  auth,
   SignIn,
   SignInButton,
   SignOutButton,
@@ -11,39 +12,21 @@ import { useRouter, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-const Navbar = () => {
+const Navbar = ({ userId }) => {
   const { user, isLoaded } = useUser();
   const [navShadow, setNavShadow] = useState(false);
   const pathName = usePathname();
   const [toggleMenu, setToggleMenu] = useState(true);
-
-  const handleScroll = () => {
-    const offSet = window.scrollY;
-    if (offSet > 100) {
-      setNavShadow(true);
-    } else {
-      setNavShadow(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll, { passive: true });
-    };
-  }, []);
-
-  // const scrollToSection = (section) => {
-  //   scroll.scrollTo(section, {
-  //     smooth: true,
-  //     duration: 500,
-  //   });
-  // };
-  // console.log(user)
+  console.log("UserId:", userId);
+  console.log("Admin ID:", process.env.ADMIN_EMAIL_ID);
+  console.log("Type of UserId:", typeof userId);
+  console.log("Type of Admin ID:", typeof process.env.ADMIN_EMAIL_ID);
+  console.log("Comparison result:", userId === process.env.ADMIN_EMAIL_ID);
 
   function onToggleMenu() {
     setToggleMenu((prev) => !prev);
   }
-  
+
   return (
     <>
       <nav className="flex justify-between items-center w-[92%] mx-auto pt-4">
@@ -61,7 +44,8 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/booking" onClick={onToggleMenu}
+                href="/booking"
+                onClick={onToggleMenu}
               >
                 Booking
               </Link>
@@ -69,7 +53,8 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/gallery"  onClick={onToggleMenu}
+                href="/gallery"
+                onClick={onToggleMenu}
               >
                 Gallery
               </Link>
@@ -77,7 +62,8 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/testimonials"  onClick={onToggleMenu}
+                href="/testimonials"
+                onClick={onToggleMenu}
               >
                 Testimonial
               </Link>
@@ -85,7 +71,8 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/contact"  onClick={onToggleMenu}
+                href="/contact"
+                onClick={onToggleMenu}
               >
                 Contact
               </Link>
@@ -93,7 +80,8 @@ const Navbar = () => {
             <li>
               <Link
                 className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/faqs"  onClick={onToggleMenu}
+                href="/faqs"
+                onClick={onToggleMenu}
               >
                 FAQ's
               </Link>
@@ -101,11 +89,23 @@ const Navbar = () => {
             <li>
               <Link
                 className="flex transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/about"  onClick={onToggleMenu}
+                href="/about"
+                onClick={onToggleMenu}
               >
                 About Us
               </Link>
             </li>
+            {userId === process.env.ADMIN_EMAIL_ID && (
+              <li>
+                <Link
+                  className="flex transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
+                  href="/admin/dashboard"
+                  onClick={onToggleMenu}
+                >
+                  Dashboard
+                </Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="flex gap-10">
@@ -150,85 +150,33 @@ const Navbar = () => {
         </div>
       </nav>
     </>
-
-    //first
-    // <nav>
-    //<div className="flex flex-col p-2 bg-white">
-    // <div className="flex justify-between">
-    // <div className="w-16">Logo </div>
-    //<div>Menu Button</div>
-    //</div>
-    //<div>Links</div>
-    //</div>
-    //</nav>
-    //second
-
-    // <nav
-    //   className={` bg-white w-screen flex justify-between p-6 z-50 ${
-    //     // fixed top-0
-    //     navShadow ? "shadow-md" : ""
-    //   }`}
-    // >
-    //   <div className="ml-8">
-    //     <Link className="navLink" href="/">
-    //       Home
-    //     </Link>{" "}
-    //   </div>
-
-    //   <div className="flex gap-8 mr-8">
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-    //       href="/booking"
-    //     >
-    //       Booking
-    //     </Link>
-
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-    //       href="/gallery"
-    //     >
-    //       Gallery
-    //     </Link>
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-    //       href="/testimonials"
-    //     >
-    //       Testimonial
-    //     </Link>
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-    //       href="/contact"
-    //     >
-    //       Contact
-    //     </Link>
-
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-    //       href="/faqs"
-    //     >
-    //       FAQ's
-    //     </Link>
-    //     <Link
-    //       className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-    //       href="/about"
-    //     >
-    //       About Us
-    //     </Link>
-    //     {isLoaded && user ? (
-    //       <div className="flex items-center justify-center">
-    //         <UserButton showName="true" afterSignOutUrl="/" />
-    //       </div>
-    //     ) : (
-    //       <SignInButton className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2" />
-    //     )}
-    //   </div>
-    // </nav>
   );
 };
 
 export default Navbar;
 
 {
+  // const handleScroll = () => {
+  //   const offSet = window.scrollY;
+  //   if (offSet > 100) {
+  //     setNavShadow(true);
+  //   } else {
+  //     setNavShadow(false);
+  //   }
+  // };
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll, { passive: true });
+  //   };
+  // }, []);
+  // const scrollToSection = (section) => {
+  //   scroll.scrollTo(section, {
+  //     smooth: true,
+  //     duration: 500,
+  //   });
+  // };
+  // console.log(user)
   // <nav
   //     // style={{ position: "relative", zIndex: 1000 }}
   //     className={` bg-white w-screen flex justify-between p-6 z-50 ${

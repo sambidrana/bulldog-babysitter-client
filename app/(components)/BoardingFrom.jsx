@@ -41,6 +41,7 @@ export const BoardingForm = ({ userId }) => {
   //step 2: Pets Info
   const [petImage, setPetImage] = useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
 
   const [petName, setPetName] = useState("");
   const [petType, setPetType] = useState("");
@@ -57,6 +58,7 @@ export const BoardingForm = ({ userId }) => {
 
   const handleBoardingSubmit = async function (e) {
     e.preventDefault();
+    let uploadedImageUrl = ""; // Temporary variable to hold the uploaded image URL
 
     //Uploading the petImage
     if (petImage) {
@@ -72,7 +74,10 @@ export const BoardingForm = ({ userId }) => {
             },
           }
         );
-        console.log(response.data);
+        console.log(response.data.link);
+        uploadedImageUrl = response.data.link; // Store the URL in a temporary variable
+        setImageUrl(uploadedImageUrl); // Update state (optional, if you need it elsewhere)
+        // setImageUrl([...imageUrl, response.data]);
       } catch (error) {
         console.error("Error uploading file:", error);
         return; // Stop the function if image upload fails
@@ -91,6 +96,7 @@ export const BoardingForm = ({ userId }) => {
       chipNumber,
       vaccines,
       petNotes,
+      imageUrl: uploadedImageUrl, // Use the uploaded image URL here
       userId,
     };
     console.log("Boarding Data:", boardingData);
