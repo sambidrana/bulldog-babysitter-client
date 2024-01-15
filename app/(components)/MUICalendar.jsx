@@ -4,23 +4,41 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { TextField } from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-const disabledDates = [
-  dayjs("2024-01-14"), // Example date: January 1st, 2024
-  dayjs("2024-02-25"), // Example date: December 25th, 2024
-  // Add more dates as needed
-];
+// const disabledDates = [
+//   dayjs("2024-01-14"), // Example date: January 1st, 2024
+//   dayjs("2024-02-25"), // Example date: December 25th, 2024
+//   // Add more dates as needed
+// ];
 
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [endTime, setEndTime] = useState(null);
+
+  const [disabledDates, setDisabledDates] = useState([]);
+  useEffect(() => {
+    const fetchDisabledDates = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/settings");
+        if (response.data && response.data.disabledDates) {
+          setDisabledDates(
+            response.data.disabledDates.map((date) => dayjs(date))
+          );
+        }
+      } catch (error) {
+        console.error("Error fetching disabled dates:", error);
+      }
+    };
+
+    fetchDisabledDates();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -103,9 +121,14 @@ export default function MUICalendar({ userId }) {
     });
 
   // Function to check if a date should be disabled
+  // const checkIfDateDisabled = (date) => {
+  //   return disabledDates.some(
+  //     (disabledDate) => date.isSame(disabledDate, "day") // Checks if the date matches any disabled date
+  //   );
+  // };
   const checkIfDateDisabled = (date) => {
-    return disabledDates.some(
-      (disabledDate) => date.isSame(disabledDate, "day") // Checks if the date matches any disabled date
+    return disabledDates.some((disabledDate) =>
+      date.isSame(disabledDate, "day")
     );
   };
   return (

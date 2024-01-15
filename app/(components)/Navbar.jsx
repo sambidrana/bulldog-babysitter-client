@@ -12,16 +12,13 @@ import { useRouter, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-const Navbar = ({ userId }) => {
+const Navbar = () => {
   const { user, isLoaded } = useUser();
   const [navShadow, setNavShadow] = useState(false);
   const pathName = usePathname();
   const [toggleMenu, setToggleMenu] = useState(true);
-  console.log("UserId:", userId);
-  console.log("Admin ID:", process.env.ADMIN_EMAIL_ID);
-  console.log("Type of UserId:", typeof userId);
-  console.log("Type of Admin ID:", typeof process.env.ADMIN_EMAIL_ID);
-  console.log("Comparison result:", userId === process.env.ADMIN_EMAIL_ID);
+  const isAdmin =
+    user && user.publicMetadata && user.publicMetadata.role === "admin";
 
   function onToggleMenu() {
     setToggleMenu((prev) => !prev);
@@ -95,7 +92,7 @@ const Navbar = ({ userId }) => {
                 About Us
               </Link>
             </li>
-            {userId === process.env.ADMIN_EMAIL_ID && (
+            {isAdmin && (
               <li>
                 <Link
                   className="flex transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"

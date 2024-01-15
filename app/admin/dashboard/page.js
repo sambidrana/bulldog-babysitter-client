@@ -1,18 +1,22 @@
-import { auth } from "@clerk/nextjs";
-
-export default function AdminDashboard() {
-  const { sessionClaims } = auth();
-
-  // If the user does not have the admin role, redirect them to the home page
-
-  //   if (sessionClaims?.metadata.role === "admin") {
-//     redirect("/");
-//   }
+// "use client"
+// import { useUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
+export default async function AdminDashboard() {
+  const user = await currentUser();
+  console.log(user.publicMetadata.role === "admin");
+  if (user.publicMetadata.role !== "admin") {
+    redirect("/");
+  }
 
   return (
     <>
       <h1>This is the admin dashboard</h1>
-      <p>This page is restricted to users with the 'admin' role.</p>
+      <div>
+        <div>For Dates customization</div>
+        <div>For Time customization</div>
+        <div>For Booking limit</div>
+      </div>
     </>
   );
 }
