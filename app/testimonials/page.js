@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import Footer from "../(components)/Footer";
 import TestimonialCard from "../(components)/TestimonialCard";
 
 const testimonialObj = [
@@ -73,7 +72,6 @@ const TestimonialsPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

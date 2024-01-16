@@ -2,6 +2,7 @@ import Navbar from "@/app/(components)/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Roboto } from 'next/font/google'
+import Footer from "./(components)/Footer";
 
 
 const roboto = Roboto({
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <body className={roboto.className}>
           <Navbar />
           <div className="">{children}</div>
+          <Footer />
         </body>
       </html>
     </ClerkProvider>

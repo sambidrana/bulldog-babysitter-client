@@ -2,9 +2,13 @@ export const faqObj = [
   {
     id: 1,
     heading: "Regarding payment",
-    questions: ["Can I make payments online?"],
+    questions: [
+      "Pet Sitting: $70 per dog per night",
+      "Doggy Day Care: $50 Per Day, Per Dog",
+    ],
     answers: [
-      "Currently we do not accept online payments. We will soon integrate the online payment system.",
+      `This includes: All exercising, no extra for walking, playing, hugging and loving your baby. Feeding twice a day, we raw feed only the finest raw meats, fruits and vegetables, we don'tsupply kibble as you can appreciate there are so many different kinds of kibble we can't obviously keep it all. however if you prefer your kiddo has kibble we are happy for you to bring it for their stay. we use whatsap to answer any questions and are happy to chat anytime when you are away,we send pics and videos to keep all the parents up to date.... 
+    `,
     ],
   },
   {

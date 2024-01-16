@@ -1,6 +1,5 @@
 import React from "react";
 import AboutUs from "../(components)/AboutUs";
-import Footer from "../(components)/Footer";
 
 const page = () => {
   return (
@@ -8,7 +7,6 @@ const page = () => {
     <div className="mt-6">
 
       <AboutUs />
-      <Footer />
     </div>
     </>
   );

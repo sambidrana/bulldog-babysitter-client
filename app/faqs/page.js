@@ -1,6 +1,5 @@
 import React from "react";
 import FAQs from "../(components)/FAQs";
-import Footer from "../(components)/Footer";
 
 const FAQsPage = () => {
   return (
@@ -12,9 +11,11 @@ const FAQsPage = () => {
           </h1>
           <p className="md:text-lg p-2 text-gray-600">
             We are a home based pet sitter for French Bulldogs. We are Fully
-            insured and police Checked. Additional information can be added or
-            it can be just about FAQ. Additional information can be added or it
-            can be just about FAQ........
+            insured and police Checked. Let your baby come and play for the day,
+            we only take a handful of dogs for doggy day care and it's in a home
+            environment so eyes on them all the time. We go for a walk and then
+            they get to play, chill and hang out with me. there is a lot of
+            snuggling involved here...and yes i have the best job in the world
           </p>
 
           {/* <div className="flex items-center text-blue-500 hover:text-blue-700 mt-5 ml-5">
@@ -37,7 +38,6 @@ const FAQsPage = () => {
           <FAQs />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

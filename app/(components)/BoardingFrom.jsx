@@ -187,7 +187,7 @@ export const BoardingForm = ({ userId }) => {
 
   return (
     <>
-      <section className="flex flex-col justify-between p-24 mt-12 ">
+      <section className="md:p-16 mt-12 bg-gray-100 ">
         <nav aria-label="Progress">
           <ol
             role="list"
@@ -226,21 +226,21 @@ export const BoardingForm = ({ userId }) => {
         </nav>
 
         <form
-          className={`mt-10 mr-28 ml-32 pb-10 shadow-2xl rounded-xl flex justify-center m-auto bg-white ${
+          className={`max-w-lg md:max-w-2xl mt-16 pb-10 shadow-lg rounded-xl mx-auto bg-white ${
             currentStep === 2 ? "hidden" : ""
           }`}
           onSubmit={handleBoardingSubmit}
         >
           {currentStep === 0 && (
-            <div className="w-full">
-              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
+            <div className="">
+              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
                 <h2>Owner's Information</h2>
               </div>
-              <div className="mt-10 flex flex-col items-center justify-evenly">
-                <div className="p-4">
+              <div className="mt-10 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="firstName"
-                    className="p-4 mr-10 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     First Name <span className="text-red-600">*</span>
                   </label>
@@ -254,10 +254,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12 "
                   />
                 </div>
-                <div className="p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="lastName"
-                    className="p-4 mr-10 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Last Name <span className="text-red-600">*</span>
                   </label>
@@ -271,10 +271,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="phone"
-                    className="p-4 mr-20 text-gray-600 text-lg"
+                    className="p-4 mr-20 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Phone <span className="text-red-600">*</span>
                   </label>
@@ -288,10 +288,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="email"
-                    className="p-4 mr-20 text-gray-600 text-lg"
+                    className="p-4 mr-20 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Email <span className="text-red-600">*</span>
                   </label>
@@ -299,7 +299,7 @@ export const BoardingForm = ({ userId }) => {
                     type="text"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="+JohnDoe@gmail.com"
+                    placeholder="johndoe@gmail.com"
                     name="email"
                     required
                     className="border-b-2 border-gray-200 p-2 px-12"
@@ -310,14 +310,14 @@ export const BoardingForm = ({ userId }) => {
           )}
 
           {currentStep === 1 && (
-            <div className="w-full">
-              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
+            <div className="">
+              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
                 <h2>About Your Pet</h2>
               </div>
 
-              <div className="mt-10 flex flex-col items-center justify-evenly">
-                <div className="flex items-center">
-                  <label className="cursor-pointer mt-10 mb-16">
+              <div className="mt-10 ">
+                <div className="grid grid-cols-1 place-items-center place-content-center mx-4 p-8 bg-gray-50">
+                  <label className="cursor-pointer mt-10 mb-10">
                     {imagePreviewUrl ? (
                       <img
                         src={imagePreviewUrl}
@@ -325,7 +325,7 @@ export const BoardingForm = ({ userId }) => {
                         className="max-w-xs max-h-60"
                       />
                     ) : (
-                      <span className=" bg-gray-100 border border-gray-200 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
+                      <span className=" font-serif font-semibold text-lg bg-gray-100 border border-gray-300 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
                         Add a photo
                       </span>
                     )}
@@ -338,10 +338,10 @@ export const BoardingForm = ({ userId }) => {
                   </label>
                 </div>
 
-                <div className="flex items-center p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petName"
-                    className="p-4 mr-28 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Pet Name <span className="text-red-600">*</span>
                   </label>
@@ -355,27 +355,27 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="flex items-center p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petType"
-                    className="p-4 mr-32 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
-                    Pet Type
+                    Sex
                   </label>
                   <input
                     type="text"
                     value={petType}
                     onChange={(e) => setPetType(e.target.value)}
-                    placeholder="Frenchie"
+                    placeholder="Female or Male"
                     name="petType"
                     required
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="flex items-center p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petAge"
-                    className="p-4 mr-32 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Pet Age
                   </label>
@@ -389,10 +389,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="flex items-center  p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="chipNumber"
-                    className="p-4 mr-24 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Chip Number
                   </label>
@@ -406,10 +406,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="flex items-center  p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="vaccines"
-                    className="p-4 mr-28 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Vaccines
                   </label>
@@ -423,10 +423,10 @@ export const BoardingForm = ({ userId }) => {
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                 </div>
-                <div className="flex items-center  p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petNotes"
-                    className="p-4 mr-24 text-gray-600 text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
                   >
                     Pet Notes
                   </label>
@@ -440,23 +440,25 @@ export const BoardingForm = ({ userId }) => {
                   />
                   <input type={"hidden"} name="userId" value={userId} />
                 </div>
-                <button
-                  type="submit"
-                  className=" p-2 px-4 rounded-lg mt-16 text-white bg-[#A9C274] mb-10 hover:bg-[#89a44f]"
-                >
-                  Add Member
-                </button>
+                <div className="grid grid-cols-1 w-1/2 mx-auto md:p-4 mt-16">
+                  <button
+                    type="submit"
+                    className=" p-2 px-4 rounded-lg  text-white text-lg bg-[#A9C274] mb-10 hover:bg-[#89a44f]"
+                  >
+                    Add Member
+                  </button>
+                </div>
               </div>
             </div>
           )}
         </form>
 
         {currentStep === 2 && (
-          <div className="flex flex-col items-center justify-center m-auto mt-14">
-            <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 w-full tracking-wide text-center text-4xl p-8 text-gray-500 shadow-inner">
-              <h2>Reginstration Complete</h2>
+          <div className="max-w-lg md:max-w-2xl mx-auto mt-10">
+            <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
+              <h2>Registration Completed</h2>
             </div>
-            <div className="bg-white shadow-lg w-full flex flex-col items-center justify-center p-8 pb-16 text-lg text-gray-500">
+            <div className="bg-white shadow-lg w-full flex flex-col items-center justify-center p-8 pb-16 text-lg text-gray-500 tracking-wide">
               <p>Your registration has been completed.</p>
               <p>
                 {navigationFailed
@@ -467,7 +469,7 @@ export const BoardingForm = ({ userId }) => {
           </div>
         )}
 
-        <div className="mt-8 pt-5">
+        <div className="mt-8 p-16">
           <div className="flex justify-between">
             <button
               type="button"
@@ -497,7 +499,7 @@ export const BoardingForm = ({ userId }) => {
               // disabled={currentStep === 1}
               style={{
                 display:
-                  currentStep === 1 && currentStep === 2 ? "none" : "block",
+                  currentStep === 1 || currentStep === 2 ? "none" : "block",
               }}
               className="rounded bg-white px-2 py-1 text-sm font-semibold text-sky-900 shadow-sm ring-1 ring-inset ring-sky-300 hover:bg-sky-50 disabled:cursor-not-allowed disabled:opacity-50"
             >
