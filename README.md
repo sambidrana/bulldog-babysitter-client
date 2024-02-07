@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The Bulldog Babysitter
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The Bulldog Babysitter is a custom web application built with Next.js, designed exclusively for the Bulldog Babysitter family's existing customers. This platform revolutionizes how clients book appointments online and offers an intuitive admin panel for managing bookings and boarding details efficiently.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key Features and Technical Highlights
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Client-Side Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Homepage**: A welcoming entry point that introduces the services offered.
+![Bulldog Babysitter Homepage](./public/readme/Homepage.jpeg "Book Now")
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Booking Page**: Enables clients to easily book appointments with detailed forms.
+![Bulldog Babysitter Bookking Page](./public/readme/Bookingpage.jpeg "Booking Calendar")
 
-## Learn More
+- **Testimonials & Gallery**: Showcases customer testimonials and a gallery of Bulldogs enjoying their time.
+![Bulldog Babysitter Testimonials Page](./public/readme/Testimonials.jpeg "Testimonials Page")
+- **Contact Us**: Provides a direct communication channel for inquiries or feedback.
+![Bulldog Babysitter Contact](./public/readme/Contact.jpeg "Contact Us Page")
 
-To learn more about Next.js, take a look at the following resources:
+### Admin-Side Features
+https://github.com/sambidrana/bulldog-babysitter-admin
+- **Booking and Boarding Management**: Comprehensive tools for admins to view booking details, manage boarding information, and customize booking availability.
+![Bulldog Babysitter Admin Booking](./public/readme/bookinginfo.jpeg "Admin Booking Info")
+![Bulldog Babysitter Admin Boarding ](./public/readme/boardingform.jpeg "Admin Boarding Info")
+![Bulldog Babysitter Admin Settings ](./public/readme/adminsettings.jpeg "Admin Settings")
+### Technical Highlights
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**: Utilizes Next.js for server-side rendering, ensuring fast load times and improved SEO.
+- **Responsive Design**: Crafted with a responsive design to ensure a great user experience across all devices.
+- **Security and Data Management**: Implements best practices in security and data management, ensuring that client and booking information is handled securely.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Showcase
 
-## Deploy on Vercel
+This project demonstrates advanced web development skills, including:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Seamless integration of client-side and admin-side functionalities.
+- Effective use of Next.js for building a performant and scalable web application.
+- Attention to user experience design, ensuring that both clients and administrators have a smooth, intuitive interaction with the platform.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies Used
+
+- **Frontend**: Next.js, React
+- **Backend**: Next.js, Node.js
+- **Database**: MongoDB, S3 Bucket
+<!-- - **Deployment** -->
+
+## Viewing the Project
+
+This project is set to be hosted at [thebulldogbabysitter.com.au](http://thebulldogbabysitter.com.au). The site is currently under preparation and will be live soon. Stay tuned to explore the features and functionalities implemented once it's launched.
+
+
+## Contact
+
+For more information about this project or to discuss potential collaborations, contact Sambid Rana at sambid.rana1@gmail.com.

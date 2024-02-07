@@ -13,12 +13,15 @@ const page = () => {
       <div className="">
         <Featured />
         {/* <UploadTest /> */}
-        {/* <BookNow />
+        {/* <BookNow /> */}
+        {
+        /* 
         <AboutUs />
         <Gallery />
         <Testimonials />
         <ContactUs />
-         */}
+         */
+         }
       </div>
     </>
   );

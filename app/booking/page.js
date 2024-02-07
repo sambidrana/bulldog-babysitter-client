@@ -9,7 +9,7 @@ const BookingPage = () => {
   return (
     <>
       {/* <CalendarApp /> */}
-      <div className="mt-6">
+      <div className="mt-1">
         <MUICalendar userId={userId} />
       </div>
     </>

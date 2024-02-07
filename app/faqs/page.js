@@ -4,18 +4,14 @@ import FAQs from "../(components)/FAQs";
 const FAQsPage = () => {
   return (
     <>
-      <div className="bg-gray-100 mt-6 p-8 pt-24 pb-24 md:pl-24 md:pr-24 ">
+      <div className="bg-gray-100 mt-1 p-8 pt-24 pb-24 md:pl-24 md:pr-24 ">
         <div className="mx-auto">
           <h1 className=" text-xl md:text-3xl font-semibold text-gray-700 mb-4">
             More Information
           </h1>
           <p className="md:text-lg p-2 text-gray-600">
             We are a home based pet sitter for French Bulldogs. We are Fully
-            insured and police Checked. Let your baby come and play for the day,
-            we only take a handful of dogs for doggy day care and it's in a home
-            environment so eyes on them all the time. We go for a walk and then
-            they get to play, chill and hang out with me. there is a lot of
-            snuggling involved here...and yes i have the best job in the world
+            insured and police Checked.
           </p>
 
           {/* <div className="flex items-center text-blue-500 hover:text-blue-700 mt-5 ml-5">

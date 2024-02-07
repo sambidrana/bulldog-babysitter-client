@@ -4,19 +4,19 @@ import React from "react";
 const Featured = () => {
   return (
     <>
-      <div className="mt-14 max-w-screen h-[70vh]">
+      <div className="mt-4 max-w-screen h-[70vh]">
         {/* Headeing for video */}
         <div className="bg-[#a9c274] p-3 text-white ">
           <p>The bulldog babysitter</p>
         </div>
         {/* Video */}
-        <div className="h-[500px]">
+        <div className="h-[450px]">
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube-nocookie.com/embed/XBukX8BRvpc?si=UqW4RUvO436OQM9K&amp;5&amp;controls=0&amp;showinfo=0&amp;start=5&amp;loop=1&amp;autoplay=1&amp;mute=1&amp;playlist=XBukX8BRvpc"
+            src="https://www.youtube-nocookie.com/embed/nqm98D2jHEQ?si=vMr9otMBuKGRuFP0&amp;5&amp;controls=0&amp;showinfo=0&amp;start=5&amp;loop=1&amp;autoplay=1&amp;mute=1"
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             allowFullScreen
           ></iframe>
         </div>
@@ -32,3 +32,5 @@ const Featured = () => {
 };
 
 export default Featured;
+// https://www.youtube-nocookie.com/embed/XBukX8BRvpc?si=UqW4RUvO436OQM9K
+// &amp;playlist=XBukX8BRvpc

@@ -46,7 +46,7 @@ const TestimonialsPage = () => {
     <>
       <div>
         <div>
-          <div className="grid grid-cols-1 gap-2 p-12 md:grid-cols-2 md:p-24 mt-10 bg-[#A9C274]  ">
+          <div className="grid grid-cols-1 gap-2 p-12 md:grid-cols-2 md:p-24 mt-1 bg-[#A9C274]  ">
             <div className="grid items-center justify-center w-1/2  md:w-auto">
               <Image
                 src="/testimonial/testHeader.png"

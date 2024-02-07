@@ -4,7 +4,7 @@ import AboutUs from "../(components)/AboutUs";
 const page = () => {
   return (
     <>
-    <div className="mt-6">
+    <div className="mt-1">
 
       <AboutUs />
     </div>
