@@ -5,19 +5,22 @@ const AboutUs = () => {
   return (
     <>
       <div>
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-2 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-10 md:gap-10 ">
-          <Image
-            src={"/aboutus/aboutexample1.png"}
-            width={800}
-            height={800}
-            alt="bulldogFamily"
-            className="drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)]"
-          />
-          <div className="mt-10">
-            <h1 className="mb-4 text-white text-xl md:text-3xl font-serif font-bold tracking-wide">
+        <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
+        <div className="grid items-center justify-center md:w-auto">
+            <Image
+              src={"/aboutus/aboutus1.jpg"}
+              width={500}
+              height={500}
+              alt="bulldogFamily"
+              className="min-w-[300px] border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-full"
+            />
+          </div>
+
+          <div className="mt-10 md:p-10 text-white">
+            <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide">
               ABOUT US
-            </h1>
-            <p className="p-2 text-gray-600 md:text-lg font-serif">
+            </h2>
+            <p className="p-2 md:text-lg font-serif tracking-wide">
               Welcome to The Bulldog Babysitter, the ultimate haven for your
               beloved bulldogs! Founded in 2015, we have dedicated ourselves to
               providing specialized care exclusively for bulldogs. We understand

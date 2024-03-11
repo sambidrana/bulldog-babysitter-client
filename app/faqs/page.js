@@ -9,7 +9,7 @@ const FAQsPage = () => {
           <h1 className=" text-xl md:text-3xl font-semibold text-gray-700 mb-4">
             More Information
           </h1>
-          <p className="md:text-lg p-2 text-gray-600">
+          <p className="text-sm md:text-base p-2 text-gray-600">
             We are a home based pet sitter for French Bulldogs. We are Fully
             insured and police Checked.
           </p>

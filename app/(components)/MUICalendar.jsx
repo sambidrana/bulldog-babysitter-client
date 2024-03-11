@@ -23,6 +23,9 @@ export default function MUICalendar({ userId }) {
   const [endTime, setEndTime] = useState(null);
 
   const [disabledDates, setDisabledDates] = useState([]);
+  const [openingTime, setOpeningTime] = useState("");
+  const [closingTime, setClosingTime] = useState("");
+
   useEffect(() => {
     const fetchDisabledDates = async () => {
       try {
@@ -38,6 +41,24 @@ export default function MUICalendar({ userId }) {
     };
 
     fetchDisabledDates();
+  }, []);
+
+  // Fetch opening and closing times
+  useEffect(() => {
+    const fetchSettings = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/hourssettings");
+        if (response.data) {
+          setOpeningTime(response.data.OpeningTime);
+          setClosingTime(response.data.ClosingTime);
+
+        }
+      } catch (error) {
+        console.error("Error fetching settings:", error);
+      }
+    };
+    // console.log(openingTime, closingTime)
+    fetchSettings();
   }, []);
 
   const handleSubmit = async (e) => {

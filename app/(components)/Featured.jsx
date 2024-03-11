@@ -14,10 +14,10 @@ const Featured = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube-nocookie.com/embed/nqm98D2jHEQ?si=vMr9otMBuKGRuFP0&amp;5&amp;controls=0&amp;showinfo=0&amp;start=5&amp;loop=1&amp;autoplay=1&amp;mute=1"
+            src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?si=dQgL0zbH-imWVDKe&amp;autoplay=1&amp;controls=0&amp;start=1&amp;showinfo=0&amp;loop=1&amp;mute=1"
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-            allowFullScreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
           ></iframe>
         </div>
         {/* Footer for video */}
@@ -34,3 +34,14 @@ const Featured = () => {
 export default Featured;
 // https://www.youtube-nocookie.com/embed/XBukX8BRvpc?si=UqW4RUvO436OQM9K
 // &amp;playlist=XBukX8BRvpc
+
+{
+  /* <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube-nocookie.com/embed/nqm98D2jHEQ?si=vMr9otMBuKGRuFP0&amp;5&amp;controls=0&amp;showinfo=0&amp;start=5&amp;loop=1&amp;autoplay=1&amp;mute=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            allowFullScreen
+          ></iframe> */
+}
