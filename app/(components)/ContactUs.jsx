@@ -70,6 +70,7 @@ const ContactUs = () => {
           <div className="grid items-center justify-center md:w-auto">
             <Image
               src="/contactus/contactus.jpg"
+              alt="Contact Us Image"
               width={300}
               height={300}
               className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-fit"
@@ -177,6 +178,7 @@ const ContactUs = () => {
             <div className="flex items-center justify-center flex-shrink">
               <Image
                 src={"/booknow/frenchie1.png"}
+                alt="French Bulldog"
                 width={250}
                 height={250}
                 className=""

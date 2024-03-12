@@ -157,7 +157,7 @@ export default function MUICalendar({ userId }) {
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 min-h-screen pt-32 pb-24 ">
           <div className="  grid grid-cols-1 md:grid-cols-2 items-center p-2 ml-4 mr-4">
-            <div className="pb-20 pt-12 p-2 md:ml-28 flex flex-col items-center justify-center md:max-w-[400px] bg-white shadow-2xl rounded-lg ">
+            <div className="pb-20 pt-12 p-2 md:ml-28 flex flex-col items-center justify-center md:max-w-[400px] 2xl:max-w-[600px] bg-white shadow-2xl rounded-lg ">
               <div className="flex items-center pt-4 pl-1 pr-1 ">
                 <DatePicker
                   label="Start Date"

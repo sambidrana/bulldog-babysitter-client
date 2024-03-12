@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav className="flex justify-between items-center w-[92%] mx-auto p-1">
         <div className="w-20 md:w-24">
           <a href="/">
-            <Image src="/logo/logo2.png" width={200} height={200} />
+            <Image src="/logo/logo2.png" width={200} height={200} alt="Logo" />
           </a>
         </div>
         <div

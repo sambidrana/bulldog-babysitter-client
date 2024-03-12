@@ -15,7 +15,7 @@ const Footer = () => {
         // pathname === "/" ||  pathname === "/faqs" ||  pathname === "/contact" ||  pathname === "/testimonials" ||  pathname === "/booking"   ? "bg-white" : "bg-[#a9c274]"
       >
         <div className="ml-4">
-          <h4>The Bulldog Babysitter</h4>
+        <p className="text-xs">Website design by <a className="font-serif text-green-600" href="https://sambid-portfolio-website.vercel.app/" target="_blank" rel="noopener noreferrer">Sambid Rana</a></p>
         </div>
         <div className="flex justify-around mr-4">
           <a

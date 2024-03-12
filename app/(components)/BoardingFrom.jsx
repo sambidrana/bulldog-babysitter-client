@@ -51,7 +51,7 @@ export const BoardingForm = ({ userId }) => {
   const [petNotes, setPetNotes] = useState("");
   // Step manager
   const [prevStep, setPrevStep] = useState(0);
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep, setCurrentStep] = useState();
   const [navigationFailed, setNavigationFailed] = useState(false);
 
   // console.log(currentStep);
@@ -187,7 +187,7 @@ export const BoardingForm = ({ userId }) => {
 
   return (
     <>
-      <section className="md:p-16 mt-12 bg-gray-100 ">
+      <section className="md:p-16 mt-12 min-h-[80vh] bg-gray-100 ">
         <nav aria-label="Progress">
           <ol
             role="list"
@@ -226,7 +226,7 @@ export const BoardingForm = ({ userId }) => {
         </nav>
 
         <form
-          className={`max-w-lg md:max-w-2xl mt-16 pb-10 shadow-lg rounded-xl mx-auto bg-white ${
+          className={`max-w-sm md:max-w-2xl mt-16 pb-10 shadow-lg rounded-xl mx-auto bg-white ${
             currentStep === 2 ? "hidden" : ""
           }`}
           onSubmit={handleBoardingSubmit}
@@ -236,11 +236,11 @@ export const BoardingForm = ({ userId }) => {
               <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
                 <h2>Owner's Information</h2>
               </div>
-              <div className="mt-10 ">
+              <div className="mt-10 md:text-lg">
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="firstName"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     First Name <span className="text-red-600">*</span>
                   </label>
@@ -257,7 +257,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="lastName"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Last Name <span className="text-red-600">*</span>
                   </label>
@@ -274,7 +274,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="phone"
-                    className="p-4 mr-20 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-20 text-gray-500 font-serif font-semibold "
                   >
                     Phone <span className="text-red-600">*</span>
                   </label>
@@ -291,7 +291,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="email"
-                    className="p-4 mr-20 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-20 text-gray-500 font-serif font-semibold "
                   >
                     Email <span className="text-red-600">*</span>
                   </label>
@@ -311,11 +311,11 @@ export const BoardingForm = ({ userId }) => {
 
           {currentStep === 1 && (
             <div className="">
-              <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
+              <div className=" bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
                 <h2>About Your Pet</h2>
               </div>
 
-              <div className="mt-10 ">
+              <div className="mt-10 md:text-lg">
                 <div className="grid grid-cols-1 place-items-center place-content-center mx-4 p-8 bg-gray-50">
                   <label className="cursor-pointer mt-10 mb-10">
                     {imagePreviewUrl ? (
@@ -341,7 +341,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petName"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Pet Name <span className="text-red-600">*</span>
                   </label>
@@ -358,7 +358,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petType"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Sex
                   </label>
@@ -375,7 +375,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petAge"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Pet Age
                   </label>
@@ -392,7 +392,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="chipNumber"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Chip Number
                   </label>
@@ -409,7 +409,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="vaccines"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Vaccines
                   </label>
@@ -417,7 +417,7 @@ export const BoardingForm = ({ userId }) => {
                     type="text"
                     value={vaccines}
                     onChange={(e) => setVaccines(e.target.value)}
-                    placeholder="Rabies, Distemper"
+                    placeholder="Up to date?"
                     name="vaccines"
                     required
                     className="border-b-2 border-gray-200 p-2 px-12"
@@ -426,7 +426,7 @@ export const BoardingForm = ({ userId }) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
                   <label
                     htmlFor="petNotes"
-                    className="p-4 mr-10 text-gray-500 font-serif font-semibold text-lg"
+                    className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
                     Pet Notes
                   </label>
@@ -454,11 +454,11 @@ export const BoardingForm = ({ userId }) => {
         </form>
 
         {currentStep === 2 && (
-          <div className="max-w-lg md:max-w-2xl mx-auto mt-10">
-            <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
+          <div className="max-w-sm md:max-w-2xl mx-auto pt-14 ">
+            <div className="rounded-lg bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
               <h2>Registration Completed</h2>
             </div>
-            <div className="bg-white shadow-lg w-full flex flex-col items-center justify-center p-8 pb-16 text-lg text-gray-500 tracking-wide">
+            <div className="bg-white shadow-lg w-full flex flex-col items-center justify-center p-8 pb-16 md:text-lg text-gray-600 tracking-wide">
               <p>Your registration has been completed.</p>
               <p>
                 {navigationFailed
