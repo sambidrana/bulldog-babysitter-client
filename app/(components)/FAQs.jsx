@@ -17,7 +17,7 @@ const FAQs = () => {
   return (
     <>
       {faqObj.map((obj, index) => (
-        <div className="border-dotted border-b-2 border-sky-300">
+        <div key={index} className="border-dotted border-b-2 border-sky-300">
           <div className="flex items-center p-2 justify-between text-blue-500">
             <h3 className="font-semibold md:text-lg text-base tracking-wide">
               {obj.heading}
@@ -48,7 +48,7 @@ const FAQs = () => {
 
           <div className={visibleSections[index] ? "block md:p-2" : "hidden"}>
             {obj.answers.map((answer, index) => (
-              <ul className="ml-8 text-sm md:text-base">
+              <ul key={index} className="ml-8 text-sm md:text-base">
                 <li
                   key={index}
                   className="p-2 tracking-wide text-gray-600 list-disc"
@@ -58,14 +58,14 @@ const FAQs = () => {
               </ul>
             ))}
             {obj?.subPoints?.map((sub, index) => (
-              <ul className="ml-16 text-sm md:text-base">
+              <ul key={index} className="ml-16 text-sm md:text-base">
                 <li className=" p-1 tracking-wide text-gray-600 list-disc">
                   {sub}
                 </li>
               </ul>
             ))}
             {obj?.note?.map((note, index) => (
-              <ul className="text-sm md:text-base">
+              <ul key={index} className="text-sm md:text-base">
                 <li className=" p-2 tracking-wide text-red-600">{note}</li>
               </ul>
             ))}

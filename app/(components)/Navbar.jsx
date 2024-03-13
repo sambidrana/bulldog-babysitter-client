@@ -11,11 +11,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
   const { user, isLoaded } = useUser();
-  const [navShadow, setNavShadow] = useState(false);
   const pathName = usePathname();
   const [toggleMenu, setToggleMenu] = useState(true);
   const isAdmin =
@@ -30,7 +28,14 @@ const Navbar = () => {
       <nav className="flex justify-between items-center w-[92%] mx-auto p-1">
         <div className="w-20 md:w-24">
           <a href="/">
-            <Image src="/logo/logo2.png" width={200} height={200} alt="Logo" />
+            <Image
+              src="/logo/logo1.png"
+              className="rounded-full"
+              width={200}
+              height={200}
+              alt="Logo"
+              priority
+            />
           </a>
         </div>
         <div
@@ -141,4 +146,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

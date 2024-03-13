@@ -16,6 +16,7 @@ const Gallery = () => {
               height={300}
               alt="Main Gallery Image"
               className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-fit"
+              priority
             />
           </div>
           <div className="mt-10 text-white">
@@ -23,24 +24,21 @@ const Gallery = () => {
               Gallery
             </h2>
             <p className="p-2 md:text-lg font-serif tracking-wide">
-              Meet our esteemed guests of honor &ndash; where every tail wag tells a
-              story and every bark is a song of joy. Dive into our world of
-              paws, play, and a whole lot of fur-flying fun!
+              Meet our esteemed guests of honor &ndash; where every tail wag
+              tells a story and every bark is a song of joy. Dive into our world
+              of paws, play, and a whole lot of fur-flying fun!
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-2 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
           <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
-          {/* <FeaturedGallery image={"/gallery/g4.jpg"} name={"g4"} /> */}
           <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />
-          {/* <FeaturedGallery image={"/gallery/g5.jpeg"} name={"g5"} /> */}
           <FeaturedGallery image={"/gallery/g3.jpeg"} name={"g3"} />
-          {/* <FeaturedGallery image={"/gallery/g6.jpg"} name={"g6"} /> */}
+          <FeaturedGallery image={"/gallery/g4.jpg"} name={"g4"} />
+          <FeaturedGallery image={"/gallery/g5.jpg"} name={"g5"} />
+          <FeaturedGallery image={"/gallery/g6.jpg"} name={"g6"} />
           <FeaturedGallery image={"/gallery/g7.jpg"} name={"g7"} />
-          {/* <FeaturedGallery image={"/gallery/g8.jpeg"} name={"g8"} /> */}
-          {/* <FeaturedGallery image={"/gallery/g9.jpeg"} name={"g9"} /> */}
           <FeaturedGallery image={"/gallery/g11.jpg"} name={"g11"} />
-          {/* <FeaturedGallery image={"/gallery/g10.jpeg"} name={"g10"} /> */}
           <FeaturedGallery image={"/gallery/g12.jpg"} name={"g12"} />
         </div>
 

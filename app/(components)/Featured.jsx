@@ -17,7 +17,7 @@ const Featured = () => {
               height="550" // Adjust based on your needs
               src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?si=dQgL0zbH-imWVDKe&amp;autoplay=1&amp;controls=0&amp;start=1&amp;showinfo=0&amp;loop=1&amp;mute=1"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
               allowFullScreen
             ></iframe>
           </div>

@@ -92,15 +92,15 @@ const ContactUs = () => {
             <form
               onSubmit={handleSubmit}
               method="POST"
-              class="max-w-lg mx-auto my-10 p-6 bg-[#ffffff] drop-shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-lg"
+              className="max-w-lg mx-auto my-10 p-6 bg-[#ffffff] drop-shadow-[0px_0px_10px_rgba(0,0,0,0.25)] rounded-lg"
             >
               <h3 className="text-2xl md:text-3xl font-serif text-[#a9c274] pb-10 text-center tracking-widest  underline underline-offset-8">
                 Enquiry Form
               </h3>
-              <div class="mb-4">
+              <div className="mb-4">
                 <label
-                  for="name"
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="name"
+                  className="block text-gray-700 text-sm font-bold mb-2"
                 >
                   Name:
                 </label>
@@ -111,13 +111,13 @@ const ContactUs = () => {
                   id="name"
                   name="name"
                   required
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
-              <div class="mb-4">
+              <div className="mb-4">
                 <label
-                  for="email"
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="email"
+                  className="block text-gray-700 text-sm font-bold mb-2"
                 >
                   Email:
                 </label>
@@ -128,13 +128,13 @@ const ContactUs = () => {
                   id="email"
                   name="email"
                   required
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
-              <div class="mb-4">
+              <div className="mb-4">
                 <label
-                  for="contact"
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="contact"
+                  className="block text-gray-700 text-sm font-bold mb-2"
                 >
                   Phone:
                 </label>
@@ -144,13 +144,13 @@ const ContactUs = () => {
                   type="tel"
                   id="contact"
                   name="contact"
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
               </div>
-              <div class="mb-6">
+              <div className="mb-6">
                 <label
-                  for="message"
-                  class="block text-gray-700 text-sm font-bold mb-2"
+                  htmlFor="message"
+                  className="block text-gray-700 text-sm font-bold mb-2"
                 >
                   Your Message:
                 </label>
@@ -161,7 +161,7 @@ const ContactUs = () => {
                   name="message"
                   rows="4"
                   required
-                  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ></textarea>
               </div>
               <div className="text-center">
@@ -189,7 +189,7 @@ const ContactUs = () => {
               <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
               <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 right-2 md:bottom-2 md:right-5 "></div>
               <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 left-2 md:bottom-2 md:left-5 "></div>
-           
+
               <div className="bg-[#264653]/10 rounded-lg text-white font-serif p-4">
                 <div className="flex justify-around text-sm p-4 md:text-xl">
                   <p className="flex-1 font-semibold tracking-widest ">

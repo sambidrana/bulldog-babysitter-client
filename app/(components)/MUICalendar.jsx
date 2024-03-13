@@ -10,11 +10,6 @@ import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-// const disabledDates = [
-//   dayjs("2024-01-14"), // Example date: January 1st, 2024
-//   dayjs("2024-02-25"), // Example date: December 25th, 2024
-//   // Add more dates as needed
-// ];
 
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
@@ -47,17 +42,19 @@ export default function MUICalendar({ userId }) {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/hourssettings");
-        if (response.data) {
-          setOpeningTime(response.data.OpeningTime);
-          setClosingTime(response.data.ClosingTime);
+        const response = await axios.get("http://localhost:3000/api/hours");
+        if (response.data && response.data.length > 0) {
+          const timings = response.data[0]; // Access the first item in the array
+          setOpeningTime(timings.OpeningTime);
+          setClosingTime(timings.ClosingTime);
 
+          console.log(timings); // Now this should show the object you expect
         }
       } catch (error) {
-        console.error("Error fetching settings:", error);
+        console.error("Error fetching timings:", error);
       }
     };
-    // console.log(openingTime, closingTime)
+
     fetchSettings();
   }, []);
 
@@ -187,8 +184,8 @@ export default function MUICalendar({ userId }) {
                   onChange={(newValue) => {
                     setStartTime(newValue);
                   }}
-                  minTime={dayjs("09:00", "HH:mm")}
-                  maxTime={dayjs("17:00", "HH:mm")}
+                  minTime={dayjs(`${openingTime}`, "HH:mm")}
+                  maxTime={dayjs(`${closingTime}`, "HH:mm")}
                   ampm={false}
                 />
                 <p className="p-2 text-2xl">-</p>
@@ -199,8 +196,8 @@ export default function MUICalendar({ userId }) {
                   onChange={(newValue) => {
                     setEndTime(newValue);
                   }}
-                  minTime={dayjs("09:00", "HH:mm")}
-                  maxTime={dayjs("17:00", "HH:mm")}
+                  minTime={dayjs(`${openingTime}`, "HH:mm")}
+                  maxTime={dayjs(`${closingTime}`, "HH:mm")}
                   ampm={false}
                 />
               </div>

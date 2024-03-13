@@ -16,7 +16,12 @@ const TestimonialCard = ({ name, image, review }) => {
             "
       ></div>
       <div className="mt-2 pl-2 flex items-center gap-2">
-        <Image src={image} width={180} height={100} alt={name}/>
+        <Image
+          src={image}
+          width={180}
+          height={180}
+          alt={name}
+        />
         <h3 className="text-gray-600 font-serif font-bold">{name}</h3>
       </div>
     </div>
