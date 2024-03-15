@@ -10,7 +10,6 @@ import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
-
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
   const [startTime, setStartTime] = useState(null);
@@ -20,11 +19,12 @@ export default function MUICalendar({ userId }) {
   const [disabledDates, setDisabledDates] = useState([]);
   const [openingTime, setOpeningTime] = useState("");
   const [closingTime, setClosingTime] = useState("");
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
     const fetchDisabledDates = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/settings");
+        const response = await axios.get(`${apiBaseUrl}/settings`);
         if (response.data && response.data.disabledDates) {
           setDisabledDates(
             response.data.disabledDates.map((date) => dayjs(date))
@@ -42,13 +42,13 @@ export default function MUICalendar({ userId }) {
   useEffect(() => {
     const fetchSettings = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/hours");
+        const response = await axios.get(`${apiBaseUrl}/hours`);
         if (response.data && response.data.length > 0) {
           const timings = response.data[0]; // Access the first item in the array
           setOpeningTime(timings.OpeningTime);
           setClosingTime(timings.ClosingTime);
 
-          console.log(timings); // Now this should show the object you expect
+          // console.log(timings); // Now this should show the object you expect
         }
       } catch (error) {
         console.error("Error fetching timings:", error);
@@ -85,22 +85,47 @@ export default function MUICalendar({ userId }) {
     }
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/userbookings",
+        `${apiBaseUrl}/userbookings`,
         userBookingInfo
       );
 
       if (response.status === 200 && response.data) {
-        console.log("Data sent: ", response);
+        // console.log("Data sent: ", response);
         notifySuccess();
         setStartDate(null);
         setEndDate(null);
         setStartTime(null);
         setEndTime(null);
       } else {
-        console.log("Data sent but something failed", response);
+        // console.log("Data sent but something failed", response);
+        toast.error(
+          "There was a problem submitting the booking information. Please try again.",
+          {
+            duration: 4000,
+            position: "top-center",
+            style: {
+              border: "1px solid #713200",
+              padding: "16px",
+              color: "#713200",
+            },
+          }
+        );
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error(
+        "An error occurred while submitting the booking information. Please try again.",
+        {
+          duration: 6000,
+          position: "top-right",
+          style: {
+            border: "1px solid red",
+            padding: "26px",
+            marginTop: "40px",
+            color: "#713200",
+          },
+        }
+      );
     }
   };
 

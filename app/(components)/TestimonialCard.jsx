@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const TestimonialCard = ({ name, image, review }) => {
-  console.log(image, review);
+  // console.log(image, review);
   return (
     <div className="relative p-2">
       <div className="bg-[#e5e096] p-6 rounded-3xl h-auto text-gray-600 font-serif drop-shadow-md 2xl:w-[420px] ">

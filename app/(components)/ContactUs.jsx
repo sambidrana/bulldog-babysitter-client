@@ -9,6 +9,7 @@ const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const ContactUs = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/enquiry",
+        `${apiBaseUrl}/enquiry`,
         enquiryData
       );
       if (response.status === 200 && response.data) {
@@ -31,7 +32,7 @@ const ContactUs = () => {
         setMessage("");
       }
     } catch (err) {
-      console.log("Could not send data to server");
+      // console.log("Could not send data to server");
       notifyError();
     }
   };

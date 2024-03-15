@@ -50,11 +50,12 @@ export const BoardingForm = ({ userId }) => {
   const [vaccines, setVaccines] = useState("");
   const [petNotes, setPetNotes] = useState("");
   // Step manager
-  const [prevStep, setPrevStep] = useState(0);
-  const [currentStep, setCurrentStep] = useState();
+  const [prevStep, setPrevStep] = useState("");
+  const [currentStep, setCurrentStep] = useState(0);
   const [navigationFailed, setNavigationFailed] = useState(false);
 
   // console.log(currentStep);
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleBoardingSubmit = async function (e) {
     e.preventDefault();
@@ -65,22 +66,26 @@ export const BoardingForm = ({ userId }) => {
       const formData = new FormData();
       formData.append("file", petImage);
       try {
-        const response = await axios.post(
-          "http://localhost:3000/api/upload",
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        console.log(response.data.link);
+        const response = await axios.post(`${apiBaseUrl}/upload`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
         uploadedImageUrl = response.data.link; // Store the URL in a temporary variable
         setImageUrl(uploadedImageUrl); // Update state (optional, if you need it elsewhere)
         // setImageUrl([...imageUrl, response.data]);
       } catch (error) {
-        console.error("Error uploading file:", error);
+        toast.error("Failed to upload the image. Please try again.", {
+          duration: 4000,
+          position: "top-center",
+          style: {
+            border: "1px solid #713200",
+            padding: "26px",
+            color: "#713200",
+          },
+        });
         return; // Stop the function if image upload fails
+        // console.error("Error uploading file:", error);
       }
     }
 
@@ -99,15 +104,16 @@ export const BoardingForm = ({ userId }) => {
       imageUrl: uploadedImageUrl, // Use the uploaded image URL here
       userId,
     };
-    console.log("Boarding Data:", boardingData);
+    // console.log("Boarding Data:", boardingData);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/boarding",
-        boardingData
-      );
+      const response = await axios.post(`${apiBaseUrl}/boarding`, boardingData);
       if (response.status === 200 && response.data) {
-        console.log("Data sent: ", response);
+        // console.log("Data sent: ", response);
+        toast.success("Boarding information successfully submitted!", {
+          position: "top-center",
+          duration: 4000,
+        });
         setCurrentStep((prev) => {
           return prev + 1;
         });
@@ -119,10 +125,35 @@ export const BoardingForm = ({ userId }) => {
           }
         }, 4000);
       } else {
-        console.log("Data sent but something failed", response);
+        // console.log("Data sent but something failed", response);
+        toast.error(
+          "There was a problem submitting the boarding information. Please try again.",
+          {
+            duration: 4000,
+            position: "top-center",
+            style: {
+              border: "1px solid #713200",
+              padding: "16px",
+              color: "#713200",
+            },
+          }
+        );
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
+      toast.error(
+        "An error occurred while submitting the boarding information. Please try again.",
+        {
+          duration: 6000,
+          position: "top-right",
+          style: {
+            border: "1px solid red",
+            padding: "26px",
+            marginTop: "40px",
+            color: "#713200",
+          },
+        }
+      );
     }
   };
 
@@ -164,7 +195,7 @@ export const BoardingForm = ({ userId }) => {
 
   const prev = () => {
     setCurrentStep((prev) => {
-      console.log(prev);
+      // console.log(prev);
       if (prev === 1) {
         return prev - 1;
       } else {
@@ -182,7 +213,7 @@ export const BoardingForm = ({ userId }) => {
       };
       fileReader.readAsDataURL(e.target.files[0]);
     }
-    console.log(petImage);
+    // console.log(petImage);
   };
 
   return (

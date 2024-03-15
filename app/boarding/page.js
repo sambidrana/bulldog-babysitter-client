@@ -5,7 +5,7 @@ import { BoardingForm } from '../(components)/BoardingFrom'
 const Boarding = () => {
 
   const {userId} = auth()
-  console.log(userId)
+  // console.log(userId)
 
   return (
     <div>
