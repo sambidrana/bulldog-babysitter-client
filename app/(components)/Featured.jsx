@@ -27,7 +27,7 @@ const Featured = () => {
               href={"/boarding"}
               className="px-4 text-white hover:underline"
             >
-              Haven't boarded? Click here to start the boarding process.
+              Haven&apos;t boarded? Click here to start the boarding process.
             </Link>
           </div>
         </div>

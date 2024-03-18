@@ -39,9 +39,9 @@ const AboutUs = () => {
             <p className="text-gray-600 md:text-lg p-2">
               Hi Jacki here, owner and head Frenchie Cuddler. I Started the
               Bulldog Babysitter in 2015 because I was anxious about leaving my
-              2 Frenchie's Maximus 9 and Zelda 7 with just anyone and realized
-              it was a very stressful decision indeed. Frenchie's are unique and
-              have needs that other breeds don't and having two of my own I know
+              2 Frenchie&apos;s Maximus 9 and Zelda 7 with just anyone and realized
+              it was a very stressful decision indeed. Frenchie&apos;s are unique and
+              have needs that other breeds don&apos;t and having two of my own I know
               how to meet those needs.
             </p>
           </div>
@@ -53,10 +53,10 @@ const AboutUs = () => {
               <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
                 Expertise:
               </span>{" "}
-              At The Bulldog Babysitter, we're not just regular dog sitters. Our
+              At The Bulldog Babysitter, we&apos;re not just regular dog sitters. Our
               team has undergone specific training to understand the intricacies
               of bulldog care. From their dietary needs to their playful nature,
-              we've got it all covered.
+              we&apos;ve got it all covered.
             </p>
             <p className="text-gray-600 md:text-lg p-2">
               <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">

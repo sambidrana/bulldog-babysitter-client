@@ -36,6 +36,7 @@ export default function MUICalendar({ userId }) {
     };
 
     fetchDisabledDates();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Fetch opening and closing times
@@ -56,6 +57,7 @@ export default function MUICalendar({ userId }) {
     };
 
     fetchSettings();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSubmit = async (e) => {
@@ -198,8 +200,9 @@ export default function MUICalendar({ userId }) {
                   onChange={(newValue) => {
                     setEndDate(newValue);
                   }}
-                  minDate={dayjs(new Date())}
+                  minDate={dayjs(startDate).add(2, "day")}
                   format="DD/MM/YYYY"
+                  disabled={!startDate}
                 />
               </div>
               <div className="flex items-center pt-4 pl-1 pr-1">
@@ -237,15 +240,15 @@ export default function MUICalendar({ userId }) {
             </div>
             <div className="px-2 pt-10 mt-4 ">
               <h3 className="text-white text-2xl md:text-3xl mb-4 font-serif font-bold tracking-wide">
-                Your Bulldog's Babysitter,
+                Your Bulldog&apos;s Babysitter,
                 <br /> Your Time Choices
               </h3>
               <p className="font-serif text-gray-700 md:text-lg">
-                With 'Your Bulldog's Babysitter, Your Time Choices,' you're in
-                control of crafting the perfect playdate for your furry friend.
-                Whether it's an energetic morning romp or a cozy afternoon
-                cuddle, our app ensures that every moment aligns with your
-                bulldog's unique preferences.
+                With &apos;Your Bulldog&apos;s Babysitter, Your Time
+                Choices,&apos; you&apos;re in control of crafting the perfect
+                playdate for your furry friend. Whether it&apos;s an energetic
+                morning romp or a cozy afternoon cuddle, our app ensures that
+                every moment aligns with your bulldog&apos;s unique preferences.
               </p>
             </div>
           </div>

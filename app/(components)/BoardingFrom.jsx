@@ -265,7 +265,7 @@ export const BoardingForm = ({ userId }) => {
           {currentStep === 0 && (
             <div className="">
               <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 tracking-wide text-center text-xl md:text-4xl p-8 text-gray-500 shadow-inner">
-                <h2>Owner's Information</h2>
+                <h2>Owner&apos;s Information</h2>
               </div>
               <div className="mt-10 md:text-lg">
                 <div className="grid grid-cols-1 md:grid-cols-2 p-2 md:p-4">
@@ -349,6 +349,7 @@ export const BoardingForm = ({ userId }) => {
               <div className="mt-10 md:text-lg">
                 <div className="grid grid-cols-1 place-items-center place-content-center mx-4 p-8 bg-gray-50">
                   <label className="cursor-pointer mt-10 mb-10">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     {imagePreviewUrl ? (
                       <img
                         src={imagePreviewUrl}

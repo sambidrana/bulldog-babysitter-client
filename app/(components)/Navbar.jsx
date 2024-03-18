@@ -86,7 +86,7 @@ const Navbar = () => {
                 href="/faqs"
                 onClick={onToggleMenu}
               >
-                FAQ's
+                FAQ&apos;s
               </Link>
             </li>
             <li>

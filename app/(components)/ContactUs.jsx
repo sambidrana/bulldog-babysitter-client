@@ -83,7 +83,7 @@ const ContactUs = () => {
             </h2>
             <p className="p-2 md:text-lg font-serif tracking-wide">
               Have questions or seeking further details? Please submit our
-              inquiry form, and we'll respond promptly, or feel free to directly
+              inquiry form, and we&apos;ll respond promptly, or feel free to directly
               connect with us for immediate assistance.
             </p>
           </div>
