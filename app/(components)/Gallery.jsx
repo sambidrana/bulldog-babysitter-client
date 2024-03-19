@@ -30,7 +30,7 @@ const Gallery = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-2 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
           <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
           <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />
           <FeaturedGallery image={"/gallery/g3.jpeg"} name={"g3"} />
@@ -42,8 +42,8 @@ const Gallery = () => {
           <FeaturedGallery image={"/gallery/g12.jpg"} name={"g12"} />
         </div>
 
-        <div className="flex justify-end mr-20 mt-10 font-extralight tracking-wider">
-          <div className=" text-gray-600 text-sm   bg-[#f2e8cf] rounded-lg p-2 flex items-center gap-1 hover:bg-[#e6d9b8]   hover:shadow-md">
+        <div className="flex justify-end mr-5 md:mr-20 mt-10 font-extralight tracking-wider">
+          <div className=" text-gray-600 text-sm  bg-[#f2e8cf] rounded-lg p-2 flex items-center gap-1 hover:bg-[#e6d9b8]   hover:shadow-md">
             <a
               href={"https://www.facebook.com/thebulldogbabysitter/photos"}
               target="_blank"

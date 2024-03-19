@@ -34,7 +34,7 @@ const TestimonialsPage = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end mr-20 mt-10 font-extralight tracking-wider mb-10">
+        <div className="flex justify-end mr-5 md:mr-20 mt-10 font-extralight tracking-wider mb-10">
           <div className=" text-gray-600 text-sm   bg-[#f2e8cf] rounded-lg p-2 flex items-center gap-1 hover:bg-[#e6d9b8]   hover:shadow-md">
             <a
               href={"https://www.facebook.com/thebulldogbabysitter/reviews"}

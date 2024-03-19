@@ -20,10 +20,7 @@ const ContactUs = () => {
       message,
     };
     try {
-      const response = await axios.post(
-        `${apiBaseUrl}/enquiry`,
-        enquiryData
-      );
+      const response = await axios.post(`${apiBaseUrl}/enquiry`, enquiryData);
       if (response.status === 200 && response.data) {
         notifySuccess();
         setName("");
@@ -67,7 +64,7 @@ const ContactUs = () => {
   return (
     <>
       <div className="">
-        <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
+        <div className="grid grid-cols-1 items-center justify-center gap-2 p-8 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
           <div className="grid items-center justify-center md:w-auto">
             <Image
               src="/contactus/contactus.jpg"
@@ -83,13 +80,13 @@ const ContactUs = () => {
             </h2>
             <p className="p-2 md:text-lg font-serif tracking-wide">
               Have questions or seeking further details? Please submit our
-              inquiry form, and we&apos;ll respond promptly, or feel free to directly
-              connect with us for immediate assistance.
+              inquiry form, and we&apos;ll respond promptly, or feel free to
+              directly connect with us for immediate assistance.
             </p>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-2 p-2 pt-8 pb-16 2xl:items-center md:grid-cols-2 md:pt-24">
-          <div className="order-2 md:order-1 pl-10 pr-10">
+          <div className="order-2 md:order-1 pr-3 pl-3 md:pl-10 md:pr-10">
             <form
               onSubmit={handleSubmit}
               method="POST"
@@ -176,23 +173,23 @@ const ContactUs = () => {
             </form>
           </div>
           <div className="order-1 md:order-2">
-            <div className="flex items-center justify-center flex-shrink">
+            <div className="flex items-center justify-center flex-shrink ">
               <Image
                 src={"/booknow/frenchie1.png"}
                 alt="French Bulldog"
                 width={250}
                 height={250}
-                className=""
+                className="w-fit md:w-[20%] h-auto"
               />
             </div>
-            <div className="max-w-[750px] bg-[#e8dbbb] text-white pt-10 pb-10 pr-2 pl-2 md:pr-8 md:pl-8 mr-10 ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
-              <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-3 md:left-5  "></div>
-              <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
-              <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 right-2 md:bottom-2 md:right-5 "></div>
-              <div className=" w-4 h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-3 left-2 md:bottom-2 md:left-5 "></div>
+            <div className="max-w-[750px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 md:pr-8 md:pl-8 mr-10 ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
+              <div className="w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-3 md:left-5  "></div>
+              <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
+              <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-2 right-2 md:bottom-2 md:right-5 "></div>
+              <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-2 left-2 md:bottom-2 md:left-5 "></div>
 
               <div className="bg-[#264653]/10 rounded-lg text-white font-serif p-4">
-                <div className="flex justify-around text-sm p-4 md:text-xl">
+                <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
                   <p className="flex-1 font-semibold tracking-widest ">
                     Address:
                   </p>
@@ -208,13 +205,13 @@ const ContactUs = () => {
                     </a>
                   </p>
                 </div>
-                <div className="flex justify-around text-sm p-4 md:text-xl">
+                <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
                   <p className="flex-1 font-semibold tracking-widest">Phone:</p>
                   <p className="flex-1 tracking-wide hover:underline">
                     <a href="tel:+61406262848">+61 406 262 848</a>
                   </p>
                 </div>
-                <div className="flex justify-around text-sm p-4 md:text-xl">
+                <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
                   <p className="flex-1 font-semibold tracking-widest">Email:</p>
                   <p className="flex-1 tracking-wide hover:underline ">
                     <a href="mailto:thebulldogbabysitter@gmail.com">

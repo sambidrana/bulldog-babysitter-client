@@ -5,27 +5,40 @@ const Featured = () => {
   return (
     <>
       <div className="flex justify-center items-center min-h-[80vh]">
-        <div className="w-full max-w-screen min-h-[40vh] flex flex-col justify-between">
+        <div className="w-full max-w-screen flex flex-col justify-between min-h-[40vh]">
           {/* Heading for video */}
-          <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-3 text-white">
+          <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-3 text-white text-sm md:text-base">
             <p>The bulldog babysitter</p>
           </div>
           {/* Video */}
-          <div className="flex-grow flex justify-center items-center">
+          <div
+            className="flex-grow flex justify-center items-center"
+            style={{
+              position: "relative",
+              paddingBottom: "36.25%",
+              height: 0,
+              overflow: "hidden",
+            }}
+          >
             <iframe
-              width="100%"
-              height="550" // Adjust based on your needs
-              src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?si=dQgL0zbH-imWVDKe&amp;autoplay=1&amp;controls=0&amp;start=1&amp;showinfo=0&amp;loop=1&amp;mute=1"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+              }}
+              src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?autoplay=1&controls=0&start=1&showinfo=0&loop=1&mute=1"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; "
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           </div>
           {/* Footer for video */}
-          <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-3 flex justify-end items-center">
+          <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-2 md:p-3 flex justify-end items-center">
             <Link
               href={"/boarding"}
-              className="px-4 text-white hover:underline"
+              className="px-2 md:px-4 text-white hover:underline text-sm md:text-base"
             >
               Haven&apos;t boarded? Click here to start the boarding process.
             </Link>
