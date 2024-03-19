@@ -182,7 +182,7 @@ const ContactUs = () => {
                 className="w-fit md:w-[20%] h-auto"
               />
             </div>
-            <div className="max-w-[750px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 md:pr-8 md:pl-8 mr-10 ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
+            <div className="md:max-w-[750px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 md:pr-8 md:pl-8 mr-6 ml-6 md:mr-10 md:ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
               <div className="w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-3 md:left-5  "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-2 right-2 md:bottom-2 md:right-5 "></div>
@@ -190,10 +190,10 @@ const ContactUs = () => {
 
               <div className="bg-[#264653]/10 rounded-lg text-white font-serif p-4">
                 <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
-                  <p className="flex-1 font-semibold tracking-widest ">
+                  <p className="w-1/4 md:w-1/6 font-semibold tracking-widest ">
                     Address:
                   </p>
-                  <p className="flex-1 tracking-wide hover:underline">
+                  <p className="w-3/4 md:w-5/6 text-center tracking-wide hover:underline ">
                     <a
                       href="https://www.google.com/maps/search/?api=1&query=Narre+Warren+North,+VIC+Australia+-+3806"
                       target="_blank"
@@ -206,14 +206,14 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
-                  <p className="flex-1 font-semibold tracking-widest">Phone:</p>
-                  <p className="flex-1 tracking-wide hover:underline">
+                  <p className="w-1/4 md:w-1/6 font-semibold tracking-widest">Phone:</p>
+                  <p className="w-3/4 md:w-5/6 text-center tracking-wide hover:underline">
                     <a href="tel:+61406262848">+61 406 262 848</a>
                   </p>
                 </div>
                 <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
-                  <p className="flex-1 font-semibold tracking-widest">Email:</p>
-                  <p className="flex-1 tracking-wide hover:underline ">
+                  <p className="w-1/4 md:w-1/6 font-semibold tracking-widest">Email:</p>
+                  <p className="w-3/4 md:w-5/6 text-center tracking-wide hover:underline ">
                     <a href="mailto:thebulldogbabysitter@gmail.com">
                       thebulldogbabysitter@gmail.com
                     </a>
