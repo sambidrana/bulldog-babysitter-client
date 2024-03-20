@@ -4,7 +4,7 @@ import React from "react";
 const Featured = () => {
   return (
     <>
-      <div className="flex justify-center items-center min-h-[70vh] md:min-h-[80vh]">
+      <div className="flex justify-center items-center min-h-[60vh] md:min-h-[80vh]">
         <div className="w-full max-w-screen flex flex-col justify-between min-h-[40vh]">
           {/* Heading for video */}
           <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-3 text-white text-sm md:text-base">
@@ -50,3 +50,13 @@ const Featured = () => {
 };
 
 export default Featured;
+
+{/* <iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/biRuR3G16Kk?si=Xj-tfa5o2pFoW5CH&amp;controls=0"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen
+></iframe>; */}
