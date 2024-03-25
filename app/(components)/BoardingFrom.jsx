@@ -62,6 +62,7 @@ export const BoardingForm = ({ userId }) => {
     let uploadedImageUrl = ""; // Temporary variable to hold the uploaded image URL
 
     //Uploading the petImage
+
     if (petImage) {
       const formData = new FormData();
       formData.append("file", petImage);
@@ -357,8 +358,9 @@ export const BoardingForm = ({ userId }) => {
                         className="max-w-xs max-h-60"
                       />
                     ) : (
-                      <span className=" font-serif font-semibold text-lg bg-gray-100 border border-gray-300 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500">
-                        Add a photo
+                      <span className="font-serif font-semibold text-lg bg-gray-100 border border-gray-300 p-14 rounded-full hover:bg-gray-200 text-gray-400 hover:text-gray-500 inline-block">
+                        <div>Add a photo </div>
+                        <div className="text-sm flex items-center justify-center">Required</div>
                       </span>
                     )}
                     <input
@@ -392,7 +394,7 @@ export const BoardingForm = ({ userId }) => {
                     htmlFor="petType"
                     className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
-                    Sex
+                    Sex <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
@@ -409,7 +411,7 @@ export const BoardingForm = ({ userId }) => {
                     htmlFor="petAge"
                     className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
-                    Pet Age
+                    Pet Age <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
@@ -426,7 +428,7 @@ export const BoardingForm = ({ userId }) => {
                     htmlFor="chipNumber"
                     className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
-                    Chip Number
+                    Chip Number <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
@@ -443,13 +445,13 @@ export const BoardingForm = ({ userId }) => {
                     htmlFor="vaccines"
                     className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
-                    Vaccines
+                    Vaccines <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
                     value={vaccines}
                     onChange={(e) => setVaccines(e.target.value)}
-                    placeholder="Up to date?"
+                    placeholder="Up to date? Yes or No"
                     name="vaccines"
                     required
                     className="border-b-2 border-gray-200 p-2 px-12"
@@ -467,7 +469,7 @@ export const BoardingForm = ({ userId }) => {
                     onChange={(e) => setPetNotes(e.target.value)}
                     placeholder="Any additional notes about your pet..."
                     name="petNotes"
-                    required
+                    
                     className="border-b-2 border-gray-200 p-2 px-12"
                   />
                   <input type={"hidden"} name="userId" value={userId} />
