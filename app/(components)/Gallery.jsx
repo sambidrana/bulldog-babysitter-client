@@ -30,16 +30,21 @@ const Gallery = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
-          <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
-          <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />
-          <FeaturedGallery image={"/gallery/g3.jpeg"} name={"g3"} />
-          <FeaturedGallery image={"/gallery/g4.jpg"} name={"g4"} />
-          <FeaturedGallery image={"/gallery/g5.jpg"} name={"g5"} />
-          <FeaturedGallery image={"/gallery/g6.jpg"} name={"g6"} />
-          <FeaturedGallery image={"/gallery/g7.jpg"} name={"g7"} />
-          <FeaturedGallery image={"/gallery/g11.jpg"} name={"g11"} />
-          <FeaturedGallery image={"/gallery/g12.jpg"} name={"g12"} />
+        <div className="relative w-full">
+          <div className="absolute z-[-1] top-[95%] right-[31%] md:top-64 w-screen">
+            <Image src={"/gallery/pawsbackground.webp"} width={1792} height={1024} alt="Paws" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
+            <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
+            <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />
+            <FeaturedGallery image={"/gallery/g3.jpeg"} name={"g3"} />
+            <FeaturedGallery image={"/gallery/g4.jpg"} name={"g4"} />
+            <FeaturedGallery image={"/gallery/g5.jpg"} name={"g5"} />
+            <FeaturedGallery image={"/gallery/g6.jpg"} name={"g6"} />
+            <FeaturedGallery image={"/gallery/g7.jpg"} name={"g7"} />
+            <FeaturedGallery image={"/gallery/g11.jpg"} name={"g11"} />
+            <FeaturedGallery image={"/gallery/g12.jpg"} name={"g12"} />
+          </div>
         </div>
 
         <div className="flex justify-end mr-5 md:mr-20 mt-10 font-extralight tracking-wider">
