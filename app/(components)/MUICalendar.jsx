@@ -3,7 +3,6 @@ import * as React from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { TextField } from "@mui/material";
 import { useState, useEffect } from "react";
 import { TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
@@ -22,41 +21,33 @@ export default function MUICalendar({ userId }) {
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
-    const fetchDisabledDates = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/settings`);
-        if (response.data && response.data.disabledDates) {
+        // Fetch disabled dates
+        const responseDates = await axios.get(`${apiBaseUrl}/settings`);
+        if (responseDates.data && responseDates.data.disabledDates) {
           setDisabledDates(
-            response.data.disabledDates.map((date) => dayjs(date))
+            responseDates.data.disabledDates.map((date) => dayjs(date))
           );
         }
       } catch (error) {
         console.error("Error fetching disabled dates:", error);
       }
-    };
 
-    fetchDisabledDates();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Fetch opening and closing times
-  useEffect(() => {
-    const fetchSettings = async () => {
       try {
-        const response = await axios.get(`${apiBaseUrl}/hours`);
-        if (response.data && response.data.length > 0) {
-          const timings = response.data[0]; // Access the first item in the array
+        // Fetch opening and closing times
+        const responseHours = await axios.get(`${apiBaseUrl}/hours`);
+        if (responseHours.data && responseHours.data.length > 0) {
+          const timings = responseHours.data[0]; // Access the first item in the array
           setOpeningTime(timings.OpeningTime);
           setClosingTime(timings.ClosingTime);
-
-          // console.log(timings); // Now this should show the object you expect
         }
       } catch (error) {
         console.error("Error fetching timings:", error);
       }
     };
 
-    fetchSettings();
+    fetchData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -166,11 +157,7 @@ export default function MUICalendar({ userId }) {
     });
 
   // Function to check if a date should be disabled
-  // const checkIfDateDisabled = (date) => {
-  //   return disabledDates.some(
-  //     (disabledDate) => date.isSame(disabledDate, "day") // Checks if the date matches any disabled date
-  //   );
-  // };
+
   const checkIfDateDisabled = (date) => {
     return disabledDates.some((disabledDate) =>
       date.isSame(disabledDate, "day")
@@ -191,7 +178,7 @@ export default function MUICalendar({ userId }) {
                   }}
                   minDate={dayjs(new Date())}
                   format="DD/MM/YYYY"
-                  shouldDisableDate={checkIfDateDisabled} // Use the function here
+                  shouldDisableDate={checkIfDateDisabled} 
                 />
                 <p className="p-2 text-2xl">-</p>
                 <DatePicker
