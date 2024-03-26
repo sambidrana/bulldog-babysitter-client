@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import FeaturedGallery from "./FeaturedGallery";
 import BackgroundImgs from "./BackgroundImgs";
+import BackgroundImgsTwo from "./BackgroundImgsTwo";
 
 const Gallery = () => {
   return (
@@ -31,8 +32,9 @@ const Gallery = () => {
             </p>
           </div>
         </div>
-        <div className="relative w-full">
-          <BackgroundImgs top="6" />
+        <div className="relative">
+          <BackgroundImgs />
+          <BackgroundImgsTwo />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
             <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
             <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />

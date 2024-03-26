@@ -1,27 +1,36 @@
 import Image from "next/image";
 
-const BackgroundImgs = ({top}) => {
-  console.log(top)
+const BackgroundImgs = () => {
   return (
     <>
-      <div className="absolute z-[-1] top-[85%] right-[23%] md:right-[1%] md:top-[15%] w-screen">
+      <div className="min-w-[800px] absolute z-[-1] top-[20%] right-[0%]  md:top-[12%] md:right-[10%] ">
         <Image
           src={"/gallery/pawsbackground.webp"}
-          width={1792}
+          width={1200}
           height={1024}
           alt="Paws"
-          className="opacity-10"
+          className="opacity-10 over p-0 m-0"
         />
       </div>
-      <div className="absolute z-[-1] top-[0%] left-[50%] w-screen">
+      <div className="absolute z-[-1] top-[0%] right-[5%]">
         <Image
           src={"/background/bg1.webp"}
           width={250}
-          height={250}
+          height={150}
           alt="Background Decoration"
           className="opacity-50"
         />
       </div>
+      <div className="absolute z-[-1] top-[60%] left-[1%]">
+        <Image
+          src={"/background/bg2.webp"}
+          width={50}
+          height={50}
+          alt="Background Decoration"
+          className="opacity-20"
+        />
+      </div>
+      
     </>
   );
 };

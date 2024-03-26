@@ -15,11 +15,11 @@ const TestimonialCard = ({ name, image, review }) => {
             border-r-[1px] border-r-transparent absolute left-10 m-0 p-0   
             "
       ></div>
-      <div className="mt-2 pl-2 flex items-center gap-2">
+      <div className=" mt-2 pl-2 flex items-center gap-2">
         <Image
           src={image}
-          width={180}
-          height={180}
+          width={150}
+          height={150}
           alt={name}
         />
         <h3 className="text-gray-600 font-serif font-bold">{name}</h3>
