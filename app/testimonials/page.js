@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import TestimonialCard from "../(components)/TestimonialCard";
 import { testimonialObj } from "@/constants/testimonials";
+import BackgroundImgs from "../(components)/BackgroundImgs";
 
 const TestimonialsPage = () => {
   return (
@@ -28,10 +29,15 @@ const TestimonialsPage = () => {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center p-8 md:pl-28 md:pr-28 ">
-            {testimonialObj.map((testimonial, index) => (
-              <TestimonialCard key={index} {...testimonial} />
-            ))}
+          <div>
+            <div className="relative">
+              <BackgroundImgs />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center p-8 md:pl-28 md:pr-28 ">
+              {testimonialObj.map((testimonial, index) => (
+                <TestimonialCard key={index} {...testimonial} />
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex justify-end mr-5 md:mr-20 mt-10 font-extralight tracking-wider mb-10">

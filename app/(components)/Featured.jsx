@@ -1,18 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import BackgroundImgs from "./BackgroundImgs";
 const Featured = () => {
   return (
     <>
       <div className="relative w-full">
-        <div className="absolute z-[-1] top-[60%] right-[21%] md:top-64 w-screen">
-          <Image
-            src={"/gallery/pawsbackground.webp"}
-            width={1792}
-            height={1024}
-            alt="Paws"
-          />
-        </div>
+        {/* <BackgroundImgs /> */}
         <div className="flex justify-center items-center min-h-[60vh] md:min-h-[80vh]">
           <div className="w-full max-w-screen flex flex-col justify-between min-h-[40vh]">
             {/* Heading for video */}

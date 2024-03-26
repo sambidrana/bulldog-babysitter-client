@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import FeaturedGallery from "./FeaturedGallery";
+import BackgroundImgs from "./BackgroundImgs";
 
 const Gallery = () => {
   return (
@@ -31,9 +32,7 @@ const Gallery = () => {
           </div>
         </div>
         <div className="relative w-full">
-          <div className="absolute z-[-1] top-[95%] right-[31%] md:top-64 w-screen">
-            <Image src={"/gallery/pawsbackground.webp"} width={1792} height={1024} alt="Paws" />
-          </div>
+          <BackgroundImgs top="6" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
             <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
             <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />

@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
+import BackgroundImgs from "./BackgroundImgs";
 
 const AboutUs = () => {
   return (
     <>
       <div>
         <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
-        <div className="grid items-center justify-center md:w-auto">
+          <div className="grid items-center justify-center md:w-auto">
             <Image
               src={"/aboutus/aboutus1.jpg"}
               width={500}
@@ -30,59 +31,65 @@ const AboutUs = () => {
             </p>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 place-items-center p-10">
-          <div className="p-6">
-            <h2 className="text-xl md:text-3xl font-serif tracking-wider mb-4 text-[#A9C274]">
-              About Bulldog Babysitters
-            </h2>
-            <p className="text-gray-600 md:text-lg p-2">
-              Hi Jacki here, owner and head Frenchie Cuddler. I Started the
-              Bulldog Babysitter in 2015 because I was anxious about leaving my
-              2 Frenchie&apos;s Maximus 9 and Zelda 7 with just anyone and realized
-              it was a very stressful decision indeed. Frenchie&apos;s are unique and
-              have needs that other breeds don&apos;t and having two of my own I know
-              how to meet those needs.
-            </p>
+        <div>
+          <div className="relative">
+            <BackgroundImgs />
           </div>
-          <div className="p-6">
-            <h2 className="text-xl md:text-3xl tracking-wider mb-6 font-serif text-[#A9C274]">
-              Why choose us?
-            </h2>
-            <p className="text-gray-600 md:text-lg p-2">
-              <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
-                Expertise:
-              </span>{" "}
-              At The Bulldog Babysitter, we&apos;re not just regular dog sitters. Our
-              team has undergone specific training to understand the intricacies
-              of bulldog care. From their dietary needs to their playful nature,
-              we&apos;ve got it all covered.
-            </p>
-            <p className="text-gray-600 md:text-lg p-2">
-              <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
-                Facilities:
-              </span>{" "}
-              Nestled in [Location], our facility boasts spacious play areas,
-              comfortable resting zones, and a health clinic specifically
-              tailored for the well-being of bulldogs.
-            </p>
-            <p className="text-gray-600 md:text-lg p-2">
-              <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
-                Love & Care:
-              </span>{" "}
-              Every bulldog that comes through our doors is treated like family.
-              Our passionate team ensures that your furry friend receives not
-              just the necessities but also an abundance of love and playtime.
-            </p>
-            <p className="text-gray-600 md:text-lg p-2">
-              <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
-                {" "}
-                Holistic Approach:
-              </span>{" "}
-              We believe in a holistic approach to care. This includes regular
-              exercise, balanced nutrition, social interaction, and even a bit
-              of pampering!
-            </p>
+          <div className="grid grid-cols-1 place-items-center p-10">
+            <div className="p-6">
+              <h2 className="text-xl md:text-3xl font-serif tracking-wider mb-4 text-[#A9C274]">
+                About Bulldog Babysitters
+              </h2>
+              <p className="text-gray-600 md:text-lg p-2">
+                Hi Jacki here, owner and head Frenchie Cuddler. I Started the
+                Bulldog Babysitter in 2015 because I was anxious about leaving
+                my 2 Frenchie&apos;s Maximus 9 and Zelda 7 with just anyone and
+                realized it was a very stressful decision indeed.
+                Frenchie&apos;s are unique and have needs that other breeds
+                don&apos;t and having two of my own I know how to meet those
+                needs.
+              </p>
+            </div>
+            <div className="p-6">
+              <h2 className="text-xl md:text-3xl tracking-wider mb-6 font-serif text-[#A9C274]">
+                Why choose us?
+              </h2>
+              <p className="text-gray-600 md:text-lg p-2">
+                <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
+                  Expertise:
+                </span>{" "}
+                At The Bulldog Babysitter, we&apos;re not just regular dog
+                sitters. Our team has undergone specific training to understand
+                the intricacies of bulldog care. From their dietary needs to
+                their playful nature, we&apos;ve got it all covered.
+              </p>
+              <p className="text-gray-600 md:text-lg p-2">
+                <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
+                  Facilities:
+                </span>{" "}
+                Nestled in [Location], our facility boasts spacious play areas,
+                comfortable resting zones, and a health clinic specifically
+                tailored for the well-being of bulldogs.
+              </p>
+              <p className="text-gray-600 md:text-lg p-2">
+                <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
+                  Love & Care:
+                </span>{" "}
+                Every bulldog that comes through our doors is treated like
+                family. Our passionate team ensures that your furry friend
+                receives not just the necessities but also an abundance of love
+                and playtime.
+              </p>
+              <p className="text-gray-600 md:text-lg p-2">
+                <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
+                  {" "}
+                  Holistic Approach:
+                </span>{" "}
+                We believe in a holistic approach to care. This includes regular
+                exercise, balanced nutrition, social interaction, and even a bit
+                of pampering!
+              </p>
+            </div>
           </div>
         </div>
       </div>

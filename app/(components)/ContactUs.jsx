@@ -3,6 +3,7 @@ import axios from "axios";
 import Image from "next/image";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import BackgroundImgs from "./BackgroundImgs";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
@@ -86,14 +87,7 @@ const ContactUs = () => {
           </div>
         </div>
         <div className="relative w-full">
-          <div className="absolute z-[-1] top-[85%] right-[23%] md:right-[1%] md:top-[15%] w-screen">
-            <Image
-              src={"/gallery/pawsbackground.webp"}
-              width={1792}
-              height={1024}
-              alt="Paws"
-            />
-          </div>
+          <BackgroundImgs />
           <div className="grid grid-cols-1 gap-2 p-2 pt-8 pb-16 2xl:items-center md:grid-cols-2 md:pt-24">
             <div className="order-2 md:order-1 pr-3 pl-3 md:pl-10 md:pr-10">
               <form
