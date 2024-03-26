@@ -1,24 +1,91 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import BackgroundImgs from "./BackgroundImgs";
 const Featured = () => {
   return (
     <>
-      <div className="relative w-full">
+      <div className="relative">
+        <div className="absolute z-[-1] top-[2%] right-[10%]">
+          <Image
+            src={"/background/bg3.webp"}
+            width={50}
+            height={50}
+            alt="Background Decoration"
+            className="opacity-50"
+          />
+        </div>
+        <div className="absolute z-[-1] top-[2%] left-[20%]">
+          <Image
+            src={"/background/bg2.webp"}
+            width={50}
+            height={50}
+            alt="Background Decoration"
+            className="opacity-30"
+          />
+        </div>
+        <div className="absolute z-[-1] top-[2%] right-[10%]">
+          <Image
+            src={"/background/bg1.webp"}
+            width={550}
+            height={550}
+            alt="Background Decoration"
+            className="opacity-50"
+          />
+        </div>
+        <div className="absolute z-[-1] top-[40%] right-[10%]">
+          <Image
+            src={"/background/bg1.webp"}
+            width={550}
+            height={550}
+            alt="Background Decoration"
+            className="opacity-50"
+          />
+        </div>
+        <div className="absolute z-[-1] top-[8%] right-[25%]">
+          <Image
+            src={"/background/bg6.webp"}
+            width={50}
+            height={50}
+            alt="Background Decoration"
+            className="opacity-50"
+          />
+        </div>
         {/* <BackgroundImgs /> */}
-        <div className="flex justify-center items-center min-h-[60vh] md:min-h-[80vh]">
+        <div className="flex justify-center items-center min-h-[70vh] md:min-h-[90vh]">
           <div className="w-full max-w-screen flex flex-col justify-between min-h-[40vh]">
             {/* Heading for video */}
             <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-3 text-white text-sm md:text-base">
-              <p>The bulldog babysitter</p>
+              <div className="flex items-center justify-center">
+                <div>
+                  <Image
+                    src={"/background/bgFeatured.webp"}
+                    width={30}
+                    height={20}
+                    alt="Background Decoration"
+                    className="mr-10 "
+                  />
+                </div>
+                <p className="font-serif tracking-widest">
+                  The Bulldog Babysitter
+                </p>
+                <div>
+                  <Image
+                    src={"/background/bgFeatured.webp"}
+                    width={30}
+                    height={20}
+                    alt="Background Decoration"
+                    className="ml-10"
+                  />
+                </div>
+              </div>
             </div>
             {/* Video */}
             <div
-              className="flex-grow flex justify-center items-center"
+              className="flex-grow flex justify-center items-center "
               style={{
                 position: "relative",
                 paddingBottom: "35.25%",
+                // paddingTop: "35.25%",
                 height: 0,
                 overflow: "hidden",
               }}
@@ -41,7 +108,7 @@ const Featured = () => {
             <div className="bg-gradient-to-r from-[#c0dc84] to-[#A9C264] p-2 md:p-3 flex justify-end items-center">
               <Link
                 href={"/boarding"}
-                className="px-2 md:px-4 text-white hover:underline text-sm md:text-base"
+                className="font-serif tracking-wide px-2 md:px-4 text-white hover:underline text-sm md:text-base"
               >
                 Haven&apos;t boarded? Click here to start the boarding process.
               </Link>
