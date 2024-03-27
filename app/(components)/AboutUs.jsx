@@ -10,7 +10,7 @@ const AboutUs = () => {
         <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
           <div className="grid items-center justify-center md:w-auto">
             <Image
-              src={"/aboutus/aboutus1.jpg"}
+              src={"/aboutus/aboutus1.webp"}
               width={500}
               height={500}
               alt="bulldogFamily"

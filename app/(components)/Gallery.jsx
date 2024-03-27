@@ -13,7 +13,7 @@ const Gallery = () => {
         <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
           <div className="grid items-center justify-center md:w-auto">
             <Image
-              src="/gallery/maingallery.jpg"
+              src="/gallery/maingallery.webp"
               width={300}
               height={300}
               alt="Main Gallery Image"
@@ -36,15 +36,15 @@ const Gallery = () => {
           <BackgroundImgs />
           <BackgroundImgsTwo />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 p-4 pt-8 md:pt-8 md:pb-8 md:pl-28 md:pr-28 m items-center justify-items-center mx-auto">
-            <FeaturedGallery image={"/gallery/g1.jpg"} name={"g1"} />
-            <FeaturedGallery image={"/gallery/g2.jpg"} name={"g2"} />
-            <FeaturedGallery image={"/gallery/g3.jpeg"} name={"g3"} />
-            <FeaturedGallery image={"/gallery/g4.jpg"} name={"g4"} />
-            <FeaturedGallery image={"/gallery/g5.jpg"} name={"g5"} />
-            <FeaturedGallery image={"/gallery/g6.jpg"} name={"g6"} />
-            <FeaturedGallery image={"/gallery/g7.jpg"} name={"g7"} />
-            <FeaturedGallery image={"/gallery/g11.jpg"} name={"g11"} />
-            <FeaturedGallery image={"/gallery/g12.jpg"} name={"g12"} />
+            <FeaturedGallery image={"/gallery/g1.webp"} name={"g1"} />
+            <FeaturedGallery image={"/gallery/g2.webp"} name={"g2"} />
+            <FeaturedGallery image={"/gallery/g3.webp"} name={"g3"} />
+            <FeaturedGallery image={"/gallery/g4.webp"} name={"g4"} />
+            <FeaturedGallery image={"/gallery/g5.webp"} name={"g5"} />
+            <FeaturedGallery image={"/gallery/g6.webp"} name={"g6"} />
+            <FeaturedGallery image={"/gallery/g7.webp"} name={"g7"} />
+            <FeaturedGallery image={"/gallery/g11.webp"} name={"g11"} />
+            <FeaturedGallery image={"/gallery/g12.webp"} name={"g12"} />
           </div>
         </div>
 

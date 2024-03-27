@@ -13,7 +13,7 @@ const TestimonialsPage = () => {
           <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-36 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
             <div className="grid items-center justify-center md:w-auto">
               <Image
-                src="/testimonial/testimonial3.jpeg"
+                src="/testimonial/testimonial3.webp"
                 width={500}
                 height={500}
                 className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-fit"
@@ -34,7 +34,7 @@ const TestimonialsPage = () => {
             <div className="relative">
               <BackgroundImgs  />
               <BackgroundImgsTwo />
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center p-8 md:pl-28 md:pr-28 ">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center p-8 md:pl-28 md:pr-28 ">
                 {testimonialObj.map((testimonial, index) => (
                   <TestimonialCard key={index} {...testimonial} />
                 ))}

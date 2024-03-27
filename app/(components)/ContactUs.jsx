@@ -69,7 +69,7 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 items-center justify-center gap-2 p-8 2xl:p-36 md:grid-cols-2 md:p-24 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
           <div className="grid items-center justify-center md:w-auto">
             <Image
-              src="/contactus/contactus.jpg"
+              src="/contactus/contactus.webp"
               alt="Contact Us Image"
               width={300}
               height={300}
@@ -180,7 +180,7 @@ const ContactUs = () => {
             <div className="order-1 md:order-2">
               <div className="flex items-center justify-center flex-shrink ">
                 <Image
-                  src={"/booknow/frenchie1.png"}
+                  src={"/booknow/frenchie1.webp"}
                   alt="French Bulldog"
                   width={250}
                   height={250}
