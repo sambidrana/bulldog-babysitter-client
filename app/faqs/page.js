@@ -17,7 +17,7 @@ const FAQsPage = () => {
         </div>
         <div className="mt-10 text-white">
           <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
-            FAQ's
+            FAQ`&apos;s
           </h2>
           <p className="p-2 md:text-lg font-serif tracking-wide">
             Browse our frequently asked questions for swift answers to common
