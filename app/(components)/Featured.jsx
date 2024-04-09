@@ -32,16 +32,16 @@ const Featured = () => {
             className="opacity-50"
           />
         </div>
-        <div className="absolute z-[-1] top-[40%] right-[10%]">
+        <div className="absolute z-[-1] top-[40%] right-[10%] ">
           <Image
             src={"/background/bg1.webp"}
             width={550}
             height={550}
             alt="Background Decoration"
-            className="opacity-50"
+            className="opacity-50 "
           />
         </div>
-        <div className="absolute z-[-1] top-[8%] right-[25%]">
+        <div className="absolute z-[-1] top-[8%] right-[25%] ">
           <Image
             src={"/background/bg6.webp"}
             width={50}
@@ -62,10 +62,10 @@ const Featured = () => {
                     width={30}
                     height={20}
                     alt="Background Decoration"
-                    className="mr-10 "
+                    className="mr-10"
                   />
                 </div>
-                <p className="font-serif tracking-widest">
+                <p className="font-serif tracking-widest animate-bounce">
                   The Bulldog Babysitter
                 </p>
                 <div>
@@ -74,7 +74,7 @@ const Featured = () => {
                     width={30}
                     height={20}
                     alt="Background Decoration"
-                    className="ml-10"
+                    className="ml-10 "
                   />
                 </div>
               </div>
@@ -85,7 +85,7 @@ const Featured = () => {
               style={{
                 position: "relative",
                 paddingBottom: "35.25%",
-                // paddingTop: "35.25%",
+                // paddingTop: "50.25%",
                 height: 0,
                 overflow: "hidden",
               }}
@@ -98,7 +98,7 @@ const Featured = () => {
                   width: "100%",
                   height: "100%",
                 }}
-                src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?autoplay=1&controls=0&start=1&showinfo=0&loop=1&mute=1"
+                src="https://www.youtube-nocookie.com/embed/Zu7FBqEcNNQ?si=ffALGUKRIC_1APop&amp;controls=0&amp;start=1&amp;autoplay=1&amp;showinfo=0&amp;loop=1&amp;mute=1" 
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -121,3 +121,44 @@ const Featured = () => {
 };
 
 export default Featured;
+
+{/* 1gb
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube-nocookie.com/embed/Zu7FBqEcNNQ?si=ffALGUKRIC_1APop?autoplay=1&controls=0&start=1&showinfo=0&loop=1&mute=1"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>; 
+
+*/}
+
+
+{/* <div
+className="flex-grow flex justify-center items-center "
+style={{
+  position: "relative",
+  paddingBottom: "35.25%",
+  // paddingTop: "35.25%",
+  height: 0,
+  overflow: "hidden",
+}}
+>
+<iframe
+  style={{
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+  }}
+  src="https://www.youtube-nocookie.com/embed/VKXt9sPGBJM?autoplay=1&controls=0&start=1&showinfo=0&loop=1&mute=1"
+  title="YouTube video player"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+</div> */}

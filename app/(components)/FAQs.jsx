@@ -17,9 +17,11 @@ const FAQs = () => {
   return (
     <>
       {faqObj.map((obj, index) => (
-        <div key={index} className="border-dotted border-b-2 border-sky-300">
-          <div className="flex items-center p-2 justify-between text-blue-500">
-            <h3 className="font-semibold md:text-lg text-base tracking-wide">
+        // <div key={index} className="border-dotted border-b-2 border-sky-300">
+        <div key={index} className="border-dotted border-b-2 border-[#a0b95d]">
+          {/* <div className="flex items-center p-2 justify-between text-blue-500"> */}
+          <div className="flex items-center p-2 justify-between text-[#a0b95d]">
+            <h3 className="font-semibold md:text-xl text-base tracking-wide">
               {obj.heading}
             </h3>
 
@@ -48,10 +50,10 @@ const FAQs = () => {
 
           <div className={visibleSections[index] ? "block md:p-2" : "hidden"}>
             {obj.answers.map((answer, index) => (
-              <ul key={index} className="ml-8 text-sm md:text-base">
+              <ul key={index} className="ml-8 text-sm md:text-lg">
                 <li
                   key={index}
-                  className="p-2 tracking-wide text-gray-600 list-disc"
+                  className="p-2 tracking-wide text-gray-700 list-disc"
                 >
                   {answer}
                 </li>
@@ -59,7 +61,7 @@ const FAQs = () => {
             ))}
             {obj?.subPoints?.map((sub, index) => (
               <ul key={index} className="ml-16 text-sm md:text-base">
-                <li className=" p-1 tracking-wide text-gray-600 list-disc">
+                <li className=" p-1 tracking-wide text-gray-700 list-disc">
                   {sub}
                 </li>
               </ul>

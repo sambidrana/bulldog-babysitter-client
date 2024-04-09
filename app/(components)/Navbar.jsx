@@ -15,6 +15,7 @@ import React, { useEffect, useState } from "react";
 const Navbar = () => {
   const { user, isLoaded } = useUser();
   const pathName = usePathname();
+
   const [toggleMenu, setToggleMenu] = useState(true);
   const isAdmin =
     user && user.publicMetadata && user.publicMetadata.role === "admin";
@@ -23,73 +24,122 @@ const Navbar = () => {
     setToggleMenu((prev) => !prev);
   }
 
+  // const activeLink = {pathName}
+
   return (
     <>
-      <nav className="flex justify-between items-center w-[92%] mx-auto p-1">
-        <div className="w-20 md:w-24">
-          <a href="/">
-            <Image
-              src="/logo/logo1.png"
-              className="rounded-full"
-              width={200}
-              height={200}
-              alt="Logo"
-              priority
-            />
-          </a>
+      {/* <nav className="flex justify-between items-center w-[92%] mx-auto pt-4 pb-6"> */}
+      <nav className="flex justify-between w-[92%] mx-auto pt-5 pb-6 md:pt-10 md:pb-5">
+        <div className="relative bottom-3 right-1  md:bottom-7 md:right-7 md:w-24">
+          <div className="absolute w-20 md:w-32">
+            <a href="/">
+              <Image
+                src="/logo/logo1.png"
+                className="rounded-full"
+                width={200}
+                height={200}
+                alt="Logo"
+                priority
+              />
+            </a>
+          </div>
         </div>
         <div
-          className={`md:static absolute bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
+          className={`md:static absolute border-b-2 md:border-b-0 bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
             toggleMenu ? "top-[-100%]" : "top-[11%]"
           }`}
         >
-          <ul className="flex md:flex-row flex-col md:items-center gap-12 md:gap-[4vw]">
-            <li>
+          <ul className="flex md:flex-row flex-col md:items-center gap-10 md:gap-[3vw] font-serif text-black">
+            {/* <li className={pathName === "/" ? "text-[#A9C274]" : "text-black"}>
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
+                href="/"
+                onClick={onToggleMenu}
+              >
+                Home
+              </Link>
+            </li> */}
+            <li
+              className={
+                pathName === "/booking" ? "text-[#A9C274]" : "text-black"
+              }
+            >
+              <Link
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
                 href="/booking"
                 onClick={onToggleMenu}
               >
                 Booking
               </Link>
             </li>
-            <li>
+            <li
+              className={
+                pathName === "/gallery" ? "text-[#A9C274]" : "text-black"
+              }
+            >
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
                 href="/gallery"
                 onClick={onToggleMenu}
               >
                 Gallery
               </Link>
             </li>
-            <li>
+            <li
+              className={
+                pathName === "/testimonials" ? "text-[#A9C274]" : "text-black"
+              }
+            >
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
                 href="/testimonials"
                 onClick={onToggleMenu}
               >
                 Testimonial
               </Link>
             </li>
-            <li>
+            <li
+              className={
+                pathName === "/services" ? "text-[#A9C274]" : "text-black"
+              }
+            >
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
+                href="/services"
+                onClick={onToggleMenu}
+              >
+                Services
+              </Link>
+            </li>
+            <li
+              className={
+                pathName === "/contact" ? "text-[#A9C274]" : "text-black"
+              }
+            >
+              <Link
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
                 href="/contact"
                 onClick={onToggleMenu}
               >
                 Contact
               </Link>
             </li>
-            <li>
+            <li
+              className={pathName === "/faqs" ? "text-[#A9C274]" : "text-black"}
+            >
               <Link
-                className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
+                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
                 href="/faqs"
                 onClick={onToggleMenu}
               >
                 FAQ&apos;s
               </Link>
             </li>
-            <li>
+            <li
+              className={
+                pathName === "/about" ? "text-[#A9C274]" : "text-black"
+              }
+            >
               <Link
                 className="flex transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
                 href="/about"

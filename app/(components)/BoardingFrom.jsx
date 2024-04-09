@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 const steps = [
   {
     id: "Step 1",
-    title: "Ownre's Information",
+    title: "Owner's Information",
     fields: ["firstName", "lastName", "phone", "email"],
   },
   {

@@ -17,12 +17,12 @@ const Gallery = () => {
               width={300}
               height={300}
               alt="Main Gallery Image"
-              className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-fit"
+              className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] max-w-[220px] md:max-w-[350px] 2xl:w-fit"
               priority
             />
           </div>
           <div className="mt-10 text-white">
-            <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide">
+            <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
               Gallery
             </h2>
             <p className="p-2 md:text-lg font-serif tracking-wide">

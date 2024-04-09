@@ -13,15 +13,15 @@ const TestimonialsPage = () => {
           <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-36 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
             <div className="grid items-center justify-center md:w-auto">
               <Image
-                src="/testimonial/testimonial3.webp"
+                src="/gallery/g7.webp"
                 width={500}
                 height={500}
-                className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-fit"
+                className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] max-w-[300px] md:max-w-[550px] 2xl:w-fit"
                 alt="Testimonial Image."
               />
             </div>
             <div className="mt-10 text-white">
-              <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide">
+              <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
                 Testimonials
               </h2>
               <p className="p-2 md:text-lg font-serif tracking-wide">

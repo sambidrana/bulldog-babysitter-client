@@ -14,12 +14,12 @@ const AboutUs = () => {
               width={500}
               height={500}
               alt="bulldogFamily"
-              className="min-w-[300px] border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-full"
+              className="max-w-[270px] md:max-w-[450px]  border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] 2xl:w-full"
             />
           </div>
 
           <div className="mt-10 md:p-10 text-white">
-            <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide">
+            <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
               ABOUT US
             </h2>
             <p className="p-2 md:text-lg font-serif tracking-wide">
