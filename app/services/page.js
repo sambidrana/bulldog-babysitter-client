@@ -40,7 +40,7 @@ const ServicePage = () => {
             </div>
           </div>
 
-          <ul className="list-disc p-10 text-base md:text-lg">
+          <ul className="list-disc p-10 text-sm md:text-lg">
             <li className="mb-2">
               For a 24-hour period, we charge $70 per dog per night. For
               instance, if you drop off your dog at 11 am, the pick-up time

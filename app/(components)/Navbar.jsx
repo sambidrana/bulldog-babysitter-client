@@ -46,10 +46,10 @@ const Navbar = () => {
         </div>
         <div
           className={`md:static absolute border-b-2 md:border-b-0 bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
-            toggleMenu ? "top-[-100%]" : "top-[11%]"
+            toggleMenu ? "top-[-100%]" : "top-[12%]"
           }`}
         >
-          <ul className="flex md:flex-row flex-col md:items-center gap-10 md:gap-[3vw] font-serif text-black">
+          <ul className="flex pt-6 pb-4 md:pt-0 md:pb-1 md:flex-row flex-col md:items-center gap-10 md:gap-[3vw] font-serif text-black">
             {/* <li className={pathName === "/" ? "text-[#A9C274]" : "text-black"}>
               <Link
                 className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
