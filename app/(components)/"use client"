@@ -68,27 +68,17 @@ export const BoardingForm = ({ userId }) => {
     let uploadedVaccineUrl = "";
     //Uploading the petImage
 
-    if (petImage && vaccineImage) {
+    if (petImage) {
       const formData = new FormData();
-      formData.append("petImage", petImage);
-      formData.append("vaccineImage", vaccineImage);
-      formData.append("userID", userId);
-
+      formData.append("file", petImage);
       try {
         const response = await axios.post(`${apiBaseUrl}/upload`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
-        
-        uploadedImageUrl = response.data.links.petImage; // Store the URL in a temporary variable
-        uploadedVaccineUrl = response.data.links.vaccineImage; // Store the URL in a temporary variable
-
-        console.log("uploadedImageUrl" + uploadedImageUrl, "uploadedVaccineUrl" + uploadedVaccineUrl)
-
+        uploadedImageUrl = response.data.link; // Store the URL in a temporary variable
         setImageUrl(uploadedImageUrl); // Update state (optional, if you need it elsewhere)
-        setVaccineUrl(uploadedVaccineUrl); // Update state (optional, if you need it elsewhere)
-
         // setImageUrl([...imageUrl, response.data]);
       } catch (error) {
         toast.error("Failed to upload the image. Please try again.", {
@@ -106,7 +96,7 @@ export const BoardingForm = ({ userId }) => {
     }
 
     //Uploading the vaccineImage
-    /*
+
     if (vaccineImage) {
       const formData = new FormData();
       formData.append("file", vaccineImage);
@@ -137,7 +127,7 @@ export const BoardingForm = ({ userId }) => {
         // console.error("Error uploading file:", error);
       }
     }
-*/
+
     //Rest of the form data
     const boardingData = {
       firstName,
@@ -255,6 +245,7 @@ export const BoardingForm = ({ userId }) => {
   };
 
   const handleImageUpload = async (e) => {
+
     if (e.target.files?.[0]) {
       setPetImage(e.target.files[0]);
       const fileReader = new FileReader();
@@ -266,6 +257,7 @@ export const BoardingForm = ({ userId }) => {
   };
 
   const handleVaccineUpload = async (e) => {
+
     if (e.target.files?.[0]) {
       setVaccineImage(e.target.files[0]);
       const fileReader = new FileReader();

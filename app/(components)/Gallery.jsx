@@ -25,10 +25,10 @@ const Gallery = () => {
             <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
               Gallery
             </h2>
-            <p className="p-2 md:text-lg font-serif tracking-wide">
-              Meet our esteemed guests of honor &ndash; where every tail wag
-              tells a story and every bark is a song of joy. Dive into our world
-              of paws, play, and a whole lot of fur-flying fun!
+            <p className="p-2 md:text-lg font-serif tracking-wide text-gray-700">
+              Come and meet our special guests – where every tail wag tells a
+              story, and every bark is a song of joy. Dive into our world of
+              paws, play, and a whole lot of fur-flying fun!
             </p>
           </div>
         </div>

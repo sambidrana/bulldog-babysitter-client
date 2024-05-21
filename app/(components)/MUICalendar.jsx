@@ -14,6 +14,7 @@ export default function MUICalendar({ userId }) {
   const [startTime, setStartTime] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [endTime, setEndTime] = useState(null);
+  const [requirePickup, setRequirePickup] = useState(false);
 
   const [disabledDates, setDisabledDates] = useState([]);
   const [openingTime, setOpeningTime] = useState("");
@@ -25,11 +26,15 @@ export default function MUICalendar({ userId }) {
       try {
         // Fetch disabled dates
         const responseDates = await axios.get(`${apiBaseUrl}/settings`);
-        if (responseDates.data && responseDates.data.disabledDates) {
+
+        // console.log(responseDates.data[0].disabledDates)
+        if (responseDates.data && responseDates.data[0].disabledDates) {
+          // console.log(responseDates.data[0].disabledDates.map((date) => dayjs(date)))
           setDisabledDates(
-            responseDates.data.disabledDates.map((date) => dayjs(date))
+            responseDates.data[0].disabledDates.map((date) => dayjs(date))
           );
         }
+
       } catch (error) {
         console.error("Error fetching disabled dates:", error);
       }
@@ -51,6 +56,46 @@ export default function MUICalendar({ userId }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // console.log(disabledDates)
+
+  /*
+  const dateStringToMilliseconds = (dateString) => {
+    const dateParts = dateString.split("/");
+    const year = parseInt(dateParts[2]);
+    const month = parseInt(dateParts[1]) - 1; // Months are zero-based
+    const day = parseInt(dateParts[0]);
+
+    const dateObject = new Date(year, month, day);
+    console.log("dateObject" + dateObject);
+    console.log("dateObjectgettime" + dateObject.getTime());
+    return dateObject.getTime();
+  };
+  */
+  const dateStringToMilliseconds = (dateString, timeString) => {
+    const [day, month, year] = dateString.split("/").map(Number);
+    const [hours, minutes] = timeString.split(":").map(Number);
+
+    const dateObject = new Date(year, month - 1, day, hours, minutes);
+    return dateObject.getTime();
+  };
+
+  /*
+  const millisecondsToDays = (milliseconds) => {
+    const millisecondsInDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
+    return Math.ceil(milliseconds / millisecondsInDay); // Use ceil to round up
+  };
+  */
+  const millisecondsToDaysAndHours = (milliseconds) => {
+    const millisecondsInDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
+    const millisecondsInHour = 1000 * 60 * 60; // Number of milliseconds in an hour
+  
+    const totalDays = Math.floor(milliseconds / millisecondsInDay);
+    const remainingMilliseconds = milliseconds % millisecondsInDay;
+    const totalHours = Math.floor(remainingMilliseconds / millisecondsInHour);
+  
+    return { totalDays, totalHours };
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -58,12 +103,36 @@ export default function MUICalendar({ userId }) {
     const formattedEndDate = dayjs(endDate).format("DD/MM/YYYY");
     const formattedStartTime = dayjs(startTime).format("HH:mm");
     const formattedEndTime = dayjs(endTime).format("HH:mm");
+    
+    /*
+    
+    const startDateMiliSeconds = dateStringToMilliseconds(formattedStartDate);
+    console.log("startDateMiliSeconds" + startDateMiliSeconds);
+    const endDateMiliSeconds = dateStringToMilliseconds(formattedEndDate);
+    console.log("endDateMiliSeconds" + endDateMiliSeconds);
+    const totalMilliseconds = endDateMiliSeconds - startDateMiliSeconds;
+    console.log("totalMilliseconds" + totalMilliseconds);
+    
+    const totalDays = millisecondsToDays(totalMilliseconds);
+    console.log("totalDays" + totalDays);
+    */
+
+    const startDateMiliSeconds = dateStringToMilliseconds(formattedStartDate, formattedStartTime);
+    const endDateMiliSeconds = dateStringToMilliseconds(formattedEndDate, formattedEndTime);
+    const totalMilliseconds = endDateMiliSeconds - startDateMiliSeconds;
+    const { totalDays, totalHours } = millisecondsToDaysAndHours(totalMilliseconds);
+
+    // console.log("Total Days:", totalDays);
+    // console.log("Total Hours:", totalHours);
 
     const userBookingInfo = {
       startDate: formattedStartDate,
       endDate: formattedEndDate,
       startTime: formattedStartTime,
       endTime: formattedEndTime,
+      requirePickup,
+      totalDays,
+      totalHours,
       userId,
     };
 
@@ -89,6 +158,7 @@ export default function MUICalendar({ userId }) {
         setEndDate(null);
         setStartTime(null);
         setEndTime(null);
+        setRequirePickup(false);
       } else {
         // console.log("Data sent but something failed", response);
         toast.error(
@@ -178,13 +248,14 @@ export default function MUICalendar({ userId }) {
                   }}
                   minDate={dayjs(new Date())}
                   format="DD/MM/YYYY"
-                  shouldDisableDate={checkIfDateDisabled} 
+                  shouldDisableDate={checkIfDateDisabled}
                 />
                 <p className="p-2 text-2xl">-</p>
                 <DatePicker
                   label="End Date"
                   value={endDate}
                   onChange={(newValue) => {
+                    // console.log(endDate);
                     setEndDate(newValue);
                   }}
                   minDate={dayjs(startDate).add(2, "day")}
@@ -216,7 +287,22 @@ export default function MUICalendar({ userId }) {
                   ampm={false}
                 />
               </div>
-              <div className=" pt-20">
+
+              <div className="mt-10 mr-10 font-light text-gray-500 text-base md:text-lg">
+                <div className="border border-gray-300 rounded-md pl-4 pr-4 pt-2 pb-2 ">
+                  <label>Pick up required?</label>
+                  <input
+                    type="checkbox"
+                    className="ml-10"
+                    checked={requirePickup} // Use checked attribute to reflect the state
+                    onChange={(e) => {
+                      setRequirePickup(e.target.checked); // Update the state with the checked value
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div className=" pt-10">
                 <button
                   className="p-2 px-20 bg-[#A9C274] hover:bg-[#7a9343] text-white rounded-md"
                   onClick={handleSubmit}

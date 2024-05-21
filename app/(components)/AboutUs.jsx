@@ -22,13 +22,15 @@ const AboutUs = () => {
             <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
               ABOUT US
             </h2>
-            <p className="p-2 md:text-lg font-serif tracking-wide">
-              Welcome to The Bulldog Babysitter, the ultimate haven for your
-              beloved bulldogs! Founded in 2015, we have dedicated ourselves to
-              providing specialized care exclusively for bulldogs. We understand
-              the unique charm of these stout, wrinkled-faced companions and
-              recognize that their distinctive physique and temperament require
-              particular attention.
+            <p className="text-gray-700 p-2 md:text-lg font-serif tracking-wide">
+              Welcome to the bulldog babysitter the ultimate haven for your
+              beloved Frenchies.
+              <br />
+              Founded in 2015 we have dedicated ourselves to providing
+              specialized care exclusively for French Bulldogs.
+              <br />
+              We understand that Frenchies are not your average dogs and we make
+              sure to treat them like it’s their second home.
             </p>
           </div>
         </div>
@@ -42,13 +44,13 @@ const AboutUs = () => {
                   About Bulldog Babysitters
                 </h2>
                 <p className="text-gray-600 md:text-lg p-2">
-                  Hi Jacki here, owner and head Frenchie Cuddler. I Started the
-                  Bulldog Babysitter in 2015 because I was anxious about leaving
-                  my 2 Frenchie&apos;s Maximus 9 and Zelda 7 with just anyone
-                  and realized it was a very stressful decision indeed.
-                  Frenchie&apos;s are unique and have needs that other breeds
-                  don&apos;t and having two of my own I know how to meet those
-                  needs.
+                  Hi Jacki &amp; John, here, owners and devoted Frenchie
+                  Cuddlers. We Started the Bulldog Babysitter in 2015 because we
+                  were anxious about leaving our 2 Frenchie&#39;s Maximus and
+                  Zelda with just anyone and realized it was a very stressful
+                  decision indeed. Frenchie&#39;s are unique and have needs that
+                  other breeds don&#39;t and having two of my own I know how to
+                  meet those needs.
                 </p>
               </div>
               <div className="p-6">
@@ -59,18 +61,18 @@ const AboutUs = () => {
                   <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
                     Expertise:
                   </span>{" "}
-                  At The Bulldog Babysitter, we&apos;re not just regular dog
-                  sitters. Our team has undergone specific training to
-                  understand the intricacies of bulldog care. From their dietary
-                  needs to their playful nature, we&apos;ve got it all covered.
+                  Expertise: at the Bulldog babysitter we are not just regular
+                  sitters, we own Frenchie’s, we know Frenchie’s ad we are part
+                  of the French Bulldog community
                 </p>
                 <p className="text-gray-600 md:text-lg p-2">
                   <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">
                     Facilities:
                   </span>{" "}
-                  Nestled in [Location], our facility boasts spacious play
-                  areas, comfortable resting zones, and a health clinic
-                  specifically tailored for the well-being of bulldogs.
+                  Located in the lovely heart of Narre Warren North, our
+                  facility boasts spacious paddocks to run in and a home-based
+                  setting where your Frenchy isn’t left outside in a run they
+                  sleep on the lounge or dog beds inside our house. 
                 </p>
                 <p className="text-gray-600 md:text-lg p-2">
                   <span className="font-semibold md:text-xl text-[#A9C274] tracking-wide ">

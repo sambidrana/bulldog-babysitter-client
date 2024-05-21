@@ -25,13 +25,14 @@ const Navbar = () => {
   }
 
   // const activeLink = {pathName}
-
+//sm-640
+//md:768px
   return (
     <>
       {/* <nav className="flex justify-between items-center w-[92%] mx-auto pt-4 pb-6"> */}
       <nav className="flex justify-between w-[92%] mx-auto pt-5 pb-6 md:pt-10 md:pb-5">
-        <div className="relative bottom-3 right-1  md:bottom-7 md:right-7 md:w-24">
-          <div className="absolute w-20 md:w-32">
+        <div className="relative bottom-3 right-1 md:bottom-7 md:right-7 md:w-24 ">
+          <div className="absolute w-20 md:w-32 ">
             <a href="/">
               <Image
                 src="/logo/logo1.png"
@@ -45,20 +46,12 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`md:static absolute border-b-2 md:border-b-0 bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5 ${
+          className={`md:static absolute border-b-2 md:border-b-0 bg-white md:min-h-fit min-h-[60vh] z-50 left-0 duration-500 md:w-auto w-full flex items-center px-5  ${
             toggleMenu ? "top-[-100%]" : "top-[12%]"
           }`}
         >
-          <ul className="flex pt-6 pb-4 md:pt-0 md:pb-1 md:flex-row flex-col md:items-center gap-10 md:gap-[3vw] font-serif text-black">
-            {/* <li className={pathName === "/" ? "text-[#A9C274]" : "text-black"}>
-              <Link
-                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm"
-                href="/"
-                onClick={onToggleMenu}
-              >
-                Home
-              </Link>
-            </li> */}
+          <ul className="flex flex-col pt-6 pb-4  md:flex-row md:pt-0 md:pb-1  md:items-center gap-6 ml-6 font-serif text-black flex-wrap">
+            
             <li
               className={
                 pathName === "/booking" ? "text-[#A9C274]" : "text-black"
@@ -156,7 +149,7 @@ const Navbar = () => {
               <UserButton showName="true" afterSignOutUrl="/" />
             </div>
           ) : (
-            <SignInButton className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2" />
+            <SignInButton className="transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white" />
           )}
           <button className="md:hidden" onClick={onToggleMenu}>
             {toggleMenu ? (

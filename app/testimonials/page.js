@@ -8,15 +8,14 @@ import BackgroundImgsTwo from "../(components)/BackgroundImgsTwo";
 const TestimonialsPage = () => {
   return (
     <>
-      <div>
         <div>
-          <div className="grid grid-cols-1 items-center justify-center gap-2 p-12 2xl:p-36 md:grid-cols-2 md:p-36 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
-            <div className="grid items-center justify-center md:w-auto">
+          <div className="grid grid-cols-1 items-center justify-center max-w-[650px]:grid-cols-2 gap-4 p-12 2xl:p-36 md:grid-cols-2  md:p-36 mt-1 bg-gradient-to-r from-[#c0dc84] to-[#A9C264] md:w-auto min-h-[50vh]">
+          <div className="grid items-center justify-center md:w-auto">
               <Image
                 src="/gallery/g7.webp"
                 width={500}
                 height={500}
-                className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] max-w-[300px] md:max-w-[550px] 2xl:w-fit"
+                className="border-4 border-white drop-shadow-[2px_15px_5px_rgba(0,0,0,0.5)] max-w-[300px] md:max-w-[400px] 2xl:w-fit"
                 alt="Testimonial Image."
               />
             </div>
@@ -24,15 +23,15 @@ const TestimonialsPage = () => {
               <h2 className="mb-4 text-xl md:text-3xl font-serif font-bold tracking-wide animate-bounce">
                 Testimonials
               </h2>
-              <p className="p-2 md:text-lg font-serif tracking-wide">
-                Discover why bulldog owners everywhere trust us for caring,
-                reliable, and bulldog-savvy babysitting services.
+              <p className="p-2 md:text-lg font-serif tracking-wide text-gray-700">
+                Discover why Frenchie owners everywhere trust us for caring,
+                reliable, babysitting services.
               </p>
             </div>
           </div>
           <div>
             <div className="relative">
-              <BackgroundImgs  />
+              <BackgroundImgs />
               <BackgroundImgsTwo />
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center p-8 md:pl-28 md:pr-28 ">
                 {testimonialObj.map((testimonial, index) => (
@@ -64,7 +63,6 @@ const TestimonialsPage = () => {
             </svg>
           </div>
         </div>
-      </div>
     </>
   );
 };

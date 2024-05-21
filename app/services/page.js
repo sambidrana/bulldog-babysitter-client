@@ -14,7 +14,7 @@ const ServicePage = () => {
             height={250}
           />
         </div>
-        <div className="flex flex-col items-center tracking-wide  bg-yellow-50 p-1 rounded-md drop-shadow-lg text-gray-600">
+        <div className="flex flex-col md:min-w-[550px] md:max-w-[700px] items-center tracking-wide  bg-yellow-50 p-1 rounded-md drop-shadow-lg text-gray-600">
           <BackgroundImgsTwo />
           <div className="flex items-center justify-center">
             <div>
@@ -26,7 +26,7 @@ const ServicePage = () => {
                 className="mr-10"
               />
             </div>
-            <h1 className="mt-4 text-lg md:text-2xl font-serif font-bold tracking-wider animate-bounce ">
+            <h1 className=" mt-4 text-lg md:text-2xl font-serif font-bold tracking-wider animate-bounce ">
               Boarding Fees
             </h1>
             <div>
