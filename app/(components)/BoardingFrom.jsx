@@ -437,6 +437,7 @@ export const BoardingForm = ({ userId }) => {
                       type="file"
                       className="hidden"
                       required
+                      accept="image/*"
                     />
                   </label>
                 </div>
@@ -548,6 +549,7 @@ export const BoardingForm = ({ userId }) => {
                       type="file"
                       className="hidden"
                       required
+                      accept="image/*"
                     />
                   </label>
                 </div>
