@@ -4,6 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import Compressor from 'compressorjs';
 
 const steps = [
   {
@@ -262,25 +263,65 @@ export const BoardingForm = ({ userId }) => {
     });
   };
 
+  // const handleImageUpload = async (e) => {
+  //   if (e.target.files?.[0]) {
+  //     setPetImage(e.target.files[0]);
+  //     const fileReader = new FileReader();
+  //     fileReader.onloadend = () => {
+  //       setImagePreviewUrl(fileReader.result);
+  //     };
+  //     fileReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
+
+  // const handleVaccineUpload = async (e) => {
+  //   if (e.target.files?.[0]) {
+  //     setVaccineImage(e.target.files[0]);
+  //     const fileReader = new FileReader();
+  //     fileReader.onloadend = () => {
+  //       setVaccinePreviewUrl(fileReader.result);
+  //     };
+  //     fileReader.readAsDataURL(e.target.files[0]);
+  //   }
+  // };
+
   const handleImageUpload = async (e) => {
     if (e.target.files?.[0]) {
-      setPetImage(e.target.files[0]);
-      const fileReader = new FileReader();
-      fileReader.onloadend = () => {
-        setImagePreviewUrl(fileReader.result);
-      };
-      fileReader.readAsDataURL(e.target.files[0]);
+      new Compressor(e.target.files[0], {
+        quality: 0.6, // Adjust the quality here (0 to 1)
+        success(result) {
+          setPetImage(result);
+  
+          const fileReader = new FileReader();
+          fileReader.onloadend = () => {
+            setImagePreviewUrl(fileReader.result);
+          };
+          fileReader.readAsDataURL(result);
+        },
+        error(err) {
+          console.error('Error compressing the image:', err);
+        },
+      });
     }
   };
-
+  
   const handleVaccineUpload = async (e) => {
     if (e.target.files?.[0]) {
-      setVaccineImage(e.target.files[0]);
-      const fileReader = new FileReader();
-      fileReader.onloadend = () => {
-        setVaccinePreviewUrl(fileReader.result);
-      };
-      fileReader.readAsDataURL(e.target.files[0]);
+      new Compressor(e.target.files[0], {
+        quality: 0.6, // Adjust the quality here (0 to 1)
+        success(result) {
+          setVaccineImage(result);
+  
+          const fileReader = new FileReader();
+          fileReader.onloadend = () => {
+            setVaccinePreviewUrl(fileReader.result);
+          };
+          fileReader.readAsDataURL(result);
+        },
+        error(err) {
+          console.error('Error compressing the image:', err);
+        },
+      });
     }
   };
 
