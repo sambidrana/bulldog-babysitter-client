@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider
       appearance={{
         elements: {
-          footer: "hidden",
+          // footer: "hidden",
+          // socialButtons: "hidden",  // Hide all social buttons (including Google)
+
         },
       }}
     >

@@ -60,10 +60,13 @@ export const BoardingForm = ({ userId }) => {
   const [navigationFailed, setNavigationFailed] = useState(false);
 
   // console.log(currentStep);
+  const [isLoading, setIsLoading] = useState(false);
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleBoardingSubmit = async function (e) {
     e.preventDefault();
+    setIsLoading(true);
+
     let uploadedImageUrl = ""; // Temporary variable to hold the uploaded image URL
     let uploadedVaccineUrl = "";
     //Uploading the petImage
@@ -80,11 +83,14 @@ export const BoardingForm = ({ userId }) => {
             "Content-Type": "multipart/form-data",
           },
         });
-        
+
         uploadedImageUrl = response.data.links.petImage; // Store the URL in a temporary variable
         uploadedVaccineUrl = response.data.links.vaccineImage; // Store the URL in a temporary variable
 
-        console.log("uploadedImageUrl" + uploadedImageUrl, "uploadedVaccineUrl" + uploadedVaccineUrl)
+        console.log(
+          "uploadedImageUrl" + uploadedImageUrl,
+          "uploadedVaccineUrl" + uploadedVaccineUrl
+        );
 
         setImageUrl(uploadedImageUrl); // Update state (optional, if you need it elsewhere)
         setVaccineUrl(uploadedVaccineUrl); // Update state (optional, if you need it elsewhere)
@@ -204,6 +210,8 @@ export const BoardingForm = ({ userId }) => {
           },
         }
       );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -564,7 +572,7 @@ export const BoardingForm = ({ userId }) => {
                     type="submit"
                     className=" p-2 px-4 rounded-lg  text-white text-lg bg-[#A9C274] mb-10 hover:bg-[#89a44f]"
                   >
-                    Add Member
+                  {isLoading ? "Sending..." : "Add Member"}
                   </button>
                 </div>
               </div>

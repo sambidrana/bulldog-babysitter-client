@@ -11,10 +11,14 @@ const ContactUs = () => {
   const [email, setEmail] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     const enquiryData = {
       name,
       email,
@@ -33,6 +37,8 @@ const ContactUs = () => {
     } catch (err) {
       // console.log("Could not send data to server");
       notifyError();
+    } finally {
+      setIsLoading(false);
     }
   };
   const notifySuccess = () =>
@@ -170,12 +176,12 @@ const ContactUs = () => {
                   type="submit"
                   className=" p-2 px-4 rounded-lg  text-white bg-[#A9C274] mb-10 hover:bg-[#89a44f]"
                 >
-                  Submit Enquiry
+                  {isLoading ? "Sending..." : "Submit Enquiry"}
                 </button>
               </div>
             </form>
           </div>
-          <div className="order-1 custom-order-two">
+          <div className="order-1 custom-order-two m-auto">
             <div className="flex items-center justify-center flex-shrink ">
               <Image
                 src={"/booknow/frenchie1.webp"}
@@ -185,7 +191,7 @@ const ContactUs = () => {
                 className="w-fit md:w-[20%] h-auto"
               />
             </div>
-            <div className=" md:max-w-[650px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 md:pr-8 md:pl-8 mr-6 ml-6 md:mr-10 md:ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
+            <div className="md:max-w-[650px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 m-auto md:pr-8 md:pl-8 mr-6 ml-6 md:mr-10 md:ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
               <div className="w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-3 md:left-5  "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-2 right-2 md:bottom-2 md:right-5 "></div>
