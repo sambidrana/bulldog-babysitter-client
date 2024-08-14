@@ -1,10 +1,12 @@
 import React from "react";
 import BackgroundImgsTwo from "../../(components)/BackgroundImgsTwo";
 import Image from "next/image";
+import BackgroundImgsMain from "@/app/(components)/BackgroundImgsMain";
 
 const WeddingChaperonePage = () => {
   return (
     <div className="flex items-center justify-center mt-1 min-h-[80vh] bg-gradient-to-r from-[#c0dc84] to-[#A9C264]">
+      <BackgroundImgsMain />
       <div className="relative mt-4 p-8 md:pt-16 md:pb-16 md:pl-64 md:pr-64  ">
         <div className="absolute md:bottom-3 md:right-14">
           <Image
@@ -40,12 +42,11 @@ const WeddingChaperonePage = () => {
             </div>
           </div>
 
-          {/* <h1>Dog Wedding Chaperone Services</h1> */}
           <p className="mt-4 p-4 text-sm md:text-lg">
             Dog wedding chaperone services are specialized offerings for pet
             owners who want their furry friends to be part of their big day.
             These services ensure that dogs are well-cared for and appropriately
-            managed during wedding ceremonies and receptions. Here's a breakdown
+            managed during wedding ceremonies and receptions. Here&apos;s a breakdown
             of what such services typically include and why they might be
             appealing:
           </p>
@@ -55,7 +56,7 @@ const WeddingChaperonePage = () => {
               <strong>Pre-Wedding Consultation:</strong>
               <ul className="list-disc ml-5 mb-2">
                 <li className="mt-1 mb-1.5 list-dash">
-                  Meeting with the couple to understand their dog's needs,
+                  Meeting with the couple to understand their dog&apos;s needs,
                   temperament, and role in the wedding.
                 </li>
                 <li className="list-dash">
@@ -103,7 +104,7 @@ const WeddingChaperonePage = () => {
                   ties, or floral collars.
                 </li>
                 <li className="list-dash">
-                  Ensuring the dog's outfit is comfortable and suitable for the
+                  Ensuring the dog&apos;s outfit is comfortable and suitable for the
                   weather and setting.
                 </li>
               </ul>
@@ -141,7 +142,7 @@ const WeddingChaperonePage = () => {
                   Taking the dog home or to our boarding facility.
                 </li>
                 <li className="list-dash">
-                  Providing a report or photos to the couple detailing the dog's
+                  Providing a report or photos to the couple detailing the dog&apos;s
                   day.
                 </li>
               </ul>
@@ -165,7 +166,7 @@ const WeddingChaperonePage = () => {
             </li>
             <li className="mb-2">
               Safety: Ensuring the dog is safe and not overwhelmed by the
-              event's noise and activity.
+              event&apos;s noise and activity.
             </li>
             <li className="mb-2">
               Convenience: The couple, family, and friends are freed from the
