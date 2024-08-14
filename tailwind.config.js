@@ -12,8 +12,22 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      
+      listStyleType: {
+        dash: '"- "',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      // Define new utility classes
+      const newUtilities = {
+        // Add a utility class named ".list-dash" that applies the custom list style type "dash"
+        ".list-dash": {
+          "list-style-type": '"- "',
+        },
+      };
+      // Register the new utilities with Tailwind
+      addUtilities(newUtilities);
+    },
+  ],
 };

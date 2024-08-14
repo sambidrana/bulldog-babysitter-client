@@ -98,7 +98,7 @@ const Featured = () => {
                   width: "100%",
                   height: "100%",
                 }}
-                src="https://www.youtube-nocookie.com/embed/Zu7FBqEcNNQ?si=ffALGUKRIC_1APop&amp;controls=0&amp;start=1&amp;autoplay=1&amp;showinfo=0&amp;loop=1&amp;mute=1" 
+                src="https://www.youtube-nocookie.com/embed/_rFR3pJuLM4?si=sDUdBIA558yrV6Pl&amp;controls=0&amp;start=1&amp;autoplay=1&amp;showinfo=0&amp;loop=1&amp;mute=0&amp;vq=hd720"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

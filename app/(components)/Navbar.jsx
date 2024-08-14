@@ -25,8 +25,8 @@ const Navbar = () => {
   }
 
   // const activeLink = {pathName}
-//sm-640
-//md:768px
+  //sm-640
+  //md:768px
   return (
     <>
       {/* <nav className="flex justify-between items-center w-[92%] mx-auto pt-4 pb-6"> */}
@@ -51,7 +51,6 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex flex-col pt-6 pb-4  md:flex-row md:pt-0 md:pb-1  md:items-center gap-6 ml-6 font-serif text-black flex-wrap">
-            
             <li
               className={
                 pathName === "/booking" ? "text-[#A9C274]" : "text-black"
@@ -96,14 +95,43 @@ const Navbar = () => {
                 pathName === "/services" ? "text-[#A9C274]" : "text-black"
               }
             >
-              <Link
-                className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer"
-                href="/services"
-                onClick={onToggleMenu}
-              >
-                Services
-              </Link>
+              <div className="relative group">
+                <button className="tracking-wide transition duration-50 hover:bg-[#A9C274] hover:bg-opacity-70 rounded-lg px-4 py-2 hover:text-white hover:shadow-sm cursor-pointer flex items-center">
+                  Services
+                  <svg
+                    className="w-4 h-4 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
+                  </svg>
+                </button>
+                <div className="absolute left-0 w-full md:w-[200px] pt-1 bg-white rounded-lg shadow-lg hidden group-hover:block ">
+                  <Link
+                    href={"/services/boarding-fee"}
+                    className="block px-4 py-2 hover:bg-[#A9C274] hover:text-white"
+                    onClick={onToggleMenu}
+                  >
+                    Boarding Fees
+                  </Link>
+                  <Link
+                    href={"/services/dog-wedding-chaperone"}
+                    className="block px-4 py-2 hover:bg-[#A9C274] hover:text-white"
+                    onClick={onToggleMenu}
+                  >
+                    Dog Wedding Chaperone
+                  </Link>
+                </div>
+              </div>
             </li>
+
             <li
               className={
                 pathName === "/contact" ? "text-[#A9C274]" : "text-black"

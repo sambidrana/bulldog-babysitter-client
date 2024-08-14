@@ -191,7 +191,7 @@ const ContactUs = () => {
                 className="w-fit md:w-[20%] h-auto"
               />
             </div>
-            <div className="md:max-w-[650px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 m-auto md:pr-8 md:pl-8 mr-6 ml-6 md:mr-10 md:ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
+            <div className="md:min-w-[550px] bg-[#e8dbbb] text-white pt-5 md:pt-10 pb-5 md:pb-10 pr-1 pl-1 m-auto md:pr-8 md:pl-8 mr-6 ml-6 md:mr-10 md:ml-10 2xl:mr-32 rounded-md relative drop-shadow-[0px_15px_1px_rgba(0,0,0,0.25)]">
               <div className="w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 md:top-3 md:left-5  "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute top-2 right-2 md:top-3 md:right-5 "></div>
               <div className=" w-2 h-2 md:w-4 md:h-4 bg-white shadow-inner shadow-gray-950 rounded-full absolute bottom-2 right-2 md:bottom-2 md:right-5 "></div>
@@ -223,10 +223,10 @@ const ContactUs = () => {
                   </p>
                 </div>
                 <div className="flex justify-around text-xs p-1 md:p-4 md:text-xl">
-                  <p className="w-1/4 md:w-1/6 font-semibold tracking-widest">
+                  <p className="w-1/4 md:w-2/6 font-semibold tracking-widest">
                     Email:
                   </p>
-                  <p className="w-3/4 md:w-5/6 text-center tracking-wide hover:underline ">
+                  <p className="w-3/4 md:w-4/6 text-center tracking-wide hover:underline ">
                     <a href="mailto:thebulldogbabysitter@gmail.com">
                       thebulldogbabysitter@gmail.com
                     </a>

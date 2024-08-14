@@ -1,8 +1,8 @@
 import React from "react";
-import BackgroundImgsTwo from "../(components)/BackgroundImgsTwo";
+import BackgroundImgsTwo from "../../(components)/BackgroundImgsTwo";
 import Image from "next/image";
 
-const ServicePage = () => {
+const BoardingFeePage = () => {
   return (
     <div className="flex items-center justify-center mt-1 min-h-[80vh] bg-gradient-to-r from-[#c0dc84] to-[#A9C264]">
       <div className="relative mt-4 p-8 md:pt-16 md:pb-16 md:pl-64 md:pr-64  ">
@@ -104,4 +104,4 @@ const ServicePage = () => {
   );
 };
 
-export default ServicePage;
+export default BoardingFeePage;

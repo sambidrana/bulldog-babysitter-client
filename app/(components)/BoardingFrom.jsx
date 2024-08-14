@@ -288,7 +288,7 @@ export const BoardingForm = ({ userId }) => {
   const handleImageUpload = async (e) => {
     if (e.target.files?.[0]) {
       new Compressor(e.target.files[0], {
-        quality: 0.6, // Adjust the quality here (0 to 1)
+        quality: 0.4, // Adjust the quality here (0 to 1)
         success(result) {
           setPetImage(result);
   
@@ -308,7 +308,7 @@ export const BoardingForm = ({ userId }) => {
   const handleVaccineUpload = async (e) => {
     if (e.target.files?.[0]) {
       new Compressor(e.target.files[0], {
-        quality: 0.6, // Adjust the quality here (0 to 1)
+        quality: 0.4, // Adjust the quality here (0 to 1)
         success(result) {
           setVaccineImage(result);
   
@@ -525,7 +525,7 @@ export const BoardingForm = ({ userId }) => {
                     Pet Age <span className="text-red-600">*</span>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     value={petAge}
                     onChange={(e) => setPetAge(e.target.value)}
                     placeholder="3"
