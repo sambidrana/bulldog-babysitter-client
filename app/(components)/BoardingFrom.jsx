@@ -522,7 +522,7 @@ export const BoardingForm = ({ userId }) => {
                     htmlFor="petAge"
                     className="p-4 mr-10 text-gray-500 font-serif font-semibold "
                   >
-                    Pet Age <span className="text-red-600">*</span>
+                    D.O.B <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="date"
