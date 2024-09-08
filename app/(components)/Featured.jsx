@@ -98,7 +98,7 @@ const Featured = () => {
                   width: "100%",
                   height: "100%",
                 }}
-                src="https://www.youtube-nocookie.com/embed/_rFR3pJuLM4?si=sDUdBIA558yrV6Pl&amp;controls=0&amp;start=1&amp;autoplay=1&amp;showinfo=0&amp;loop=1&amp;mute=0&amp;vq=hd720"
+                src="https://www.youtube-nocookie.com/embed/WGZ4YfG2sNc?si=SZf2blnZFoT3yI3o&amp;controls=0&amp;autoplay=1&amp;showinfo=0&amp;loop=1&amp;mute=0&amp;vq=hd720&amp;rel=0"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -122,7 +122,8 @@ const Featured = () => {
 
 export default Featured;
 
-{/* 1gb
+{
+  /* 1gb
 
 <iframe
   width="560"
@@ -135,10 +136,11 @@ export default Featured;
   allowfullscreen
 ></iframe>; 
 
-*/}
+*/
+}
 
-
-{/* <div
+{
+  /* <div
 className="flex-grow flex justify-center items-center "
 style={{
   position: "relative",
@@ -161,4 +163,5 @@ style={{
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
 ></iframe>
-</div> */}
+</div> */
+}
