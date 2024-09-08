@@ -85,9 +85,8 @@ export const BoardingForm = ({ userId }) => {
           },
         });
 
-        uploadedImageUrl = response.data.links.petImage; // Store the URL in a temporary variable
-        uploadedVaccineUrl = response.data.links.vaccineImage; // Store the URL in a temporary variable
-
+        uploadedImageUrl = response.data.links.petImage; // Storing the URL in a temporary variable
+        uploadedVaccineUrl = response.data.links.vaccineImage; 
         console.log(
           "uploadedImageUrl" + uploadedImageUrl,
           "uploadedVaccineUrl" + uploadedVaccineUrl
@@ -106,45 +105,16 @@ export const BoardingForm = ({ userId }) => {
             padding: "26px",
             color: "#713200",
           },
+          
         });
+        setIsLoading(false);
         return; // Stop the function if image upload fails
         // console.error("Error uploading file:", error);
       }
     }
 
     //Uploading the vaccineImage
-    /*
-    if (vaccineImage) {
-      const formData = new FormData();
-      formData.append("file", vaccineImage);
-      try {
-        const response = await axios.post(
-          `${apiBaseUrl}/uploadvaccine`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        uploadedVaccineUrl = response.data.link; // Store the URL in a temporary variable
-        setVaccineUrl(uploadedVaccineUrl); // Update state (optional, if you need it elsewhere)
-        // setImageUrl([...imageUrl, response.data]);
-      } catch (error) {
-        toast.error("Failed to upload the image. Please try again.", {
-          duration: 4000,
-          position: "top-center",
-          style: {
-            border: "1px solid #713200",
-            padding: "26px",
-            color: "#713200",
-          },
-        });
-        return; // Stop the function if image upload fails
-        // console.error("Error uploading file:", error);
-      }
-    }
-*/
+
     //Rest of the form data
     const boardingData = {
       firstName,
@@ -263,27 +233,6 @@ export const BoardingForm = ({ userId }) => {
     });
   };
 
-  // const handleImageUpload = async (e) => {
-  //   if (e.target.files?.[0]) {
-  //     setPetImage(e.target.files[0]);
-  //     const fileReader = new FileReader();
-  //     fileReader.onloadend = () => {
-  //       setImagePreviewUrl(fileReader.result);
-  //     };
-  //     fileReader.readAsDataURL(e.target.files[0]);
-  //   }
-  // };
-
-  // const handleVaccineUpload = async (e) => {
-  //   if (e.target.files?.[0]) {
-  //     setVaccineImage(e.target.files[0]);
-  //     const fileReader = new FileReader();
-  //     fileReader.onloadend = () => {
-  //       setVaccinePreviewUrl(fileReader.result);
-  //     };
-  //     fileReader.readAsDataURL(e.target.files[0]);
-  //   }
-  // };
 
   const handleImageUpload = async (e) => {
     if (e.target.files?.[0]) {
