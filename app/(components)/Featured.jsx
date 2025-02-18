@@ -34,7 +34,7 @@ const Featured = () => {
             {/* Image */}
             {/* <h1 className="pl-2 text-lg animate-pulse font-bold md:text-lg text-[#A9C274] tracking-wide">The Bulldog Babysitter</h1> */}
             <p className="p-4 md:text-lg font-serif tracking-wide text-gray-700">
-              A loving and safe place for your Frenchie while you're away. Book
+              A loving and safe place for your Frenchie while you&apos;re away. Book
               now for top-quality care!
             </p>
           </div>
