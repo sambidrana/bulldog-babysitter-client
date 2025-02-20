@@ -7,11 +7,11 @@ const Featured = () => {
       {/* Main Container */}
       <div className="grid grid-flow-col grid-rows-2">
         {/* Grid 3 */}
-        <div className="flex justify-center items-center h-[40vh]  md:h-auto">
+        <div className="flex justify-center items-center md:h-auto">
           {/* h-[70vh] */}
           <div className="flex items-center justify-center border-[2px] p-[3px] rounded-2xl border-[#A9C274] ">
             <video
-              className=" w-screen max-h-[800px] object-fill rounded-2xl "
+              className=" w-screen max-h-[800px]  object-fill rounded-2xl "
               autoPlay
               muted
               loop
@@ -28,26 +28,38 @@ const Featured = () => {
           </div>
         </div>
 
-        <div className="grid grid-flow-col grid-cols-3 h-[30vh] gap-1 mt-5">
+        <div className="grid grid-rows-3 h-[40vh] sm:h-[70vh] pb-10 pt-5  bg-gray-50 ">
           {/* Grid 1 */}
-          <div className="grid grid-flow-row col-span-2 justify-start place-self-center p-2 ">
+          <div className="flex justify-center items-center p-2 mt-1">
             {/* Image */}
             {/* <h1 className="pl-2 text-lg animate-pulse font-bold md:text-lg text-[#A9C274] tracking-wide">The Bulldog Babysitter</h1> */}
-            <p className="p-4 md:text-lg font-serif tracking-wide text-gray-700">
-              A loving and safe place for your Frenchie while you&apos;re away. Book
-              now for top-quality care!
+            <p className="p-4 sm:text-2xl font-serif tracking-wide text-[#A9C274] drop-shadow-2xl ">
+              A loving and safe place for your Frenchie while you&apos;re away.
+              Book now for top-quality care!
             </p>
           </div>
 
           {/* Grid 2 */}
-          <div className="col-span-1 flex items-end  mb-10 ">
+          <div className="flex justify-center items-center m-auto ">
+            <Image
+              src={"/featured/featured2.webp"}
+              width={550}
+              height={550}
+              alt="Background Decoration"
+              className="w-[270px] sm:w-[1000px] "
+            />
+          </div>
+
+          {/* Grid 3 */}
+
+          <div className="flex justify-center items-center h-[170px] sm:h-[500px] ">
             <a href="/booking">
               <Image
                 src="/featured/bone.png"
                 width={200}
                 height={200}
                 alt="Logo"
-                className="animate-bounce"
+                className="animate-bounce drop-shadow-xl  w-[100px] sm:w-[250px]"
               />
             </a>
           </div>

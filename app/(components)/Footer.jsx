@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <>
       <div
-        className={`flex justify-between items-center p-8 bg-white ${
+        className={`flex justify-between items-center p-8 bg-white  ${
           pathname === "/" ? "" : "border-t-2"
         } `}
 
