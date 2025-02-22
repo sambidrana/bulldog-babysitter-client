@@ -5,7 +5,7 @@ const Featured = () => {
   return (
     <>
       {/* Main Container */}
-      <div className="grid grid-flow-col grid-rows-2 mb-24 ">
+      <div className="grid grid-flow-row mb-10 ">
 
         {/* Grid A */}
         <div className="flex justify-center items-center pt-24 sm:pt-0 max-h-[200px] sm:max-h-[530px] md:max-h-[600px] 3xl:max-h-[1050px] ">
@@ -30,11 +30,22 @@ const Featured = () => {
         </div>
 
         {/* Grid B */}
-        <div className="grid grid-rows-3 h-[300px] sm:h-[400px] md:h-[570px] 3xl:h-[1000px] pt-5 mb-10  bg-gray-100 ">
+        <div className="flex justify-end items-end  h-[150px] 3xl:ml-16 3xl:mr-16  ">
+            <Image
+              src={"/featured/lazy.webp"}
+              width={200}
+              height={200}
+              alt="Background Decoration"
+              className="w-[100px] sm:w-[150px] drop-shadow-lg "
+            />
+          </div>
+
+        {/* Grid C */}
+        <div className="grid grid-rows-3 h-[350px] sm:h-[400px] md:h-[570px] 3xl:h-[1000px] pt-5 mb-10  bg-gray-50 3xl:ml-16 3xl:mr-16 ">
           {/* Grid 1 */}
 
           <div className="flex justify-center items-center h-[50px] sm:h-[200px] ">
-            <a href="/booking">
+            <Link href="/booking">
               <Image
                 src="/featured/booknow.webp"
                 width={200}
@@ -42,7 +53,7 @@ const Featured = () => {
                 alt="Logo"
                 className="animate-bounce drop-shadow-xl w-[110px] sm:w-[250px]"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Grid 2 */} 
@@ -56,13 +67,13 @@ const Featured = () => {
           </div>
 
           {/* Grid 3 */}
-          <div className="flex justify-center items-center m-auto h-auto  ">
+          <div className="flex justify-center items-end h-auto   ">
             <Image
               src={"/featured/featured2.webp"}
-              width={200}
-              height={200}
+              width={1000}
+              height={100}
               alt="Background Decoration"
-              className="w-[350px] sm:w-[1000px] "
+              className="w-[300px] sm:w-[700px] 3xl:w-[1500px] "
             />
           </div>
         </div>
