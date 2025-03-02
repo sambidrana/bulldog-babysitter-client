@@ -8,11 +8,11 @@ const Featured = () => {
       <div className="grid grid-flow-row mb-10 ">
 
         {/* Grid A */}
-        <div className="flex justify-center items-center pt-24 sm:pt-0 max-h-[200px] sm:max-h-[530px] md:max-h-[600px] 3xl:max-h-[1050px] ">
+        <div className="flex justify-center items-center pt-24 sm:pt-0 max-h-[200px] sm:max-h-[530px] md:max-h-[650px] 3xl:max-h-[1050px] ">
           {/* h-[70vh] */}
           <div className="flex items-center justify-center border-[2px] p-[3px] rounded-2xl border-[#A9C274] 3xl:ml-16 3xl:mr-16  ">
             <video
-              className=" w-screen  max-h-[250px] sm:max-h-[380px] md:max-h-[600px] 3xl:max-h-[1000px]   object-fill rounded-2xl "
+              className=" w-screen  max-h-[250px] sm:max-h-[380px] md:max-h-[650px] 3xl:max-h-[1000px]   object-fill rounded-2xl "
               autoPlay
               muted
               loop
@@ -30,7 +30,7 @@ const Featured = () => {
         </div>
 
         {/* Grid B */}
-        <div className="flex justify-end items-end  h-[150px] 3xl:ml-16 3xl:mr-16  ">
+        <div className="flex justify-end items-end  h-[150px] sm:h-[115px] 3xl:ml-16 3xl:mr-16  ">
             <Image
               src={"/featured/lazy.webp"}
               width={200}
@@ -51,7 +51,7 @@ const Featured = () => {
                 width={200}
                 height={200}
                 alt="Logo"
-                className="animate-bounce drop-shadow-xl w-[110px] sm:w-[250px]"
+                className="animate-bounce drop-shadow-xl w-[110px] sm:w-[250px] hover:p-2"
               />
             </Link>
           </div>

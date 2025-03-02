@@ -2,7 +2,7 @@
 import * as React from "react";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { DatePicker, DateField } from "@mui/x-date-pickers/DatePicker";
 import { useState, useEffect } from "react";
 import { TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
@@ -34,7 +34,6 @@ export default function MUICalendar({ userId }) {
             responseDates.data[0].disabledDates.map((date) => dayjs(date))
           );
         }
-
       } catch (error) {
         console.error("Error fetching disabled dates:", error);
       }
@@ -88,11 +87,11 @@ export default function MUICalendar({ userId }) {
   const millisecondsToDaysAndHours = (milliseconds) => {
     const millisecondsInDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
     const millisecondsInHour = 1000 * 60 * 60; // Number of milliseconds in an hour
-  
+
     const totalDays = Math.floor(milliseconds / millisecondsInDay);
     const remainingMilliseconds = milliseconds % millisecondsInDay;
     const totalHours = Math.floor(remainingMilliseconds / millisecondsInHour);
-  
+
     return { totalDays, totalHours };
   };
 
@@ -103,7 +102,7 @@ export default function MUICalendar({ userId }) {
     const formattedEndDate = dayjs(endDate).format("DD/MM/YYYY");
     const formattedStartTime = dayjs(startTime).format("HH:mm");
     const formattedEndTime = dayjs(endTime).format("HH:mm");
-    
+
     /*
     
     const startDateMiliSeconds = dateStringToMilliseconds(formattedStartDate);
@@ -117,10 +116,17 @@ export default function MUICalendar({ userId }) {
     console.log("totalDays" + totalDays);
     */
 
-    const startDateMiliSeconds = dateStringToMilliseconds(formattedStartDate, formattedStartTime);
-    const endDateMiliSeconds = dateStringToMilliseconds(formattedEndDate, formattedEndTime);
+    const startDateMiliSeconds = dateStringToMilliseconds(
+      formattedStartDate,
+      formattedStartTime
+    );
+    const endDateMiliSeconds = dateStringToMilliseconds(
+      formattedEndDate,
+      formattedEndTime
+    );
     const totalMilliseconds = endDateMiliSeconds - startDateMiliSeconds;
-    const { totalDays, totalHours } = millisecondsToDaysAndHours(totalMilliseconds);
+    const { totalDays, totalHours } =
+      millisecondsToDaysAndHours(totalMilliseconds);
 
     // console.log("Total Days:", totalDays);
     // console.log("Total Hours:", totalHours);
@@ -320,10 +326,23 @@ export default function MUICalendar({ userId }) {
                 With &apos;Your Bulldog&apos;s Babysitter, Your Time
                 Choices,&apos; you&apos;re in control of crafting the perfect
                 playdate for your furry friend. Whether it&apos;s an energetic
-                morning romp or a cozy afternoon cuddle, our app ensures that
-                every moment aligns with your bulldog&apos;s unique preferences.
+                morning romp or a cozy afternoon cuddle, our platform ensures
+                that every moment aligns with your bulldog&apos;s unique
+                preferences.
               </p>
+              <p className="font-serif text-red-600 md:text-lg pb-3 mt-10">
+                If you haven't boarded with us before, please complete the
+                boarding process first to avoid cancellation. Click the link
+                below to get started.
+              </p>
+              <a
+                href="/boarding"
+                className=" mt-4 font-serif text-gray-700 md:text-lg hover:underline animate-bounce flex items-center justify-center m-auto"
+              >
+              👉&nbsp;&nbsp;&nbsp;<p className="text-red-600">Start&nbsp;</p> the boarding process&nbsp;&nbsp;&nbsp;👈
+              </a>
             </div>
+            
           </div>
         </div>
         <Toaster />
