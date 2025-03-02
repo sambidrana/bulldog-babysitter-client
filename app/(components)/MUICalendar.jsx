@@ -331,7 +331,7 @@ export default function MUICalendar({ userId }) {
                 preferences.
               </p>
               <p className="font-serif text-red-600 md:text-lg pb-3 mt-10">
-                If you haven't boarded with us before, please complete the
+                If you haven&apos;t boarded with us before, please complete the
                 boarding process first to avoid cancellation. Click the link
                 below to get started.
               </p>
