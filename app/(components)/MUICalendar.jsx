@@ -243,15 +243,15 @@ export default function MUICalendar({ userId }) {
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 min-h-screen pt-32 pb-24 ">
-          <div className="sm:hidden ml-4 mr-4">
-            <p className="font-serif text-red-600 pb-3 ">
+          <div className=" ml-8 mr-8 sm:hidden m-auto">
+            <p className=" text-[13px] font-serif text-red-600 pb-3 ">
               If you haven&apos;t boarded with us before, please complete the
-              boarding process first to avoid cancellation. Click the link below
+              boarding process first to avoid any cancellation. Click the link below
               to get started.
             </p>
             <a
               href="/boarding"
-              className="mt-4 mb-4 font-serif text-gray-700 hover:underline animate-bounce flex items-center justify-center m-auto"
+              className="mt-4 mb-4 text-[14px] font-serif text-gray-700 hover:underline animate-bounce flex items-center justify-center m-auto"
             >
               👉&nbsp;&nbsp;&nbsp;<p className="text-red-600">Start&nbsp;</p>{" "}
               the boarding process&nbsp;&nbsp;&nbsp;👈
