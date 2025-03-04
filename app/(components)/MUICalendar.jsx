@@ -243,6 +243,20 @@ export default function MUICalendar({ userId }) {
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <div className="bg-gradient-to-r from-[#A9C274] via-[#c3e281] to-lime-200 min-h-screen pt-32 pb-24 ">
+          <div className="sm:hidden ml-4 mr-4">
+            <p className="font-serif text-red-600 pb-3 ">
+              If you haven&apos;t boarded with us before, please complete the
+              boarding process first to avoid cancellation. Click the link below
+              to get started.
+            </p>
+            <a
+              href="/boarding"
+              className="mt-4 mb-4 font-serif text-gray-700 hover:underline animate-bounce flex items-center justify-center m-auto"
+            >
+              👉&nbsp;&nbsp;&nbsp;<p className="text-red-600">Start&nbsp;</p>{" "}
+              the boarding process&nbsp;&nbsp;&nbsp;👈
+            </a>
+          </div>
           <div className="  grid grid-cols-1 md:grid-cols-2 items-center p-2 ml-4 mr-4">
             <div className="pb-20 pt-12 p-2 md:ml-28 flex flex-col items-center justify-center md:max-w-[400px] 2xl:max-w-[600px] bg-white shadow-2xl rounded-lg ">
               <div className="flex items-center pt-4 pl-1 pr-1 ">
@@ -279,6 +293,10 @@ export default function MUICalendar({ userId }) {
                   minTime={dayjs(`${openingTime}`, "HH:mm")}
                   maxTime={dayjs(`${closingTime}`, "HH:mm")}
                   ampm={false}
+                  timeSteps={{ minutes: 15 }} // Ensures only 00, 15, 30, 45 are selectable
+                  shouldDisableTime={(value, view) =>
+                    view === "minutes" && value.minute() % 15 !== 0
+                  }
                 />
                 <p className="p-2 text-2xl">-</p>
 
@@ -291,6 +309,10 @@ export default function MUICalendar({ userId }) {
                   minTime={dayjs(`${openingTime}`, "HH:mm")}
                   maxTime={dayjs(`${closingTime}`, "HH:mm")}
                   ampm={false}
+                  timeSteps={{ minutes: 15 }} // Ensures only 00, 15, 30, 45 are selectable
+                  shouldDisableTime={(value, view) =>
+                    view === "minutes" && value.minute() % 15 !== 0
+                  }
                 />
               </div>
 
@@ -330,19 +352,19 @@ export default function MUICalendar({ userId }) {
                 that every moment aligns with your bulldog&apos;s unique
                 preferences.
               </p>
-              <p className="font-serif text-red-600 md:text-lg pb-3 mt-10">
+              <p className="font-serif text-red-600 md:text-lg pb-3 mt-10 hidden sm:block">
                 If you haven&apos;t boarded with us before, please complete the
                 boarding process first to avoid cancellation. Click the link
                 below to get started.
               </p>
               <a
                 href="/boarding"
-                className=" mt-4 font-serif text-gray-700 md:text-lg hover:underline animate-bounce flex items-center justify-center m-auto"
+                className="hidden  mt-4 font-serif text-gray-700 md:text-lg hover:underline animate-bounce sm:flex items-center justify-center m-auto"
               >
-              👉&nbsp;&nbsp;&nbsp;<p className="text-red-600">Start&nbsp;</p> the boarding process&nbsp;&nbsp;&nbsp;👈
+                👉&nbsp;&nbsp;&nbsp;<p className="text-red-600">Start&nbsp;</p>{" "}
+                the boarding process&nbsp;&nbsp;&nbsp;👈
               </a>
             </div>
-            
           </div>
         </div>
         <Toaster />
