@@ -4,10 +4,13 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker, DateField } from "@mui/x-date-pickers/DatePicker";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import { TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
+import Loading from "../loading";
 
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
@@ -20,6 +23,49 @@ export default function MUICalendar({ userId }) {
   const [openingTime, setOpeningTime] = useState("");
   const [closingTime, setClosingTime] = useState("");
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
+
+  const [isUserBoarded, setIsUserBoarded] = useState(null);
+
+  const router = useRouter();
+
+
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const checkUserBoarding = async () => {
+      try {
+        const responseBoarding = await axios.get(`${apiBaseUrl}/boarding`);
+        if (!isMounted) return;
+
+        const boardingData = responseBoarding.data;
+        console.log(boardingData);
+
+        const userExist = boardingData.some(
+          (record) => record.userId === userId
+        );
+
+        setIsUserBoarded(userExist);
+
+        if (!userExist) {
+          setTimeout(() => {
+            router.push("/boarding");
+          }, 0); 
+        }
+      } catch (error) {
+        console.error("Error fetching Boarding Data", error);
+      }
+    };
+
+    checkUserBoarding();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [userId, router]);
+
+
+  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -239,6 +285,11 @@ export default function MUICalendar({ userId }) {
       date.isSame(disabledDate, "day")
     );
   };
+
+
+  // ⏳ Show "Checking Boarding Data..." while verifying
+
+
   return (
     <>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -246,8 +297,8 @@ export default function MUICalendar({ userId }) {
           <div className=" ml-8 mr-8 sm:hidden m-auto">
             <p className=" text-[13px] font-serif text-red-600 pb-3 ">
               If you haven&apos;t boarded with us before, please complete the
-              boarding process first to avoid any cancellation. Click the link below
-              to get started.
+              boarding process first to avoid any cancellation. Click the link
+              below to get started.
             </p>
             <a
               href="/boarding"
