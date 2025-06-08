@@ -10,7 +10,6 @@ import { TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import Loading from "../loading";
 
 export default function MUICalendar({ userId }) {
   const [startDate, setStartDate] = useState(null);
@@ -25,10 +24,9 @@ export default function MUICalendar({ userId }) {
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const [isUserBoarded, setIsUserBoarded] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
-
-
 
   useEffect(() => {
     let isMounted = true;
@@ -50,7 +48,7 @@ export default function MUICalendar({ userId }) {
         if (!userExist) {
           setTimeout(() => {
             router.push("/boarding");
-          }, 0); 
+          }, 0);
         }
       } catch (error) {
         console.error("Error fetching Boarding Data", error);
@@ -63,9 +61,6 @@ export default function MUICalendar({ userId }) {
       isMounted = false;
     };
   }, [userId, router]);
-
-
-  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -103,19 +98,6 @@ export default function MUICalendar({ userId }) {
 
   // console.log(disabledDates)
 
-  /*
-  const dateStringToMilliseconds = (dateString) => {
-    const dateParts = dateString.split("/");
-    const year = parseInt(dateParts[2]);
-    const month = parseInt(dateParts[1]) - 1; // Months are zero-based
-    const day = parseInt(dateParts[0]);
-
-    const dateObject = new Date(year, month, day);
-    console.log("dateObject" + dateObject);
-    console.log("dateObjectgettime" + dateObject.getTime());
-    return dateObject.getTime();
-  };
-  */
   const dateStringToMilliseconds = (dateString, timeString) => {
     const [day, month, year] = dateString.split("/").map(Number);
     const [hours, minutes] = timeString.split(":").map(Number);
@@ -124,12 +106,6 @@ export default function MUICalendar({ userId }) {
     return dateObject.getTime();
   };
 
-  /*
-  const millisecondsToDays = (milliseconds) => {
-    const millisecondsInDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
-    return Math.ceil(milliseconds / millisecondsInDay); // Use ceil to round up
-  };
-  */
   const millisecondsToDaysAndHours = (milliseconds) => {
     const millisecondsInDay = 1000 * 60 * 60 * 24; // Number of milliseconds in a day
     const millisecondsInHour = 1000 * 60 * 60; // Number of milliseconds in an hour
@@ -148,19 +124,6 @@ export default function MUICalendar({ userId }) {
     const formattedEndDate = dayjs(endDate).format("DD/MM/YYYY");
     const formattedStartTime = dayjs(startTime).format("HH:mm");
     const formattedEndTime = dayjs(endTime).format("HH:mm");
-
-    /*
-    
-    const startDateMiliSeconds = dateStringToMilliseconds(formattedStartDate);
-    console.log("startDateMiliSeconds" + startDateMiliSeconds);
-    const endDateMiliSeconds = dateStringToMilliseconds(formattedEndDate);
-    console.log("endDateMiliSeconds" + endDateMiliSeconds);
-    const totalMilliseconds = endDateMiliSeconds - startDateMiliSeconds;
-    console.log("totalMilliseconds" + totalMilliseconds);
-    
-    const totalDays = millisecondsToDays(totalMilliseconds);
-    console.log("totalDays" + totalDays);
-    */
 
     const startDateMiliSeconds = dateStringToMilliseconds(
       formattedStartDate,
@@ -197,11 +160,17 @@ export default function MUICalendar({ userId }) {
       notifyErrorField();
       return;
     }
+
+    setIsSubmitting(true); // 🔒 Disable the button
+
+
     try {
       const response = await axios.post(
         `${apiBaseUrl}/userbookings`,
         userBookingInfo
       );
+
+      console.log("Raw Data that is being sent to backend:", userBookingInfo);
 
       if (response.status === 200 && response.data) {
         // console.log("Data sent: ", response);
@@ -227,10 +196,22 @@ export default function MUICalendar({ userId }) {
         );
       }
     } catch (error) {
-      // console.log(error);
-      toast.error(
-        "An error occurred while submitting the booking information. Please try again.",
-        {
+      if (error.response && error.response.status === 400) {
+        console.log("❌ Booking failed - 400 Bad Request");
+        console.log("Status:", error.response.status);
+        console.log("Message:", error.response.data?.error);
+        toast.error(error.response.data?.error || "Bad Request", {
+          duration: 9000,
+          position: "top-right",
+          style: {
+            border: "1px solid red",
+            padding: "26px",
+            marginTop: "40px",
+            color: "#713200",
+          },
+        });
+      } else {
+        toast.error("An unexpected error occurred. Please try again.", {
           duration: 6000,
           position: "top-right",
           style: {
@@ -239,8 +220,10 @@ export default function MUICalendar({ userId }) {
             marginTop: "40px",
             color: "#713200",
           },
-        }
-      );
+        });
+      }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -286,9 +269,7 @@ export default function MUICalendar({ userId }) {
     );
   };
 
-
   // ⏳ Show "Checking Boarding Data..." while verifying
-
 
   return (
     <>
@@ -332,6 +313,7 @@ export default function MUICalendar({ userId }) {
                   minDate={dayjs(startDate).add(2, "day")}
                   format="DD/MM/YYYY"
                   disabled={!startDate}
+                  shouldDisableDate={checkIfDateDisabled}
                 />
               </div>
               <div className="flex items-center pt-4 pl-1 pr-1">
@@ -381,14 +363,20 @@ export default function MUICalendar({ userId }) {
                 </div>
               </div>
 
-              <div className=" pt-10">
+              <div className="pt-10">
                 <button
-                  className="p-2 px-20 bg-[#A9C274] hover:bg-[#7a9343] text-white rounded-md"
+                  className={`p-2 px-20 text-white rounded-md ${
+                    isSubmitting
+                      ? "bg-gray-400 cursor-not-allowed"
+                      : "bg-[#A9C274] hover:bg-[#7a9343]"
+                  }`}
                   onClick={handleSubmit}
+                  disabled={isSubmitting}
                 >
-                  Book Now
+                  {isSubmitting ? "Booking..." : "Book Now"}
                 </button>
               </div>
+
             </div>
             <div className="px-2 pt-10 mt-4 ">
               <h3 className="text-white text-2xl md:text-3xl mb-4 font-serif font-bold tracking-wide">
