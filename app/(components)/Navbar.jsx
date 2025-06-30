@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className="absolute w-20 md:w-[160px]">
             <a href="/">
               <Image
-                src="/logo/logo1.png"
+                src="/logo/logo4.png"
                 className="rounded-full"
                 width={200}
                 height={200}
