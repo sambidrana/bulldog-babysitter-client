@@ -115,6 +115,14 @@ const Navbar = () => {
                 </button>
                 <div className="absolute left-0 w-full md:w-[200px] pt-1 bg-white rounded-lg shadow-lg hidden group-hover:block ">
                   <Link
+                    href={"/services/daycare"}
+                    className="block px-4 py-2 hover:bg-[#A9C274] hover:text-white"
+                    onClick={onToggleMenu}
+                  >
+                    Daycare <br />{" "}
+                    <span className="text-sm"> 7am - 5:45pm </span>
+                  </Link>
+                  <Link
                     href={"/services/boarding-fee"}
                     className="block px-4 py-2 hover:bg-[#A9C274] hover:text-white"
                     onClick={onToggleMenu}

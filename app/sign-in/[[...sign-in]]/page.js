@@ -2,7 +2,9 @@ import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
   return (
+    
     <div className="flex items-center justify-center mt-28 mb-20 md:mb-28">
+      
       <SignIn
         appearance={{
           elements: {

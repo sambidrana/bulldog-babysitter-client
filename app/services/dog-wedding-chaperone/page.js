@@ -18,7 +18,7 @@ const WeddingChaperonePage = () => {
         </div>
         <div className="flex flex-col md:min-w-[550px] md:max-w-[900px] items-center tracking-wide  bg-yellow-50 p-1 rounded-md drop-shadow-lg text-gray-600">
           <BackgroundImgsTwo />
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center border-b-2 p-2">
             <div>
               <Image
                 src={"/background/bgFeatured.webp"}
