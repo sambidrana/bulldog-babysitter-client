@@ -14,6 +14,7 @@ const BookingPage = () => {
     if (isLoaded && !isSignedIn) {
       router.push("/"); // redirect to home if not signed in
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoaded, isSignedIn]);
 
   if (!isLoaded) return <div>Loading...</div>;
@@ -26,16 +27,6 @@ const BookingPage = () => {
 };
 
 export default BookingPage;
-
-
-
-
-
-
-
-
-
-
 
 /*
 import { auth } from "@clerk/nextjs";

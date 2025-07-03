@@ -60,6 +60,7 @@ export default function MUICalendar({ userId }) {
     return () => {
       isMounted = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, router]);
 
   useEffect(() => {
@@ -162,7 +163,6 @@ export default function MUICalendar({ userId }) {
     }
 
     setIsSubmitting(true); // 🔒 Disable the button
-
 
     try {
       const response = await axios.post(
@@ -376,7 +376,6 @@ export default function MUICalendar({ userId }) {
                   {isSubmitting ? "Booking..." : "Book Now"}
                 </button>
               </div>
-
             </div>
             <div className="px-2 pt-10 mt-4 ">
               <h3 className="text-white text-2xl md:text-3xl mb-4 font-serif font-bold tracking-wide">

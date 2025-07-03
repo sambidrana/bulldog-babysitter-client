@@ -38,7 +38,7 @@ export default function Page() {
             </h2>
 
             <p className="mb-2">
-              We're so glad you're here! Please note that in order to access our
+              We&apos;re so glad you&apos;re here! Please note that in order to access our
               booking system, you&apos;ll need to be signed up with us first.
             </p>
             <p className="mb-2">
