@@ -119,7 +119,7 @@ const Navbar = () => {
                     className="block px-4 py-2 hover:bg-[#A9C274] hover:text-white"
                     onClick={onToggleMenu}
                   >
-                    Daycare <br />{" "}
+                    Daycare <span className="text-sm">$50 per day</span> <br />{" "}
                     <span className="text-sm"> 7am - 5:45pm </span>
                   </Link>
                   <Link

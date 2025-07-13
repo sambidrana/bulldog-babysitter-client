@@ -45,7 +45,7 @@ const DaycarePage = () => {
 
           <ul className="list-disc p-10 text-sm md:text-lg ">
             <li className="mb-2">
-              <strong>Daycare</strong> - We offer daycare from <strong>7:00 AM to 5:45 PM</strong>.
+              <strong>Daycare</strong> - We offer daycare from <strong>7:00 AM to 5:45 PM</strong> for just <strong>$50 a day</strong>.
             </li>
             <li className="mb-2">
               <strong>Zoomies guaranteed</strong> – with a fun-filled,
