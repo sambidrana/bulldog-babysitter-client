@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import WebsiteCounter from "./WebsiteCounter";
 const Featured = () => {
   return (
     <>
       {/* Main Container */}
       <div className="grid grid-flow-row mb-10 ">
-
         {/* Grid A */}
         <div className="flex justify-center items-center pt-24 sm:pt-0 max-h-[200px] sm:max-h-[530px] md:max-h-[650px] 3xl:max-h-[1050px] ">
           {/* h-[70vh] */}
@@ -30,15 +30,17 @@ const Featured = () => {
         </div>
 
         {/* Grid B */}
-        <div className="flex justify-end items-end  h-[150px] sm:h-[115px] 3xl:ml-16 3xl:mr-16  ">
-            <Image
-              src={"/featured/lazy.webp"}
-              width={200}
-              height={200}
-              alt="Background Decoration"
-              className="w-[100px] sm:w-[150px] drop-shadow-lg "
-            />
-          </div>
+        <div className="flex gap-10 justify-end items-end  h-[150px] sm:h-[115px] 3xl:ml-16 3xl:mr-16  ">
+          <WebsiteCounter />
+
+          <Image
+            src={"/featured/lazy.webp"}
+            width={200}
+            height={200}
+            alt="Background Decoration"
+            className="w-[100px] sm:w-[150px] drop-shadow-lg "
+          />
+        </div>
 
         {/* Grid C */}
         <div className="grid grid-rows-3 h-[350px] sm:h-[400px] md:h-[570px] 3xl:h-[1000px] pt-5 mb-10  bg-gray-50 3xl:ml-16 3xl:mr-16 ">
@@ -56,7 +58,7 @@ const Featured = () => {
             </Link>
           </div>
 
-          {/* Grid 2 */} 
+          {/* Grid 2 */}
           <div className="flex justify-center items-center p-2 mt-1 h-[10px] sm:h-[100px]">
             {/* Image */}
             {/* <h1 className="pl-2 text-lg animate-pulse font-bold md:text-lg text-[#A9C274] tracking-wide">The Bulldog Babysitter</h1> */}
