@@ -1,20 +1,20 @@
-"use client"
-import React from 'react'
-import { useState, useEffect } from 'react'
+// "use client"
+// import React from 'react'
+// import { useState, useEffect } from 'react'
 
-const WebsiteCounter = () => {
-    const [websiteVisitCount, setWebsiteVisitCount] = useState(0)
-    // console.log(localStorage)
-    // console.log(sessionStorage)
+// const WebsiteCounter = () => {
+//     const [websiteVisitCount, setWebsiteVisitCount] = useState(0)
+//     // console.log(localStorage)
+//     // console.log(sessionStorage)
 
-    // console.log(window)
-  return (
-    <div>
+//     // console.log(window)
+//   return (
+//     <div>
         
-        <span className='hidden text-lg text-gray-500'>{websiteVisitCount}</span>
+//         <span className='hidden text-lg text-gray-500'>{websiteVisitCount}</span>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
-export default WebsiteCounter
+// export default WebsiteCounter
