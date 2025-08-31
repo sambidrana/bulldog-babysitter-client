@@ -11,7 +11,7 @@ const WebsiteCounter = () => {
   return (
     <div>
         
-        <span className='text-lg text-gray-500'>{websiteVisitCount}</span>
+        <span className='hidden text-lg text-gray-500'>{websiteVisitCount}</span>
 
     </div>
   )

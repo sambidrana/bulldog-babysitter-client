@@ -31,7 +31,7 @@ const Featured = () => {
 
         {/* Grid B */}
         <div className="flex gap-10 justify-end items-end  h-[150px] sm:h-[115px] 3xl:ml-16 3xl:mr-16  ">
-          <WebsiteCounter />
+          <WebsiteCounter/>
 
           <Image
             src={"/featured/lazy.webp"}
